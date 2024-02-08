@@ -717,7 +717,6 @@ We should always include a forest plot with our results. Unfortunately, this is 
 
 ::: rmdnote
 **Important Note:** We're going to use a different file for creating our forest and caterpillar plots. This same file and data preparation is needed to create the funnel plots to evaluate publication bias. For that reason, I tend to create my forest plots, caterpillar plots, and funnel plots all at the same time. In addition, because it uses a different data file, I generally create a second R code file as well specifically for making plots. That's why this all grouped at the end of this chapter.
-
 The code in this plots section is adapted from Fernández-Castilla et al. (2020)[@fernández-castilla2020]. I have slightly adapted the code to fit our data.
 :::
 
