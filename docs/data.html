@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 7 Data Extraction and Coding | A Beginner’s Guide to Systematic Review and Meta-Analysis</title>
+<meta name="author" content="Noah L. Schroeder, Ph.D.">
+<meta name="description" content="Preface to this chapter: There are so many factors to account for while coding that it is impossible for me to say, “just do this” and you’ll get the data you need. As such, this chapter will...">
+<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta property="og:title" content="Chapter 7 Data Extraction and Coding | A Beginner’s Guide to Systematic Review and Meta-Analysis">
+<meta property="og:type" content="book">
+<meta property="og:image" content="/images/cover.png">
+<meta property="og:description" content="Preface to this chapter: There are so many factors to account for while coding that it is impossible for me to say, “just do this” and you’ll get the data you need. As such, this chapter will...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 7 Data Extraction and Coding | A Beginner’s Guide to Systematic Review and Meta-Analysis">
+<meta name="twitter:description" content="Preface to this chapter: There are so many factors to account for while coding that it is impossible for me to say, “just do this” and you’ll get the data you need. As such, this chapter will...">
+<meta name="twitter:image" content="/images/cover.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">A Beginner’s Guide to Systematic Review and Meta-Analysis</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome</a></li>
+<li><a class="" href="how-to-cite-this-book.html">How to Cite this Book</a></li>
+<li class="book-part">Background</li>
+<li><a class="" href="introduction-to-systematic-reviews.html"><span class="header-section-number">1</span> Introduction to Systematic Reviews</a></li>
+<li><a class="" href="getting-started.html"><span class="header-section-number">2</span> Getting Started</a></li>
+<li><a class="" href="statistical-foundations-of-meta-analysis.html"><span class="header-section-number">3</span> Statistical Foundations of Meta-Analysis</a></li>
+<li><a class="" href="PRISMA.html"><span class="header-section-number">4</span> PRISMA</a></li>
+<li class="book-part">Methods</li>
+<li><a class="" href="literaturesearch.html"><span class="header-section-number">5</span> Literature Searches</a></li>
+<li><a class="" href="screening.html"><span class="header-section-number">6</span> Study Screening</a></li>
+<li><a class="active" href="data.html"><span class="header-section-number">7</span> Data Extraction and Coding</a></li>
+<li><a class="" href="systematic-review-data-analysis.html"><span class="header-section-number">8</span> Systematic Review Data Analysis</a></li>
+<li class="book-part">Meta-Analysis in R</li>
+<li><a class="" href="rbasics.html"><span class="header-section-number">9</span> R Basics</a></li>
+<li><a class="" href="meta.html"><span class="header-section-number">10</span> Conventional Meta-Analysis</a></li>
+<li><a class="" href="id_3LMA.html"><span class="header-section-number">11</span> Three-Level Meta-Analysis</a></li>
+<li class="book-part">Notes</li>
+<li><a class="" href="change-log.html">Change Log</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="data" class="section level1" number="7">
+<h1>
+<span class="header-section-number">7</span> Data Extraction and Coding<a class="anchor" aria-label="anchor" href="#data"><i class="fas fa-link"></i></a>
+</h1>
+<div class="rmdimportant">
+<p><strong>Preface to this chapter:</strong> There are so many factors to account for while coding that it is impossible for me to say, “just do this” and you’ll get the data you need. As such, this chapter will cover some major ideas, but you may need to refer to reviews in your area for more practical examples.</p>
+</div>
+<div id="general-principles-and-ideas" class="section level2" number="7.1">
+<h2>
+<span class="header-section-number">7.1</span> General Principles and Ideas<a class="anchor" aria-label="anchor" href="#general-principles-and-ideas"><i class="fas fa-link"></i></a>
+</h2>
+<div id="coding-forms" class="section level3" number="7.1.1">
+<h3>
+<span class="header-section-number">7.1.1</span> Coding Forms<a class="anchor" aria-label="anchor" href="#coding-forms"><i class="fas fa-link"></i></a>
+</h3>
+<p>To this point we have identified our studies, and we now need to get the data out of our studies into a format we can use for data analysis. Typically I have used spreadsheets as my “coding form” where I store my data. I have used SPSS, Excel, and Google Sheets. Each has advantages and disadvantages. Recently, I’ve been using Google Sheets simply because it is easily accessible. I do not really find myself missing any features of other software platforms I’ve tried.</p>
+<p>If you’re conducting a meta-analysis, perhaps the most important consideration is that you can export to a file type that is usable with R. Personally I prefer to use .csv files as my data file that I import into R. Why? Because that is what the examples I found online used when I first learned R, and I’ve used it ever since.  </p>
+</div>
+<div id="establishing-your-variables" class="section level3" number="7.1.2">
+<h3>
+<span class="header-section-number">7.1.2</span> Establishing Your Variables<a class="anchor" aria-label="anchor" href="#establishing-your-variables"><i class="fas fa-link"></i></a>
+</h3>
+<p>Next you need to decide what information you want to extract from studies. This sounds daunting, there are so many possibilities! Well, this actually is pretty easy. Just look at your research questions - they should help you identify what information you need to extract from studies.</p>
+<p>One very important factor is keeping a table of the variables you’re coding. I like to create a table where the first column is the name of the variable, and the second column is an explanation of my coding scheme. Here is an example:</p>
+<div class="inline-figure"><img src="images/vartable.PNG" style="width:100.0%"></div>
+</div>
+</div>
+<div id="systematic-review-outcome-data-extraction" class="section level2" number="7.2">
+<h2>
+<span class="header-section-number">7.2</span> Systematic Review Outcome Data Extraction<a class="anchor" aria-label="anchor" href="#systematic-review-outcome-data-extraction"><i class="fas fa-link"></i></a>
+</h2>
+<p>It is very difficult to provide guidance on how to set up your coding form for systematic reviews simply because there are <em>so</em> many different options. For example, do you want to know the fine-grained results, such as mean, standard deviations, and sample sizes? Or do you want to just know overall statistical test results? Or, maybe you only care about the conclusion the authors made based on those findings?</p>
+<p>Regardless, you’ll probably have key features you want to code from the studies. Depending on your research questions, these can vary widely. For example, you might be interested in publication trends, coding the year and type of publication. Or, you might be interested in the design of an intervention, coding features of the implementation. Or, you might be interested in the type of assessment used and code their qualities. Or, you might code all of these things. It really depends on your research questions. <u>Your research questions should guide the data you extract from studies.</u></p>
+</div>
+<div id="meta-analysis-outcome-data-extraction" class="section level2" number="7.3">
+<h2>
+<span class="header-section-number">7.3</span> Meta-Analysis Outcome Data Extraction<a class="anchor" aria-label="anchor" href="#meta-analysis-outcome-data-extraction"><i class="fas fa-link"></i></a>
+</h2>
+<p>Metafor<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Viechtbauer, &lt;span&gt;“Conducting Meta-Analyses in R with the Metafor Package.”&lt;/span&gt;&lt;/p&gt;"><sup>27</sup></a></span> uses two pieces of information for conducting the meta-analysis that you need to consider during your coding process: the effect size (<strong><em>yi</em></strong>) and the variance (<strong><em>vi</em></strong>). As such, you have choices when coding: you can code the mean, standard deviation, and sample size for the experimental and control groups and then use R and metafor to calculate the effect size and variance for each comparison (my recommended method), or you can calculate the effect size and variance for each effect size yourself. I prefer the former approach because I find it helpful to have all of this data to check for errors in coding (such as a misplaced decimal point – these things happen!) and also for calculating sample sizes for tables.</p>
+<p>If you choose to use R and metafor to calculate the effect sizes and variance, it will be important to have each mean, standard deviation, and sample size for the experimental group and the control group in their own columns (i.e., you’ll need six columns to record this data). <strong>The analysis codes in this book will assume this is the case.</strong> I recommend having simple column titles that are descriptive, don’t contain spaces, and are easy to remember, because you will have to type them into R.</p>
+<p>Another important note I would like to make, because I see it so poorly reported in papers sometimes, is that <u>you should be very purposeful in your selection of comparison groups</u>. Personally, I recommend that if given a choice (e.g., multiple control and/or experimental groups), you select the comparisons with the <strong>fewest confounding variables.</strong> Why? So you have more confidence that the effects you find are actually speaking to the intervention you’re investigating rather than extraneous factors. If given a choice, I generally choose to ignore (that’s right, I ignore data!) groups that present confounding variables when a non-confounded comparison is available. While that ‘leaves data on the table’ so to speak, it makes for a more trustworthy analysis (in my opinion). One key thing to remember with meta-analysis is that if you use junk data, you’ll get a junk result. So more data isn’t necessarily better than “cleaner” (less confounded) data.</p>
+<div id="conventional-meta-analysis" class="section level3" number="7.3.1">
+<h3>
+<span class="header-section-number">7.3.1</span> Conventional Meta-analysis<a class="anchor" aria-label="anchor" href="#conventional-meta-analysis"><i class="fas fa-link"></i></a>
+</h3>
+<p>One key assumption of conventional meta-analysis is that of <u>statistical independence - each participant can only be counted once.</u> Let’s say you have a study that has three dependent variables, all of which are of interest to you - guess what, in conventional meta-analysis, you have to pick one dependent variable (or calculate weighted means and pooled standard deviations, but I do not prefer this method for reasons discussed in the <a href="meta.html#meta">conventional meta-analysis chapter</a>). <strong>Due to this, each comparison will appear on one row on your coding form.</strong></p>
+<p>Let’s look at some examples of different scenarios. Please note that you can have as many moderator variables as you wish, and they can be continuous or categorical.</p>
+<p>Our first example is a study with one experiment and three groups: a control group, a group using clickers, and a group using clickers with self-reflection prompts. For the purposes of our example, we’ll ignore the clicker with self-reflection prompts group, because a) we only have one control group, so we can only have one comparison or we violate the principle of statistical independence, and b) I don’t like to combine groups for reasons discussed in the <a href="meta.html#meta">conventional meta-analysis chapter</a>. This means we’ll compare the control group and the clicker group. We’ll also code for two moderator variables, the type of control condition (categorical) and the student’s confidence level using clickers (continuous). Our coding form may look like this:</p>
+<div class="rmdnote">
+<div class="inline-figure"><img src="images/MA_coding.PNG" style="width:200.0%"></div>
+<p><em>What’s this mean?</em></p>
+<p>Labels in the “<strong>Study</strong>” column will appear on the forest plots, so check your spelling and formatting unless you want to fix it later. (Unsolicited advice: nobody wants to fix something like this later, just type it in correctly the first time).</p>
+<p><strong>Comparison</strong> in this case is used so that I know what group’s data I coded and so readers know what data I coded.</p>
+<p><strong>Control</strong> is a categorical moderator. I would have set choices for this before starting coding.</p>
+<p><strong>Confidence</strong> is a continuous variable.</p>
+<p><strong>Exp_mean</strong> = mean of the experimental group</p>
+<p><strong>Exp_sd</strong> = standard deviation of the experimental group</p>
+<p><strong>Exp_n</strong> = sample size of the experimental group</p>
+<p><strong>Ctrl_mean</strong> = mean of the control group</p>
+<p><strong>Ctrl_sd</strong> = standard deviation of the control group</p>
+<p><strong>Ctrl_n</strong> = sample size of the control group</p>
+<p><strong>Notes</strong> = my own notes on the paper</p>
+</div>
+<p>What if we have a study that has a design where there are two control groups (for our purposes) and two experimental groups? Well, luckily we can include all of them. Here’s what that might look like if participants were split between low confidence and high confidence participants:</p>
+<div class="rmdnote">
+<div class="inline-figure"><img src="images/meta2.PNG" style="width:200.0%"></div>
+<p><em>What’s this mean?</em></p>
+<p>Here you can see a few differences compared to the first example. Namely, in the study column I have separated the study names by adding an <strong>‘a’</strong> and <strong>‘b’</strong> to indicate that they are different comparisons in the same study.</p>
+<p>Next, under “<strong>comparison</strong>” I indicated that one group was designated as the low confidence participants, and one was high confidence. Importantly - these are different participant groups with no overlap.</p>
+</div>
+<p>That’s basically it. The most important thing to remember when coding a conventional meta-analysis is that <u><strong>each participant can only be counted once.</strong></u></p>
+</div>
+<div id="three-level-meta-analysis" class="section level3" number="7.3.2">
+<h3>
+<span class="header-section-number">7.3.2</span> Three-Level Meta-Analysis<a class="anchor" aria-label="anchor" href="#three-level-meta-analysis"><i class="fas fa-link"></i></a>
+</h3>
+<p>As explained in the <a href="id_3LMA.html#id_3LMA">three-level meta-analysis chapter</a>, three-level meta-analysis can account for dependencies in the data. So, remember that example study with three dependent variables that were important? Well, if we use three-level meta-analysis we can include all of that data!</p>
+<p>There are some important things we should note about how to structure your coding form. These are best seen through an example, so let’s analyze an example coding form. Note that just like conventional meta-analysis, you can have as many moderator variables as you wish, and they can be continuous or categorical.</p>
+<div class="rmdnote">
+<div class="inline-figure"><img src="images/3lmacoding.PNG" style="width:200.0%"></div>
+<p><em>What’s this mean?</em></p>
+<p><strong>ES_number</strong>: This column is unique to three-level meta-analysis. It should sequentially number every comparison in your coding form. There should not be duplicates.</p>
+<p><strong>Study</strong>: Similar to conventional meta-analysis, this should be the citation information as you want it to appear in your forest plot. However, <u>unlike conventional meta-analysis, here you want the study name to be identical across all comparisons (rows) of data from this study</u>.</p>
+<p><strong>Comparison</strong>: Similar to conventional meta-analysis, this tells us what information we specifically examined. I indicated what type of outcome test this was from (i.e., recall, transfer, performance).</p>
+<p><strong>Control</strong>: This is a categorical moderator with pre-set categories.</p>
+<p><strong>Confidence</strong>: This is a continuous moderator. Note that it is the same for all comparisons because <u>these are the same participants across all three rows.</u> This would be a huge violation of statistical independence in conventional meta-analysis, but that’s why we’re using three-level meta-analysis!</p>
+<p>The rest of the columns are the same as in the conventional meta-analysis example.</p>
+</div>
+</div>
+</div>
+<div id="inter-rater-reliability-or-agreement-1" class="section level2" number="7.4">
+<h2>
+<span class="header-section-number">7.4</span> Inter-rater Reliability or Agreement<a class="anchor" aria-label="anchor" href="#inter-rater-reliability-or-agreement-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>You need to calculate inter-rater agreement or inter-rater reliability anytime you have more than one coder involved in the data extraction process. Even if you have one person coding the data, you should still have a second coder independently code a subset of the studies. Why? So you can find out a) if your first rater was accurate, b) if your coding scheme makes sense to another person, and c) to ensure your coding scheme is reliable. Generally speaking, I see 10-20% of the sample dual coded for inter-rater agreement or reliability purposes. 20% is what I would call “standard”, while smaller percentages are occasionally used with larger reviews.</p>
+<p>How do you calculate this? Well, it depends on what you are calculating. Many times I see a simple inter-rater agreement statistic reported as a percentage. This is OK. Cohen’s kappa is another option if there are two raters. I’ve also seen correlation coefficients reported. What is most appropriate depends on your study and your data.</p>
+</div>
+<div id="summary-1" class="section level2" number="7.5">
+<h2>
+<span class="header-section-number">7.5</span> Summary<a class="anchor" aria-label="anchor" href="#summary-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>The single most important consideration in your coding when coding for a meta-analysis is the selection of comparisons. You do not want to violate the principle of statistical independence in conventional meta-analysis, and you don’t want to introduce confounding variables in any type of meta-analysis.</p>
+
+</div>
+</div>
+
+  <div class="chapter-nav">
+<div class="prev"><a href="screening.html"><span class="header-section-number">6</span> Study Screening</a></div>
+<div class="next"><a href="systematic-review-data-analysis.html"><span class="header-section-number">8</span> Systematic Review Data Analysis</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#data"><span class="header-section-number">7</span> Data Extraction and Coding</a></li>
+<li>
+<a class="nav-link" href="#general-principles-and-ideas"><span class="header-section-number">7.1</span> General Principles and Ideas</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#coding-forms"><span class="header-section-number">7.1.1</span> Coding Forms</a></li>
+<li><a class="nav-link" href="#establishing-your-variables"><span class="header-section-number">7.1.2</span> Establishing Your Variables</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#systematic-review-outcome-data-extraction"><span class="header-section-number">7.2</span> Systematic Review Outcome Data Extraction</a></li>
+<li>
+<a class="nav-link" href="#meta-analysis-outcome-data-extraction"><span class="header-section-number">7.3</span> Meta-Analysis Outcome Data Extraction</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#conventional-meta-analysis"><span class="header-section-number">7.3.1</span> Conventional Meta-analysis</a></li>
+<li><a class="nav-link" href="#three-level-meta-analysis"><span class="header-section-number">7.3.2</span> Three-Level Meta-Analysis</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#inter-rater-reliability-or-agreement-1"><span class="header-section-number">7.4</span> Inter-rater Reliability or Agreement</a></li>
+<li><a class="nav-link" href="#summary-1"><span class="header-section-number">7.5</span> Summary</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>A Beginner’s Guide to Systematic Review and Meta-Analysis</strong>" was written by Noah L. Schroeder, Ph.D.. It was last built on 2024-02-07.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

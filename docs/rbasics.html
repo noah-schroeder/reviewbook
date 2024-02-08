@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 9 R Basics | A Beginner’s Guide to Systematic Review and Meta-Analysis</title>
+<meta name="author" content="Noah L. Schroeder, Ph.D.">
+<meta name="description" content="Alright, we’re getting to the good stuff here, how to use R. You might be a bit anxious because R requires coding, but don’t worry, we’ll walk through everything step by step.  9.1 Why use R when...">
+<meta name="generator" content="bookdown 0.37 with bs4_book()">
+<meta property="og:title" content="Chapter 9 R Basics | A Beginner’s Guide to Systematic Review and Meta-Analysis">
+<meta property="og:type" content="book">
+<meta property="og:image" content="/images/cover.png">
+<meta property="og:description" content="Alright, we’re getting to the good stuff here, how to use R. You might be a bit anxious because R requires coding, but don’t worry, we’ll walk through everything step by step.  9.1 Why use R when...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 9 R Basics | A Beginner’s Guide to Systematic Review and Meta-Analysis">
+<meta name="twitter:description" content="Alright, we’re getting to the good stuff here, how to use R. You might be a bit anxious because R requires coding, but don’t worry, we’ll walk through everything step by step.  9.1 Why use R when...">
+<meta name="twitter:image" content="/images/cover.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.6.1/transition.js"></script><script src="libs/bs3compat-0.6.1/tabs.js"></script><script src="libs/bs3compat-0.6.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">A Beginner’s Guide to Systematic Review and Meta-Analysis</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome</a></li>
+<li><a class="" href="how-to-cite-this-book.html">How to Cite this Book</a></li>
+<li class="book-part">Background</li>
+<li><a class="" href="introduction-to-systematic-reviews.html"><span class="header-section-number">1</span> Introduction to Systematic Reviews</a></li>
+<li><a class="" href="getting-started.html"><span class="header-section-number">2</span> Getting Started</a></li>
+<li><a class="" href="statistical-foundations-of-meta-analysis.html"><span class="header-section-number">3</span> Statistical Foundations of Meta-Analysis</a></li>
+<li><a class="" href="PRISMA.html"><span class="header-section-number">4</span> PRISMA</a></li>
+<li class="book-part">Methods</li>
+<li><a class="" href="literaturesearch.html"><span class="header-section-number">5</span> Literature Searches</a></li>
+<li><a class="" href="screening.html"><span class="header-section-number">6</span> Study Screening</a></li>
+<li><a class="" href="data.html"><span class="header-section-number">7</span> Data Extraction and Coding</a></li>
+<li><a class="" href="systematic-review-data-analysis.html"><span class="header-section-number">8</span> Systematic Review Data Analysis</a></li>
+<li class="book-part">Meta-Analysis in R</li>
+<li><a class="active" href="rbasics.html"><span class="header-section-number">9</span> R Basics</a></li>
+<li><a class="" href="meta.html"><span class="header-section-number">10</span> Conventional Meta-Analysis</a></li>
+<li><a class="" href="id_3LMA.html"><span class="header-section-number">11</span> Three-Level Meta-Analysis</a></li>
+<li class="book-part">Notes</li>
+<li><a class="" href="change-log.html">Change Log</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="rbasics" class="section level1" number="9">
+<h1>
+<span class="header-section-number">9</span> R Basics<a class="anchor" aria-label="anchor" href="#rbasics"><i class="fas fa-link"></i></a>
+</h1>
+<p>Alright, we’re getting to the good stuff here, how to use R. You might be a bit anxious because R requires coding, but don’t worry, we’ll walk through everything step by step.</p>
+<div id="why-use-r-when-a-gui-based-platform-is-easier" class="section level2" number="9.1">
+<h2>
+<span class="header-section-number">9.1</span> Why use R when a GUI-based Platform is Easier?<a class="anchor" aria-label="anchor" href="#why-use-r-when-a-gui-based-platform-is-easier"><i class="fas fa-link"></i></a>
+</h2>
+<p>At the time of writing, GUI-based platforms such as <a href="https://meta-analysis.com/">Comprehensive Meta-Analysis</a> (paid software at the time of writing), <a href="https://jasp-stats.org/">JASP</a> (free software at the time of writing), and <a href="https://www.jamovi.org/">Jamovi</a> (free software at the time of writing) are excellent for conducting conventional meta-analyses. They can help you analyze the data quickly, without having to know how to do any coding in R. However, some of these options are limited in terms of reproducibility, meaning someone would need the same program to confirm your analysis. While this may seem like a minor limitation to some, it is actually quite important.</p>
+<p>Another limitation of many GUI-based platform is that (at the time of writing) they do not allow one to conduct multivariate or three-level meta-analyses, among other limitations. In the educational sciences, three-level meta-analysis seems to offer advantages because you can account for, for example, all of the learning outcome tests in a study rather than only one learning outcome test per study. In other words, the three-level meta-analysis can account for the dependence between effect sizes, whereas a conventional (two-level) meta-analysis cannot. This factor alone is what convinced me that I needed to learn R!</p>
+<p>One final thing I found I enjoyed about learning R and metafor<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Viechtbauer.&lt;/p&gt;"><sup>28</sup></a></span> was that it taught me just how much you may not realize might be happening behind the scenes in GUI-based software. For example, do you know what estimator you’re using in the GUI-based software? Are you using a Knapp-Hartung adjustment? These kinds of questions are important, yet you may not think about them if you just copy-pasted your data and asked the software to run the analysis.</p>
+<p>Let’s get started using R.</p>
+</div>
+<div id="install-r-and-r-studio" class="section level2" number="9.2">
+<h2>
+<span class="header-section-number">9.2</span> Install R and R Studio<a class="anchor" aria-label="anchor" href="#install-r-and-r-studio"><i class="fas fa-link"></i></a>
+</h2>
+<p>You can <a href="https://www.r-project.org/">download and install R here</a> and I recommend <a href="https://posit.co/download/rstudio-desktop/">downloading and installing R Studio</a> (there is a free version) as well.</p>
+<p>Once you have R and R Studio installed, you’ll want to open R Studio.</p>
+</div>
+<div id="what-you-need-to-know" class="section level2" number="9.3">
+<h2>
+<span class="header-section-number">9.3</span> What You Need to Know<a class="anchor" aria-label="anchor" href="#what-you-need-to-know"><i class="fas fa-link"></i></a>
+</h2>
+<p>What do I think you <em>need</em> to know about R and R Studio before continuing in this book? Well, honestly not a lot. I’ve tried to break it down into very simple terms. I would install R and R Studio, then continue with the book as long as you know where to enter code into the file you’re working on (top left of R Studio for me), where the console is (bottom left of R Studio for me), where the environment is (top right of R Studio for me), and where the files and plots appear (bottom right of R Studio for me). If you understand those big ideas, I think you’ll likely be OK to move forward. Here’s a screenshot of R Studio so you can see where everything is on my set up (which I believe is the default).</p>
+<div class="inline-figure"><img src="images/Rstudio.png" style="width:100.0%"></div>
+<div id="set-your-working-directory" class="section level3" number="9.3.1">
+<h3>
+<span class="header-section-number">9.3.1</span> Set Your Working Directory<a class="anchor" aria-label="anchor" href="#set-your-working-directory"><i class="fas fa-link"></i></a>
+</h3>
+<p>You’ll need to tell R where to save your files and where to retrieve files from, which is known as your working directory. For simplicity, I set up a new project folder on my desktop, and I save my data file there. Then I set that folder as my working directory. To set your working directory, you click on session, then set working directory, as seen in the screenshot below. I would choose the “choose directory” option, then choose my desktop folder that is my project folder.</p>
+<div class="inline-figure"><img src="images/workingdirectory.PNG" style="width:100.0%"></div>
+</div>
+<div id="install-r-packages-well-need-for-meta-analysis" class="section level3" number="9.3.2">
+<h3>
+<span class="header-section-number">9.3.2</span> Install R Packages We’ll Need for Meta-Analysis<a class="anchor" aria-label="anchor" href="#install-r-packages-well-need-for-meta-analysis"><i class="fas fa-link"></i></a>
+</h3>
+<p>We’ll need to install a few R packages before continuing into this book. Fortunately, this is super easy! Let’s see how to do this.</p>
+<p>In your file (see screenshot above) you want to enter the following code:</p>
+<div class="rmdnote">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co">#install packages</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"metafor"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"tidyverse"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"plyr"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"grid"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"gridExtra"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"metaSEM"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"ggrepel"</span><span class="op">)</span></span></code></pre></div>
+<p><em>What will this code do?</em></p>
+<p>This code will install the named packages into your computer so that R understands the functions built into each one.</p>
+<p><em>How do I get it to actually install or run code?</em></p>
+<p>Now that you’ve copy-pasted the code into your file, you want to highlight the code, then click ‘run’ in the top right of the file area. See the screenshot below, where run is highlighted in red.</p>
+<div class="inline-figure"><img src="images/runbutton.PNG" style="width:100.0%"></div>
+<p>After you click run, you’ll see things appear in the console. That’s normal. It will take a few minutes for the packages to install, but once they’re done, you’re ready to move forward. Once a package is installed, you don’t need to install it every time you run an analysis. We will just open them. If you don’t know how to do that, don’t worry, I’ll walk you through this as we go through each chapter.</p>
+</div>
+<div id="was-that-easy" class="section level4" number="9.3.2.1">
+<h4>
+<span class="header-section-number">9.3.2.1</span> Was that easy?<a class="anchor" aria-label="anchor" href="#was-that-easy"><i class="fas fa-link"></i></a>
+</h4>
+<p>If this first step was easy or you figured it out without too much trouble, I think you’re ready to move forward in the book. The meta-analysis codes sections of the book rely on you copy-pasting sections of code from the book into your R Studio interface, then highlighting the relevant section of code you just copy-pasted into R Studio, and then clicking ‘run’.</p>
+</div>
+<div id="was-this-too-difficult" class="section level4" number="9.3.2.2">
+<h4>
+<span class="header-section-number">9.3.2.2</span> Was this too difficult?<a class="anchor" aria-label="anchor" href="#was-this-too-difficult"><i class="fas fa-link"></i></a>
+</h4>
+<p>If you struggled to keep up so far, then I would suggest you start at the very basics. There are so many resources online, I don’t see a reason to rewrite what others have written about extensively. I know getting started with R Studio can be intimidating. It seems scary and complicated. After you get started and start writing your own code, it won’t seem so scary. Here is a starting point: <a href="https://education.rstudio.com/learn/beginner/" class="uri">https://education.rstudio.com/learn/beginner/</a></p>
+<p>How not scary does R become? Well, you may be surprised to hear that I wrote this entire book in R Studio using the bookdown package. R is very versatile!</p>
+
+</div>
+</div>
+</div>
+</div>
+
+  <div class="chapter-nav">
+<div class="prev"><a href="systematic-review-data-analysis.html"><span class="header-section-number">8</span> Systematic Review Data Analysis</a></div>
+<div class="next"><a href="meta.html"><span class="header-section-number">10</span> Conventional Meta-Analysis</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#rbasics"><span class="header-section-number">9</span> R Basics</a></li>
+<li><a class="nav-link" href="#why-use-r-when-a-gui-based-platform-is-easier"><span class="header-section-number">9.1</span> Why use R when a GUI-based Platform is Easier?</a></li>
+<li><a class="nav-link" href="#install-r-and-r-studio"><span class="header-section-number">9.2</span> Install R and R Studio</a></li>
+<li>
+<a class="nav-link" href="#what-you-need-to-know"><span class="header-section-number">9.3</span> What You Need to Know</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#set-your-working-directory"><span class="header-section-number">9.3.1</span> Set Your Working Directory</a></li>
+<li><a class="nav-link" href="#install-r-packages-well-need-for-meta-analysis"><span class="header-section-number">9.3.2</span> Install R Packages We’ll Need for Meta-Analysis</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>A Beginner’s Guide to Systematic Review and Meta-Analysis</strong>" was written by Noah L. Schroeder, Ph.D.. It was last built on 2024-02-07.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>
