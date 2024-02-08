@@ -4,17 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 8 Three-Level Meta-Analysis | A Beginner’s Guide to Systematic Review and Meta-Analysis</title>
+<title>Chapter 11 Three-Level Meta-Analysis | A Beginner’s Guide to Systematic Review and Meta-Analysis</title>
 <meta name="author" content="Noah L. Schroeder, Ph.D.">
-<meta name="description" content="This chapter will cover the basics of three-level meta-analysis in R using metafor3. Remember how in conventional meta-analysis each participant can only be counted once? Well, that means we...">
+<meta name="description" content="This chapter will cover the basics of three-level meta-analysis in R using metafor37. Remember how in conventional meta-analysis each participant can only be counted once? Well, that means we...">
 <meta name="generator" content="bookdown 0.37 with bs4_book()">
-<meta property="og:title" content="Chapter 8 Three-Level Meta-Analysis | A Beginner’s Guide to Systematic Review and Meta-Analysis">
+<meta property="og:title" content="Chapter 11 Three-Level Meta-Analysis | A Beginner’s Guide to Systematic Review and Meta-Analysis">
 <meta property="og:type" content="book">
 <meta property="og:image" content="/images/cover.png">
-<meta property="og:description" content="This chapter will cover the basics of three-level meta-analysis in R using metafor3. Remember how in conventional meta-analysis each participant can only be counted once? Well, that means we...">
+<meta property="og:description" content="This chapter will cover the basics of three-level meta-analysis in R using metafor37. Remember how in conventional meta-analysis each participant can only be counted once? Well, that means we...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 8 Three-Level Meta-Analysis | A Beginner’s Guide to Systematic Review and Meta-Analysis">
-<meta name="twitter:description" content="This chapter will cover the basics of three-level meta-analysis in R using metafor3. Remember how in conventional meta-analysis each participant can only be counted once? Well, that means we...">
+<meta name="twitter:title" content="Chapter 11 Three-Level Meta-Analysis | A Beginner’s Guide to Systematic Review and Meta-Analysis">
+<meta name="twitter:description" content="This chapter will cover the basics of three-level meta-analysis in R using metafor37. Remember how in conventional meta-analysis each participant can only be counted once? Well, that means we...">
 <meta name="twitter:image" content="/images/cover.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -66,30 +66,50 @@
 </form>
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">Chapter 8</span> Three-Level Meta-Analysis</a></li></ul>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Welcome</a></li>
+<li><a class="" href="how-to-cite-this-book.html">How to Cite this Book</a></li>
+<li class="book-part">Background</li>
+<li><a class="" href="introduction-to-systematic-reviews.html"><span class="header-section-number">1</span> Introduction to Systematic Reviews</a></li>
+<li><a class="" href="getting-started.html"><span class="header-section-number">2</span> Getting Started</a></li>
+<li><a class="" href="statistical-foundations-of-meta-analysis.html"><span class="header-section-number">3</span> Statistical Foundations of Meta-Analysis</a></li>
+<li><a class="" href="PRISMA.html"><span class="header-section-number">4</span> PRISMA</a></li>
+<li class="book-part">Methods</li>
+<li><a class="" href="literaturesearch.html"><span class="header-section-number">5</span> Literature Searches</a></li>
+<li><a class="" href="screening.html"><span class="header-section-number">6</span> Study Screening</a></li>
+<li><a class="" href="data.html"><span class="header-section-number">7</span> Data Extraction and Coding</a></li>
+<li><a class="" href="systematic-review-data-analysis.html"><span class="header-section-number">8</span> Systematic Review Data Analysis</a></li>
+<li class="book-part">Meta-Analysis in R</li>
+<li><a class="" href="rbasics.html"><span class="header-section-number">9</span> R Basics</a></li>
+<li><a class="" href="meta.html"><span class="header-section-number">10</span> Conventional Meta-Analysis</a></li>
+<li><a class="active" href="id_3LMA.html"><span class="header-section-number">11</span> Three-Level Meta-Analysis</a></li>
+<li class="book-part">Notes</li>
+<li><a class="" href="change-log.html">Change Log</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
 
         <div class="book-extra">
           
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="id_3LMA" class="section level1" number="8">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="id_3LMA" class="section level1" number="11">
 <h1>
-<span class="header-section-number">8</span> Three-Level Meta-Analysis<a class="anchor" aria-label="anchor" href="#id_3LMA"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11</span> Three-Level Meta-Analysis<a class="anchor" aria-label="anchor" href="#id_3LMA"><i class="fas fa-link"></i></a>
 </h1>
-<p>This chapter will cover the basics of three-level meta-analysis in R using metafor<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Wolfgang Viechtbauer, &lt;span&gt;“Conducting Meta-Analyses in R with the Metafor Package,”&lt;/span&gt; &lt;em&gt;Journal of Statistical Software&lt;/em&gt; 36, no. 3 (2010), &lt;a href="https://doi.org/10.18637/jss.v036.i03"&gt;https://doi.org/10.18637/jss.v036.i03&lt;/a&gt;.&lt;/p&gt;'><sup>3</sup></a></span>. Remember how in conventional meta-analysis each participant can only be counted once? Well, that means we exclude A LOT of data when we use conventional meta-analysis in many education fields. But we can use three-level meta-analysis to get around that!</p>
+<p>This chapter will cover the basics of three-level meta-analysis in R using metafor<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Viechtbauer, &lt;span&gt;“Conducting Meta-Analyses in R with the Metafor Package.”&lt;/span&gt;&lt;/p&gt;"><sup>37</sup></a></span>. Remember how in conventional meta-analysis each participant can only be counted once? Well, that means we exclude A LOT of data when we use conventional meta-analysis in many education fields. But we can use three-level meta-analysis to get around that!</p>
 <p>Let’s look at an example: Say you are comparing the impact of learning from a virtual character to a game on learning outcomes. The study you’re coding has two groups, a virtual character group and a game group. It has an immediate learning test, a one week delayed learning test, and a month delayed learning test. Which test do you code? In a three-level meta-analysis, you can code all three! No data lost, yay!</p>
-<p>As noted in the conventional meta-analysis chapter, we’re focusing on random-effects models here. If you don’t know the differences between fixed and random effects meta-analysis models, please see.<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Michael Borenstein et al., &lt;span&gt;“A Basic Introduction to Fixed-Effect and Random-Effects Models for Meta-Analysis,”&lt;/span&gt; &lt;em&gt;Research Synthesis Methods&lt;/em&gt; 1, no. 2 (April 2010): 97–111, &lt;a href="https://doi.org/10.1002/jrsm.12"&gt;https://doi.org/10.1002/jrsm.12&lt;/a&gt;.&lt;/p&gt;'><sup>4</sup></a></span></p>
-<p>If you aren’t familiar with conventional meta-analysis, please read about it before conducting any meta-analysis. There are plenty of free resources available. I would recommend starting with the great, free book, <a href="https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/">Doing Meta-Analysis in R</a><span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Harrer et al., &lt;em&gt;Doing Meta-Analysis with r&lt;/em&gt;.&lt;/p&gt;"><sup>5</sup></a></span>. This same book explains three-level meta-analysis quite well too!</p>
+<p>As noted in the conventional meta-analysis chapter, we’re focusing on random-effects models here. If you don’t know the differences between fixed and random effects meta-analysis models, please see.<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Borenstein et al., &lt;span&gt;“A Basic Introduction to Fixed-Effect and Random-Effects Models for Meta-Analysis.”&lt;/span&gt;&lt;/p&gt;"><sup>38</sup></a></span></p>
+<p>If you aren’t familiar with conventional meta-analysis, please read about it before conducting any meta-analysis. There are plenty of free resources available. I would recommend starting with the great, free book, <a href="https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/">Doing Meta-Analysis in R</a><span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Harrer et al., &lt;em&gt;Doing Meta-Analysis with r&lt;/em&gt;.&lt;/p&gt;"><sup>39</sup></a></span>. This same book explains three-level meta-analysis quite well too!</p>
 <p>Let’s say you understand the differences between conventional and three-level meta-analytic models, you understand what meta-analysis is used for, and you’ve decided you’re moving ahead with the three-level model. Let’s explore how to do this in R with metafor using standardized mean differences as the effect size.</p>
-<div id="preparing-your-data-1" class="section level2" number="8.1">
+<div id="preparing-your-data-1" class="section level2" number="11.1">
 <h2>
-<span class="header-section-number">8.1</span> Preparing your data<a class="anchor" aria-label="anchor" href="#preparing-your-data-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1</span> Preparing your data<a class="anchor" aria-label="anchor" href="#preparing-your-data-1"><i class="fas fa-link"></i></a>
 </h2>
-<p>Hopefully you have already run your <a href="#literaturesearch">literature search</a>, <a href="screening.html#screening">screened your studies</a>, and <a href="data.html#data">extracted your data</a>. This point forward assumes you have already completed these steps.</p>
-<div id="your-data-file-1" class="section level3" number="8.1.1">
+<p>Hopefully you have already run your <a href="literaturesearch.html#literaturesearch">literature search</a>, <a href="screening.html#screening">screened your studies</a>, and <a href="data.html#data">extracted your data</a>. This point forward assumes you have already completed these steps.</p>
+<div id="your-data-file-1" class="section level3" number="11.1.1">
 <h3>
-<span class="header-section-number">8.1.1</span> Your Data File<a class="anchor" aria-label="anchor" href="#your-data-file-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.1</span> Your Data File<a class="anchor" aria-label="anchor" href="#your-data-file-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>Personally I prefer to use .csv files as my data file that I import into R. Why? Because that’s what was always used in the examples I found online when I was learning R, and I’ve used it ever since. Why change something that works? Plus, .csv works with many different software programs and across various operating systems.  </p>
 <p>As noted in the <a href="data.html#data">data extraction and coding chapter</a>, metafor uses two pieces of information for conducting the meta-analysis that you need to consider before importing data in R: the effect size (<strong><em>yi</em></strong>) and the variance (<strong><em>vi</em></strong>). If you read the previous chapters, you know you have choices when coding: you can code the mean, standard deviation, and sample size for the experimental and control groups and then use R and metafor to calculate the effect size and variance for each comparison (my recommended method), or you can calculate the effect size and variance for each effect size yourself. I prefer the former approach because I find it helpful to have all of this data to not only check for errors in coding (such as a misplaced decimal point – these things happen!) and also for calculating sample sizes for tables.</p>
@@ -104,23 +124,23 @@
 </div>
 </div>
 </div>
-<div id="running-a-three-level-meta-analysis-in-metafor" class="section level2" number="8.2">
+<div id="running-a-three-level-meta-analysis-in-metafor" class="section level2" number="11.2">
 <h2>
-<span class="header-section-number">8.2</span> Running a Three-Level Meta-Analysis in Metafor<a class="anchor" aria-label="anchor" href="#running-a-three-level-meta-analysis-in-metafor"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2</span> Running a Three-Level Meta-Analysis in Metafor<a class="anchor" aria-label="anchor" href="#running-a-three-level-meta-analysis-in-metafor"><i class="fas fa-link"></i></a>
 </h2>
-<div id="example-data-for-this-analysis-1" class="section level3" number="8.2.1">
+<div id="example-data-for-this-analysis-1" class="section level3" number="11.2.1">
 <h3>
-<span class="header-section-number">8.2.1</span> Example Data for This Analysis<a class="anchor" aria-label="anchor" href="#example-data-for-this-analysis-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.1</span> Example Data for This Analysis<a class="anchor" aria-label="anchor" href="#example-data-for-this-analysis-1"><i class="fas fa-link"></i></a>
 </h3>
-<p>If you want to follow along with this specific example, you’ll want to use the subset of data from Schroeder et al.’s (2023)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Noah L. Schroeder, Robert F. Siegle, and Scotty D. Craig, &lt;span&gt;“A Meta-Analysis on Learning from 360° Video,”&lt;/span&gt; &lt;em&gt;Computers &amp;amp; Education&lt;/em&gt; 206 (December 2023): 104901, &lt;a href="https://doi.org/10.1016/j.compedu.2023.104901"&gt;https://doi.org/10.1016/j.compedu.2023.104901&lt;/a&gt;.&lt;/p&gt;'><sup>6</sup></a></span> meta-analysis on the effects of 360˚ video on learning. The data can be <a href="https://github.com/noah-schroeder/reviewbook/blob/abfdb439ef81267b388ef75067a03262e1e59020/360%20sample%20data.csv">downloaded here</a>.</p>
+<p>If you want to follow along with this specific example, you’ll want to use the subset of data from Schroeder et al.’s (2023)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Noah L. Schroeder, Robert F. Siegle, and Scotty D. Craig, &lt;span&gt;“A Meta-Analysis on Learning from 360° Video,”&lt;/span&gt; &lt;em&gt;Computers &amp;amp; Education&lt;/em&gt; 206 (December 2023): 104901, &lt;a href="https://doi.org/10.1016/j.compedu.2023.104901"&gt;https://doi.org/10.1016/j.compedu.2023.104901&lt;/a&gt;.&lt;/p&gt;'><sup>40</sup></a></span> meta-analysis on the effects of 360˚ video on learning. The data can be <a href="https://github.com/noah-schroeder/reviewbook/blob/abfdb439ef81267b388ef75067a03262e1e59020/360%20sample%20data.csv">downloaded here</a>.</p>
 </div>
-<div id="load-r-packages-1" class="section level3" number="8.2.2">
+<div id="load-r-packages-1" class="section level3" number="11.2.2">
 <h3>
-<span class="header-section-number">8.2.2</span> Load R Packages<a class="anchor" aria-label="anchor" href="#load-r-packages-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.2</span> Load R Packages<a class="anchor" aria-label="anchor" href="#load-r-packages-1"><i class="fas fa-link"></i></a>
 </h3>
-<p>First we need to load our R packages. Hopefully you installed these already, if not it won’t take long, just see the <a href="#rbasics">R Basics chapter</a>. Assuming you have already installed the R packages, let’s load them up so we can do some analysis!</p>
+<p>First we need to load our R packages. Hopefully you installed these already, if not it won’t take long, just see the <a href="rbasics.html#rbasics">R Basics chapter</a>. Assuming you have already installed the R packages, let’s load them up so we can do some analysis!</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">###########################</span></span>
 <span><span class="co">#Preparation#</span></span>
 <span><span class="co">###########################</span></span>
@@ -133,25 +153,25 @@
 <p>This code is simply loading the metafor, ggplot2, and dplyr packages in the R environment so we can do our analysis.</p>
 </div>
 </div>
-<div id="import-your-data-into-r-studio-1" class="section level3" number="8.2.3">
+<div id="import-your-data-into-r-studio-1" class="section level3" number="11.2.3">
 <h3>
-<span class="header-section-number">8.2.3</span> Import Your Data Into R Studio<a class="anchor" aria-label="anchor" href="#import-your-data-into-r-studio-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.3</span> Import Your Data Into R Studio<a class="anchor" aria-label="anchor" href="#import-your-data-into-r-studio-1"><i class="fas fa-link"></i></a>
 </h3>
-<p>The first step to conducting your meta-analysis is to read in the data. To do that, we first want to set our working directory (more about that in the <a href="#rbasics">R Basics chapter</a>). Once you’ve set your working directory and saved the sample data file there, you can use this piece of code.</p>
+<p>The first step to conducting your meta-analysis is to read in the data. To do that, we first want to set our working directory (more about that in the <a href="rbasics.html#rbasics">R Basics chapter</a>). Once you’ve set your working directory and saved the sample data file there, you can use this piece of code.</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#name data file and read in .csv.</span></span>
 <span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span><span class="op">(</span><span class="st">"360 sample data.csv"</span><span class="op">)</span></span></code></pre></div>
 <p><em>What’s this code doing?<br></em>You see the first piece of code is ‘<strong>df</strong>’, which is what we are going to name our data file. The <strong>&lt;-</strong> indicates that you are going to name something. The next piece is telling R to read in a .csv file from the working directory, and then you can see the file name I used. So basically, we’re saying <em>import this data and call it df</em>.</p>
 </div>
 </div>
-<div id="calculating-effect-sizes-1" class="section level3" number="8.2.4">
+<div id="calculating-effect-sizes-1" class="section level3" number="11.2.4">
 <h3>
-<span class="header-section-number">8.2.4</span> Calculating Effect Sizes<a class="anchor" aria-label="anchor" href="#calculating-effect-sizes-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.4</span> Calculating Effect Sizes<a class="anchor" aria-label="anchor" href="#calculating-effect-sizes-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>Next, you will want to calculate the effect sizes and variance for each effect size if you have not done so already. You can do that using this code:</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://wviechtb.github.io/metafor/reference/escalc.html">escalc</a></span><span class="op">(</span>measure<span class="op">=</span><span class="st">"SMD"</span>, m1i<span class="op">=</span><span class="va">Exp_mean</span>, sd1i<span class="op">=</span><span class="va">Exp_sd</span>, n1i<span class="op">=</span><span class="va">Exp_n</span>,</span>
 <span>               m2i<span class="op">=</span><span class="va">Ctrl_mean</span>, sd2i<span class="op">=</span><span class="va">Ctrl_sd</span>, n2i<span class="op">=</span><span class="va">Ctrl_n</span>, data<span class="op">=</span><span class="va">df</span><span class="op">)</span></span></code></pre></div>
 <p><em>What’s this code doing?</em></p>
@@ -162,7 +182,7 @@
 </div>
 <p>Now you can make sure the effect size and variance for each effect size were calculated:</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#display dataset with ES and variance</span></span>
 <span><span class="va">dat1</span></span></code></pre></div>
 <p><em>What’s this code doing?</em></p>
@@ -170,7 +190,7 @@
 </div>
 <p>However, I find this kind of hard to read if I have a lot of data. So, I prefer to write it all to a .csv file instead because I find it easier to read. This code can do that:</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#save .csv file with ES data. This goes into working directory</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.csv</a></span><span class="op">(</span><span class="va">dat1</span>, file <span class="op">=</span> <span class="st">"ESdata.csv"</span><span class="op">)</span></span></code></pre></div>
 <p><em>What’s this code doing?</em></p>
@@ -182,13 +202,13 @@
 <p>Well, I like to look at the .csv file and make sure I don’t see any effect sizes that seem very wrong. If I find any then it is easy for me to track back to which study it came from and I can see if I made a mistake during coding. A misplaced decimal point can have huge implications for your analysis - this is a step that helps you catch those human errors.</p>
 </div>
 </div>
-<div id="running-the-meta-analysis-model-1" class="section level2" number="8.3">
+<div id="running-the-meta-analysis-model-1" class="section level2" number="11.3">
 <h2>
-<span class="header-section-number">8.3</span> Running The Meta-Analysis Model<a class="anchor" aria-label="anchor" href="#running-the-meta-analysis-model-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3</span> Running The Meta-Analysis Model<a class="anchor" aria-label="anchor" href="#running-the-meta-analysis-model-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>Now the part we’ve all been waiting for, let’s run a three-level meta-analysis model! We can use this code:</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#multilevel model</span></span>
 <span><span class="va">m_multi</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://wviechtb.github.io/metafor/reference/rma.mv.html">rma.mv</a></span><span class="op">(</span><span class="va">yi</span>,</span>
 <span>                  <span class="va">vi</span>,</span>
@@ -202,39 +222,39 @@
 <p>This looks scary doesn’t it? It’s not that complicated actually. Let’s see what we’re doing with this code.</p>
 <p>First, we’re naming our meta-analysis result as a new piece of data in R, and we’re naming it ‘<strong>m_multi</strong>’</p>
 <p><strong>rma.mv</strong> is telling metafor that we want to run a random-effects, multivariate meta-analysis model. Within that, we’re using <strong>yi</strong> to reference effect size data within our data set, <strong>vi</strong> to reference effect size variance within our data set.</p>
-<p>The next line is a bit more complex. Harrer et al. (2021)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Harrer et al., &lt;em&gt;Doing Meta-Analysis with r&lt;/em&gt;.&lt;/p&gt;"><sup>7</sup></a></span> explain that this is used to define the random effects and their nesting. Specifically, we will always start with <strong>~1 and a vertical bar</strong> for three-level models. Next, we need to define what our grouping variables are, in our case, it’s going to be studies (<strong>Study</strong> column in our data set), and within studies are effect size numbers (<strong>ES_number</strong> column in our data set).</p>
+<p>The next line is a bit more complex. Harrer et al. (2021)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Harrer et al., &lt;em&gt;Doing Meta-Analysis with r&lt;/em&gt;.&lt;/p&gt;"><sup>41</sup></a></span> explain that this is used to define the random effects and their nesting. Specifically, we will always start with <strong>~1 and a vertical bar</strong> for three-level models. Next, we need to define what our grouping variables are, in our case, it’s going to be studies (<strong>Study</strong> column in our data set), and within studies are effect size numbers (<strong>ES_number</strong> column in our data set).</p>
 <p><strong>method</strong> is specifying that we want to use Restricted Maximum-Likelihood.</p>
-<p><strong>test</strong>, by default, uses z. However Harrer et al. (2021)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Harrer et al.&lt;/p&gt;"><sup>8</sup></a></span> recommend using ‘<strong>t</strong>’ because it is similar to the Knapp-Hartung method.</p>
-<p><strong>dfs = “contain”</strong> is done because using “residual” can lead to inflated Type 1 error rate according to Viechtbauer (n.d.)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Wolfgang Viechtbauer, &lt;span&gt;“Meta-Analysis via Multivariate/Multilevel Linear (Mixed-Effects) Models &lt;span&gt;&lt;/span&gt; Rma.mv,”&lt;/span&gt; n.d., &lt;a href="https://wviechtb.github.io/metafor/reference/rma.mv.html"&gt;https://wviechtb.github.io/metafor/reference/rma.mv.html&lt;/a&gt;.&lt;/p&gt;'><sup>9</sup></a></span>.</p>
+<p><strong>test</strong>, by default, uses z. However Harrer et al. (2021)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Harrer et al.&lt;/p&gt;"><sup>42</sup></a></span> recommend using ‘<strong>t</strong>’ because it is similar to the Knapp-Hartung method.</p>
+<p><strong>dfs = “contain”</strong> is done because using “residual” can lead to inflated Type 1 error rate according to Viechtbauer (n.d.)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Wolfgang Viechtbauer, &lt;span&gt;“Meta-Analysis via Multivariate/Multilevel Linear (Mixed-Effects) Models &lt;span&gt;&lt;/span&gt; Rma.mv,”&lt;/span&gt; n.d., &lt;a href="https://wviechtb.github.io/metafor/reference/rma.mv.html"&gt;https://wviechtb.github.io/metafor/reference/rma.mv.html&lt;/a&gt;.&lt;/p&gt;'><sup>43</sup></a></span>.</p>
 <p>and <strong>data = dat1</strong> is simply telling metafor which data set within R to reference when running the analysis.</p>
 <p>Finally, <strong>m_multi</strong> displays the analysis results on the screen.</p>
 </div>
-<div id="interpreting-the-results-1" class="section level3" number="8.3.1">
+<div id="interpreting-the-results-1" class="section level3" number="11.3.1">
 <h3>
-<span class="header-section-number">8.3.1</span> Interpreting the Results<a class="anchor" aria-label="anchor" href="#interpreting-the-results-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.1</span> Interpreting the Results<a class="anchor" aria-label="anchor" href="#interpreting-the-results-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>When we run that code, we now see the following:</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="id_3LMA.html#cb7-1" tabindex="-1"></a>Multivariate Meta<span class="sc">-</span>Analysis <span class="fu">Model</span> (<span class="at">k =</span> <span class="dv">35</span>; method<span class="sc">:</span> REML)</span>
-<span id="cb7-2"><a href="id_3LMA.html#cb7-2" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="id_3LMA.html#cb7-3" tabindex="-1"></a>Variance Components<span class="sc">:</span></span>
-<span id="cb7-4"><a href="id_3LMA.html#cb7-4" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="id_3LMA.html#cb7-5" tabindex="-1"></a>            estim    sqrt  nlvls  fixed           factor </span>
-<span id="cb7-6"><a href="id_3LMA.html#cb7-6" tabindex="-1"></a>sigma<span class="sc">^</span><span class="fl">2.1</span>  <span class="fl">2.6808</span>  <span class="fl">1.6373</span>     <span class="dv">12</span>     no            Study </span>
-<span id="cb7-7"><a href="id_3LMA.html#cb7-7" tabindex="-1"></a>sigma<span class="sc">^</span><span class="fl">2.2</span>  <span class="fl">0.1649</span>  <span class="fl">0.4061</span>     <span class="dv">35</span>     no  Study<span class="sc">/</span>ES_number </span>
-<span id="cb7-8"><a href="id_3LMA.html#cb7-8" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="id_3LMA.html#cb7-9" tabindex="-1"></a>Test <span class="cf">for</span> Heterogeneity<span class="sc">:</span></span>
-<span id="cb7-10"><a href="id_3LMA.html#cb7-10" tabindex="-1"></a><span class="fu">Q</span>(<span class="at">df =</span> <span class="dv">34</span>) <span class="ot">=</span> <span class="fl">285.5500</span>, p<span class="sc">-</span>val <span class="sc">&lt;</span> .<span class="dv">0001</span></span>
-<span id="cb7-11"><a href="id_3LMA.html#cb7-11" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="id_3LMA.html#cb7-12" tabindex="-1"></a>Model Results<span class="sc">:</span></span>
-<span id="cb7-13"><a href="id_3LMA.html#cb7-13" tabindex="-1"></a></span>
-<span id="cb7-14"><a href="id_3LMA.html#cb7-14" tabindex="-1"></a>estimate      se     tval  df    pval    ci.lb   ci.ub    </span>
-<span id="cb7-15"><a href="id_3LMA.html#cb7-15" tabindex="-1"></a> <span class="sc">-</span><span class="fl">0.3799</span>  <span class="fl">0.4843</span>  <span class="sc">-</span><span class="fl">0.7843</span>  <span class="dv">11</span>  <span class="fl">0.4494</span>  <span class="sc">-</span><span class="fl">1.4459</span>  <span class="fl">0.6861</span>    </span>
-<span id="cb7-16"><a href="id_3LMA.html#cb7-16" tabindex="-1"></a></span>
-<span id="cb7-17"><a href="id_3LMA.html#cb7-17" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb7-18"><a href="id_3LMA.html#cb7-18" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> ‘<span class="sc">**</span><span class="er">*</span>’ <span class="fl">0.001</span> ‘<span class="sc">**</span>’ <span class="fl">0.01</span> ‘<span class="sc">*</span>’ <span class="fl">0.05</span> ‘.’ <span class="fl">0.1</span> ‘ ’ <span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="id_3LMA.html#cb34-1" tabindex="-1"></a>Multivariate Meta<span class="sc">-</span>Analysis <span class="fu">Model</span> (<span class="at">k =</span> <span class="dv">35</span>; method<span class="sc">:</span> REML)</span>
+<span id="cb34-2"><a href="id_3LMA.html#cb34-2" tabindex="-1"></a></span>
+<span id="cb34-3"><a href="id_3LMA.html#cb34-3" tabindex="-1"></a>Variance Components<span class="sc">:</span></span>
+<span id="cb34-4"><a href="id_3LMA.html#cb34-4" tabindex="-1"></a></span>
+<span id="cb34-5"><a href="id_3LMA.html#cb34-5" tabindex="-1"></a>            estim    sqrt  nlvls  fixed           factor </span>
+<span id="cb34-6"><a href="id_3LMA.html#cb34-6" tabindex="-1"></a>sigma<span class="sc">^</span><span class="fl">2.1</span>  <span class="fl">2.6808</span>  <span class="fl">1.6373</span>     <span class="dv">12</span>     no            Study </span>
+<span id="cb34-7"><a href="id_3LMA.html#cb34-7" tabindex="-1"></a>sigma<span class="sc">^</span><span class="fl">2.2</span>  <span class="fl">0.1649</span>  <span class="fl">0.4061</span>     <span class="dv">35</span>     no  Study<span class="sc">/</span>ES_number </span>
+<span id="cb34-8"><a href="id_3LMA.html#cb34-8" tabindex="-1"></a></span>
+<span id="cb34-9"><a href="id_3LMA.html#cb34-9" tabindex="-1"></a>Test <span class="cf">for</span> Heterogeneity<span class="sc">:</span></span>
+<span id="cb34-10"><a href="id_3LMA.html#cb34-10" tabindex="-1"></a><span class="fu">Q</span>(<span class="at">df =</span> <span class="dv">34</span>) <span class="ot">=</span> <span class="fl">285.5500</span>, p<span class="sc">-</span>val <span class="sc">&lt;</span> .<span class="dv">0001</span></span>
+<span id="cb34-11"><a href="id_3LMA.html#cb34-11" tabindex="-1"></a></span>
+<span id="cb34-12"><a href="id_3LMA.html#cb34-12" tabindex="-1"></a>Model Results<span class="sc">:</span></span>
+<span id="cb34-13"><a href="id_3LMA.html#cb34-13" tabindex="-1"></a></span>
+<span id="cb34-14"><a href="id_3LMA.html#cb34-14" tabindex="-1"></a>estimate      se     tval  df    pval    ci.lb   ci.ub    </span>
+<span id="cb34-15"><a href="id_3LMA.html#cb34-15" tabindex="-1"></a> <span class="sc">-</span><span class="fl">0.3799</span>  <span class="fl">0.4843</span>  <span class="sc">-</span><span class="fl">0.7843</span>  <span class="dv">11</span>  <span class="fl">0.4494</span>  <span class="sc">-</span><span class="fl">1.4459</span>  <span class="fl">0.6861</span>    </span>
+<span id="cb34-16"><a href="id_3LMA.html#cb34-16" tabindex="-1"></a></span>
+<span id="cb34-17"><a href="id_3LMA.html#cb34-17" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb34-18"><a href="id_3LMA.html#cb34-18" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> ‘<span class="sc">**</span><span class="er">*</span>’ <span class="fl">0.001</span> ‘<span class="sc">**</span>’ <span class="fl">0.01</span> ‘<span class="sc">*</span>’ <span class="fl">0.05</span> ‘.’ <span class="fl">0.1</span> ‘ ’ <span class="dv">1</span></span></code></pre></div>
 <p><em>What’s this mean?</em></p>
-<p>Recall this is a subset of data from Schroeder et al. (2023)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Schroeder, Siegle, and Craig, &lt;span&gt;“A Meta-Analysis on Learning from 360° Video.”&lt;/span&gt;&lt;/p&gt;"><sup>10</sup></a></span> so the numbers will not align with what is in the published version.</p>
+<p>Recall this is a subset of data from Schroeder et al. (2023)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Schroeder, Siegle, and Craig, &lt;span&gt;“A Meta-Analysis on Learning from 360° Video.”&lt;/span&gt;&lt;/p&gt;"><sup>44</sup></a></span> so the numbers will not align with what is in the published version.</p>
 <p>The first line tells us this is a multivariate random-effects model including 35 comparisons, and tau<sup>2</sup> was estimated using restricted maximum likelihood estimation (REML).</p>
 <p>Next, we see our variance components. The estimate is tau<sup>2</sup>. The first (<strong>sigma2.1</strong>) refers to the between-study heterogeneity, whereas <strong>sigma2.2</strong> refers to within-comparison heterogeneity.</p>
 <p>Typically, the other important pieces here that we are interested in reporting in our manuscript are the <strong>overall effect size, tau<sup>2</sup></strong>, and the <strong><em>Q</em>-test</strong>.</p>
@@ -242,19 +262,19 @@
 </div>
 <p>Next, let’s check out the variance components in more depth.</p>
 </div>
-<div id="explaining-the-variance" class="section level3" number="8.3.2">
+<div id="explaining-the-variance" class="section level3" number="11.3.2">
 <h3>
-<span class="header-section-number">8.3.2</span> Explaining the Variance<a class="anchor" aria-label="anchor" href="#explaining-the-variance"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.2</span> Explaining the Variance<a class="anchor" aria-label="anchor" href="#explaining-the-variance"><i class="fas fa-link"></i></a>
 </h3>
 <p>In the above step, we saw tau<sup>2</sup>, but we did not see <em>I</em><sup>2</sup>. If you’re familiar with conventional meta-analysis, you know that <em>I</em><sup>2</sup> tells us how much variation is explained by between-study heterogeneity. In three-level meta-analysis we can look at this to find both a within-study and between-comparison value. Let’s check out that code:</p>
 <div class="rmdnote">
-<p><strong>Important:</strong> First, we actually need to do some background work. Harrer et al. (2021)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Harrer et al., &lt;em&gt;Doing Meta-Analysis with r&lt;/em&gt;.&lt;/p&gt;"><sup>11</sup></a></span> have provided code that helps us calculate <em>I</em><sup>2</sup>,but first we need to ‘teach’ R that analysis.</p>
+<p><strong>Important:</strong> First, we actually need to do some background work. Harrer et al. (2021)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Harrer et al., &lt;em&gt;Doing Meta-Analysis with r&lt;/em&gt;.&lt;/p&gt;"><sup>45</sup></a></span> have provided code that helps us calculate <em>I</em><sup>2</sup>,but first we need to ‘teach’ R that analysis.</p>
 <p>So, please visit this link and copy the entire code: <a href="https://raw.githubusercontent.com/MathiasHarrer/dmetar/master/R/mlm.variance.distribution.R" class="uri">https://raw.githubusercontent.com/MathiasHarrer/dmetar/master/R/mlm.variance.distribution.R</a></p>
 <p>Got the code? Great, go ahead and paste that into the R <u>console</u> (where your results are usually displayed in R studio) and <strong>hit enter.</strong> Awesome, now R knows the analysis.</p>
 </div>
 <p>Now we can use this code to calculate <em>I</em><sup>2</sup>.</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#calculate i2 for each level</span></span>
 <span><span class="va">i2</span> <span class="op">&lt;-</span> <span class="fu">var.comp</span><span class="op">(</span><span class="va">m_multi</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">i2</span><span class="op">)</span></span>
@@ -266,14 +286,14 @@
 </div>
 <p>Let’s look at the results:</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="id_3LMA.html#cb9-1" tabindex="-1"></a><span class="sc">$</span>results</span>
-<span id="cb9-2"><a href="id_3LMA.html#cb9-2" tabindex="-1"></a>        % of total variance    I2</span>
-<span id="cb9-3"><a href="id_3LMA.html#cb9-3" tabindex="-1"></a>Level <span class="dv">1</span>            <span class="fl">2.805362</span>   <span class="sc">---</span></span>
-<span id="cb9-4"><a href="id_3LMA.html#cb9-4" tabindex="-1"></a>Level <span class="dv">2</span>            <span class="fl">5.631495</span>  <span class="fl">5.63</span></span>
-<span id="cb9-5"><a href="id_3LMA.html#cb9-5" tabindex="-1"></a>Level <span class="dv">3</span>           <span class="fl">91.563144</span> <span class="fl">91.56</span></span>
-<span id="cb9-6"><a href="id_3LMA.html#cb9-6" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="id_3LMA.html#cb9-7" tabindex="-1"></a><span class="sc">$</span>totalI2</span>
-<span id="cb9-8"><a href="id_3LMA.html#cb9-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">97.19464</span></span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="id_3LMA.html#cb36-1" tabindex="-1"></a><span class="sc">$</span>results</span>
+<span id="cb36-2"><a href="id_3LMA.html#cb36-2" tabindex="-1"></a>        % of total variance    I2</span>
+<span id="cb36-3"><a href="id_3LMA.html#cb36-3" tabindex="-1"></a>Level <span class="dv">1</span>            <span class="fl">2.805362</span>   <span class="sc">---</span></span>
+<span id="cb36-4"><a href="id_3LMA.html#cb36-4" tabindex="-1"></a>Level <span class="dv">2</span>            <span class="fl">5.631495</span>  <span class="fl">5.63</span></span>
+<span id="cb36-5"><a href="id_3LMA.html#cb36-5" tabindex="-1"></a>Level <span class="dv">3</span>           <span class="fl">91.563144</span> <span class="fl">91.56</span></span>
+<span id="cb36-6"><a href="id_3LMA.html#cb36-6" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="id_3LMA.html#cb36-7" tabindex="-1"></a><span class="sc">$</span>totalI2</span>
+<span id="cb36-8"><a href="id_3LMA.html#cb36-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">97.19464</span></span></code></pre></div>
 <p><em>What’s this result mean?</em></p>
 <p>When you run this analysis, you’ll see that 5.63% of the variance is due to level 2 (within-study) heterogeneity, while 91.56% is due to between-comparisons heterogeneity. Overall, the model explains 97.2% of the variance.</p>
 </div>
@@ -281,15 +301,15 @@
 <div class="inline-figure"><img src="images/i2plot.png" style="width:100.0%"></div>
 <p>Ok, so we’ve established that we have quite a bit of between-comparison heterogeneity. When we consider that the tau<sup>2</sup> for the between-comparison heterogeneity was notably higher than the within-study heterogeneity, these results are consistent and help us rationalize conducting moderator analyses.</p>
 </div>
-<div id="checking-for-outliers-and-influence-1" class="section level3" number="8.3.3">
+<div id="checking-for-outliers-and-influence-1" class="section level3" number="11.3.3">
 <h3>
-<span class="header-section-number">8.3.3</span> Checking for Outliers and Influence<a class="anchor" aria-label="anchor" href="#checking-for-outliers-and-influence-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.3</span> Checking for Outliers and Influence<a class="anchor" aria-label="anchor" href="#checking-for-outliers-and-influence-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>At this point we’ve ran our random-effects three-level meta-analysis model. We also understand where the variance is coming from. However, we have not checked for outliers or studies with significant influence on the results. This is actually a complex topic, as not many meta-analyses (as of January, 2024) in education actually address a) if they searched for outliers or influence, b) what metric they used to check for outliers and why, and c) what they did about the outliers and why. Kind of interesting right?</p>
 <p>So here’s what we can do to check for outliers and influence. Unfortunately it isn’t quite as easy as evaluating outliers in conventional meta-analysis, but don’t worry, it’s not too difficult!</p>
-<p>First, let’s check for outliers. We’re going to slightly adapt Van Lissa’s (n.d.)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Caspar van Lissa, &lt;em&gt;Doing Meta-Analysis in r and Exploring Heterogeneity Using Metaforest&lt;/em&gt;, n.d., &lt;a href="https://cjvanlissa.github.io/Doing-Meta-Analysis-in-R/index.html"&gt;https://cjvanlissa.github.io/Doing-Meta-Analysis-in-R/index.html&lt;/a&gt;.&lt;/p&gt;'><sup>12</sup></a></span> method.</p>
+<p>First, let’s check for outliers. We’re going to slightly adapt Van Lissa’s (n.d.)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Lissa, &lt;em&gt;Doing Meta-Analysis in r and Exploring Heterogeneity Using Metaforest&lt;/em&gt;.&lt;/p&gt;"><sup>46</sup></a></span> method.</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#adapting CI calculation and plotting from https://cjvanlissa.github.io/Doing-Meta-Analysis-in-R/detecting-outliers-influential-cases.html</span></span>
 <span><span class="co"># Calculate CI for all observed effect sizes</span></span>
 <span><span class="va">dat1</span><span class="op">$</span><span class="va">upperci</span> <span class="op">&lt;-</span> <span class="va">dat1</span><span class="op">$</span><span class="va">yi</span> <span class="op">+</span> <span class="fl">1.96</span> <span class="op">*</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">sqrt</a></span><span class="op">(</span><span class="va">dat1</span><span class="op">$</span><span class="va">vi</span><span class="op">)</span></span>
@@ -318,18 +338,18 @@
 <div class="inline-figure"><img src="images/outliers3level.png" style="width:100.0%"></div>
 <p>You can see here with have three outliers using this criteria, however we don’t know which comparisons they are. Both the data in the console and generated .csv file tell us which comparisons were outliers.</p>
 <p>At this point, similar to conventional meta-analysis, we need to examine the studies in more detail. First, I check for any data entry errors. Sometimes decimal points are in the wrong place, which can easy create an outlier.</p>
-<div id="checking-for-influence" class="section level4" number="8.3.3.1">
+<div id="checking-for-influence" class="section level4" number="11.3.3.1">
 <h4>
-<span class="header-section-number">8.3.3.1</span> Checking for Influence<a class="anchor" aria-label="anchor" href="#checking-for-influence"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.3.1</span> Checking for Influence<a class="anchor" aria-label="anchor" href="#checking-for-influence"><i class="fas fa-link"></i></a>
 </h4>
-<p>Assuming there were no data entry errors, I then move on to check and see if these outliers have a significant influence on the results. Similar to conventional meta-analysis, we’re going to examine Cook’s distance, dfbetas, and hat values. You can read about influence diagnostics and the metrics used <a href="https://wviechtb.github.io/metafor/reference/influence.rma.mv.html">here</a> and in Viechtbauer and Cheung (2010)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Wolfgang Viechtbauer and Mike W.-L. Cheung, &lt;span&gt;“Outlier and Influence Diagnostics for Meta-Analysis,”&lt;/span&gt; &lt;em&gt;Research Synthesis Methods&lt;/em&gt; 1, no. 2 (April 2010): 112–25, &lt;a href="https://doi.org/10.1002/jrsm.11"&gt;https://doi.org/10.1002/jrsm.11&lt;/a&gt;.&lt;/p&gt;'><sup>13</sup></a></span>.Unfortunately, we’re not using the nice influence code that provided asterisks on influential studies, so we’ll have to a do a bit of work ourselves.</p>
-<div id="cooks-distance" class="section level5" number="8.3.3.1.1">
+<p>Assuming there were no data entry errors, I then move on to check and see if these outliers have a significant influence on the results. Similar to conventional meta-analysis, we’re going to examine Cook’s distance, dfbetas, and hat values. You can read about influence diagnostics and the metrics used <a href="https://wviechtb.github.io/metafor/reference/influence.rma.mv.html">here</a> and in Viechtbauer and Cheung (2010)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Viechtbauer and Cheung, &lt;span&gt;“Outlier and Influence Diagnostics for Meta-Analysis,”&lt;/span&gt; April 2010.&lt;/p&gt;"><sup>47</sup></a></span>.Unfortunately, we’re not using the nice influence code that provided asterisks on influential studies, so we’ll have to a do a bit of work ourselves.</p>
+<div id="cooks-distance" class="section level5" number="11.3.3.1.1">
 <h5>
-<span class="header-section-number">8.3.3.1.1</span> Cook’s Distance<a class="anchor" aria-label="anchor" href="#cooks-distance"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.3.1.1</span> Cook’s Distance<a class="anchor" aria-label="anchor" href="#cooks-distance"><i class="fas fa-link"></i></a>
 </h5>
 <p>First, let’s check out the Cook’s distance.</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#cook's distance</span></span>
 <span><span class="va">cooks</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/influence.measures.html">cooks.distance</a></span><span class="op">(</span><span class="va">m_multi</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">cooks</span>, type<span class="op">=</span><span class="st">"o"</span>, pch<span class="op">=</span><span class="fl">19</span>, xlab<span class="op">=</span><span class="st">"Observed Outcome"</span>, ylab<span class="op">=</span><span class="st">"Cook's Distance"</span><span class="op">)</span></span></code></pre></div>
@@ -340,13 +360,13 @@
 <div class="inline-figure"><img src="images/cook3level.png" style="width:100.0%"></div>
 <p>Here, we are looking for a Cook’s distance over 0.50 to indicate a study with significant influence. As shown, none of our outliers meet this criteria.</p>
 </div>
-<div id="dfbetas" class="section level5" number="8.3.3.1.2">
+<div id="dfbetas" class="section level5" number="11.3.3.1.2">
 <h5>
-<span class="header-section-number">8.3.3.1.2</span> dfbetas<a class="anchor" aria-label="anchor" href="#dfbetas"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.3.1.2</span> dfbetas<a class="anchor" aria-label="anchor" href="#dfbetas"><i class="fas fa-link"></i></a>
 </h5>
 <p>Now let’s check our dfbetas. Here’s the code:</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#Calculate dfbetas</span></span>
 <span><span class="va">dfbetas</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/influence.measures.html">dfbetas</a></span><span class="op">(</span><span class="va">m_multi</span><span class="op">)</span></span>
 <span><span class="va">dfbetas</span> </span></code></pre></div>
@@ -356,53 +376,53 @@
 </div>
 <p>This gives us the following results:</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="id_3LMA.html#cb13-1" tabindex="-1"></a>        intrcpt</span>
-<span id="cb13-2"><a href="id_3LMA.html#cb13-2" tabindex="-1"></a><span class="dv">1</span>  <span class="sc">-</span><span class="fl">0.626210184</span></span>
-<span id="cb13-3"><a href="id_3LMA.html#cb13-3" tabindex="-1"></a><span class="dv">2</span>   <span class="fl">0.169860526</span></span>
-<span id="cb13-4"><a href="id_3LMA.html#cb13-4" tabindex="-1"></a><span class="dv">3</span>  <span class="sc">-</span><span class="fl">0.019773230</span></span>
-<span id="cb13-5"><a href="id_3LMA.html#cb13-5" tabindex="-1"></a><span class="dv">4</span>   <span class="fl">0.018578841</span></span>
-<span id="cb13-6"><a href="id_3LMA.html#cb13-6" tabindex="-1"></a><span class="dv">5</span>   <span class="fl">0.006064717</span></span>
-<span id="cb13-7"><a href="id_3LMA.html#cb13-7" tabindex="-1"></a><span class="dv">6</span>   <span class="fl">0.005999710</span></span>
-<span id="cb13-8"><a href="id_3LMA.html#cb13-8" tabindex="-1"></a><span class="dv">7</span>  <span class="sc">-</span><span class="fl">0.089768522</span></span>
-<span id="cb13-9"><a href="id_3LMA.html#cb13-9" tabindex="-1"></a><span class="dv">8</span>   <span class="fl">0.075905014</span></span>
-<span id="cb13-10"><a href="id_3LMA.html#cb13-10" tabindex="-1"></a><span class="dv">9</span>  <span class="sc">-</span><span class="fl">0.036595130</span></span>
-<span id="cb13-11"><a href="id_3LMA.html#cb13-11" tabindex="-1"></a><span class="dv">10</span>  <span class="fl">0.032405437</span></span>
-<span id="cb13-12"><a href="id_3LMA.html#cb13-12" tabindex="-1"></a><span class="dv">11</span>  <span class="fl">0.110392454</span></span>
-<span id="cb13-13"><a href="id_3LMA.html#cb13-13" tabindex="-1"></a><span class="dv">12</span> <span class="sc">-</span><span class="fl">0.004587048</span></span>
-<span id="cb13-14"><a href="id_3LMA.html#cb13-14" tabindex="-1"></a><span class="dv">13</span> <span class="sc">-</span><span class="fl">0.007298008</span></span>
-<span id="cb13-15"><a href="id_3LMA.html#cb13-15" tabindex="-1"></a><span class="dv">14</span> <span class="sc">-</span><span class="fl">0.001561507</span></span>
-<span id="cb13-16"><a href="id_3LMA.html#cb13-16" tabindex="-1"></a><span class="dv">15</span>  <span class="fl">0.021281904</span></span>
-<span id="cb13-17"><a href="id_3LMA.html#cb13-17" tabindex="-1"></a><span class="dv">16</span> <span class="sc">-</span><span class="fl">0.044837905</span></span>
-<span id="cb13-18"><a href="id_3LMA.html#cb13-18" tabindex="-1"></a><span class="dv">17</span> <span class="sc">-</span><span class="fl">0.019897092</span></span>
-<span id="cb13-19"><a href="id_3LMA.html#cb13-19" tabindex="-1"></a><span class="dv">18</span>  <span class="fl">0.067207219</span></span>
-<span id="cb13-20"><a href="id_3LMA.html#cb13-20" tabindex="-1"></a><span class="dv">19</span>  <span class="fl">0.003352683</span></span>
-<span id="cb13-21"><a href="id_3LMA.html#cb13-21" tabindex="-1"></a><span class="dv">20</span>  <span class="fl">0.007897610</span></span>
-<span id="cb13-22"><a href="id_3LMA.html#cb13-22" tabindex="-1"></a><span class="dv">21</span> <span class="sc">-</span><span class="fl">0.016373463</span></span>
-<span id="cb13-23"><a href="id_3LMA.html#cb13-23" tabindex="-1"></a><span class="dv">22</span>  <span class="fl">0.002410328</span></span>
-<span id="cb13-24"><a href="id_3LMA.html#cb13-24" tabindex="-1"></a><span class="dv">23</span>  <span class="fl">0.029562056</span></span>
-<span id="cb13-25"><a href="id_3LMA.html#cb13-25" tabindex="-1"></a><span class="dv">24</span> <span class="sc">-</span><span class="fl">0.010640162</span></span>
-<span id="cb13-26"><a href="id_3LMA.html#cb13-26" tabindex="-1"></a><span class="dv">25</span>  <span class="fl">0.009266463</span></span>
-<span id="cb13-27"><a href="id_3LMA.html#cb13-27" tabindex="-1"></a><span class="dv">26</span>  <span class="fl">0.005062508</span></span>
-<span id="cb13-28"><a href="id_3LMA.html#cb13-28" tabindex="-1"></a><span class="dv">27</span> <span class="sc">-</span><span class="fl">0.003420734</span></span>
-<span id="cb13-29"><a href="id_3LMA.html#cb13-29" tabindex="-1"></a><span class="dv">28</span>  <span class="fl">0.015525088</span></span>
-<span id="cb13-30"><a href="id_3LMA.html#cb13-30" tabindex="-1"></a><span class="dv">29</span> <span class="sc">-</span><span class="fl">0.007364825</span></span>
-<span id="cb13-31"><a href="id_3LMA.html#cb13-31" tabindex="-1"></a><span class="dv">30</span>  <span class="fl">0.012981876</span></span>
-<span id="cb13-32"><a href="id_3LMA.html#cb13-32" tabindex="-1"></a><span class="dv">31</span> <span class="sc">-</span><span class="fl">0.014656427</span></span>
-<span id="cb13-33"><a href="id_3LMA.html#cb13-33" tabindex="-1"></a><span class="dv">32</span>  <span class="fl">0.012061267</span></span>
-<span id="cb13-34"><a href="id_3LMA.html#cb13-34" tabindex="-1"></a><span class="dv">33</span> <span class="sc">-</span><span class="fl">0.011572638</span></span>
-<span id="cb13-35"><a href="id_3LMA.html#cb13-35" tabindex="-1"></a><span class="dv">34</span> <span class="sc">-</span><span class="fl">0.001067083</span></span>
-<span id="cb13-36"><a href="id_3LMA.html#cb13-36" tabindex="-1"></a><span class="dv">35</span>  <span class="fl">0.189468678</span></span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="id_3LMA.html#cb40-1" tabindex="-1"></a>        intrcpt</span>
+<span id="cb40-2"><a href="id_3LMA.html#cb40-2" tabindex="-1"></a><span class="dv">1</span>  <span class="sc">-</span><span class="fl">0.626210184</span></span>
+<span id="cb40-3"><a href="id_3LMA.html#cb40-3" tabindex="-1"></a><span class="dv">2</span>   <span class="fl">0.169860526</span></span>
+<span id="cb40-4"><a href="id_3LMA.html#cb40-4" tabindex="-1"></a><span class="dv">3</span>  <span class="sc">-</span><span class="fl">0.019773230</span></span>
+<span id="cb40-5"><a href="id_3LMA.html#cb40-5" tabindex="-1"></a><span class="dv">4</span>   <span class="fl">0.018578841</span></span>
+<span id="cb40-6"><a href="id_3LMA.html#cb40-6" tabindex="-1"></a><span class="dv">5</span>   <span class="fl">0.006064717</span></span>
+<span id="cb40-7"><a href="id_3LMA.html#cb40-7" tabindex="-1"></a><span class="dv">6</span>   <span class="fl">0.005999710</span></span>
+<span id="cb40-8"><a href="id_3LMA.html#cb40-8" tabindex="-1"></a><span class="dv">7</span>  <span class="sc">-</span><span class="fl">0.089768522</span></span>
+<span id="cb40-9"><a href="id_3LMA.html#cb40-9" tabindex="-1"></a><span class="dv">8</span>   <span class="fl">0.075905014</span></span>
+<span id="cb40-10"><a href="id_3LMA.html#cb40-10" tabindex="-1"></a><span class="dv">9</span>  <span class="sc">-</span><span class="fl">0.036595130</span></span>
+<span id="cb40-11"><a href="id_3LMA.html#cb40-11" tabindex="-1"></a><span class="dv">10</span>  <span class="fl">0.032405437</span></span>
+<span id="cb40-12"><a href="id_3LMA.html#cb40-12" tabindex="-1"></a><span class="dv">11</span>  <span class="fl">0.110392454</span></span>
+<span id="cb40-13"><a href="id_3LMA.html#cb40-13" tabindex="-1"></a><span class="dv">12</span> <span class="sc">-</span><span class="fl">0.004587048</span></span>
+<span id="cb40-14"><a href="id_3LMA.html#cb40-14" tabindex="-1"></a><span class="dv">13</span> <span class="sc">-</span><span class="fl">0.007298008</span></span>
+<span id="cb40-15"><a href="id_3LMA.html#cb40-15" tabindex="-1"></a><span class="dv">14</span> <span class="sc">-</span><span class="fl">0.001561507</span></span>
+<span id="cb40-16"><a href="id_3LMA.html#cb40-16" tabindex="-1"></a><span class="dv">15</span>  <span class="fl">0.021281904</span></span>
+<span id="cb40-17"><a href="id_3LMA.html#cb40-17" tabindex="-1"></a><span class="dv">16</span> <span class="sc">-</span><span class="fl">0.044837905</span></span>
+<span id="cb40-18"><a href="id_3LMA.html#cb40-18" tabindex="-1"></a><span class="dv">17</span> <span class="sc">-</span><span class="fl">0.019897092</span></span>
+<span id="cb40-19"><a href="id_3LMA.html#cb40-19" tabindex="-1"></a><span class="dv">18</span>  <span class="fl">0.067207219</span></span>
+<span id="cb40-20"><a href="id_3LMA.html#cb40-20" tabindex="-1"></a><span class="dv">19</span>  <span class="fl">0.003352683</span></span>
+<span id="cb40-21"><a href="id_3LMA.html#cb40-21" tabindex="-1"></a><span class="dv">20</span>  <span class="fl">0.007897610</span></span>
+<span id="cb40-22"><a href="id_3LMA.html#cb40-22" tabindex="-1"></a><span class="dv">21</span> <span class="sc">-</span><span class="fl">0.016373463</span></span>
+<span id="cb40-23"><a href="id_3LMA.html#cb40-23" tabindex="-1"></a><span class="dv">22</span>  <span class="fl">0.002410328</span></span>
+<span id="cb40-24"><a href="id_3LMA.html#cb40-24" tabindex="-1"></a><span class="dv">23</span>  <span class="fl">0.029562056</span></span>
+<span id="cb40-25"><a href="id_3LMA.html#cb40-25" tabindex="-1"></a><span class="dv">24</span> <span class="sc">-</span><span class="fl">0.010640162</span></span>
+<span id="cb40-26"><a href="id_3LMA.html#cb40-26" tabindex="-1"></a><span class="dv">25</span>  <span class="fl">0.009266463</span></span>
+<span id="cb40-27"><a href="id_3LMA.html#cb40-27" tabindex="-1"></a><span class="dv">26</span>  <span class="fl">0.005062508</span></span>
+<span id="cb40-28"><a href="id_3LMA.html#cb40-28" tabindex="-1"></a><span class="dv">27</span> <span class="sc">-</span><span class="fl">0.003420734</span></span>
+<span id="cb40-29"><a href="id_3LMA.html#cb40-29" tabindex="-1"></a><span class="dv">28</span>  <span class="fl">0.015525088</span></span>
+<span id="cb40-30"><a href="id_3LMA.html#cb40-30" tabindex="-1"></a><span class="dv">29</span> <span class="sc">-</span><span class="fl">0.007364825</span></span>
+<span id="cb40-31"><a href="id_3LMA.html#cb40-31" tabindex="-1"></a><span class="dv">30</span>  <span class="fl">0.012981876</span></span>
+<span id="cb40-32"><a href="id_3LMA.html#cb40-32" tabindex="-1"></a><span class="dv">31</span> <span class="sc">-</span><span class="fl">0.014656427</span></span>
+<span id="cb40-33"><a href="id_3LMA.html#cb40-33" tabindex="-1"></a><span class="dv">32</span>  <span class="fl">0.012061267</span></span>
+<span id="cb40-34"><a href="id_3LMA.html#cb40-34" tabindex="-1"></a><span class="dv">33</span> <span class="sc">-</span><span class="fl">0.011572638</span></span>
+<span id="cb40-35"><a href="id_3LMA.html#cb40-35" tabindex="-1"></a><span class="dv">34</span> <span class="sc">-</span><span class="fl">0.001067083</span></span>
+<span id="cb40-36"><a href="id_3LMA.html#cb40-36" tabindex="-1"></a><span class="dv">35</span>  <span class="fl">0.189468678</span></span></code></pre></div>
 <p><em>What’s this result mean?</em></p>
 <p>Here, we’re looking for values more than the absolute value of 1. If those exist (none do in this data) we know that comparison has a significant influence on the results.</p>
 </div>
 </div>
-<div id="hat-values" class="section level5" number="8.3.3.1.3">
+<div id="hat-values" class="section level5" number="11.3.3.1.3">
 <h5>
-<span class="header-section-number">8.3.3.1.3</span> Hat values<a class="anchor" aria-label="anchor" href="#hat-values"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.3.1.3</span> Hat values<a class="anchor" aria-label="anchor" href="#hat-values"><i class="fas fa-link"></i></a>
 </h5>
 <p>Finally we can check hat values to help us check for studies with significant influence on the overall meta-analytical result. We’ll use this code:</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#calculate hatvalues</span></span>
 <span><span class="va">hatvalues</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/influence.measures.html">hatvalues</a></span><span class="op">(</span><span class="va">m_multi</span><span class="op">)</span></span>
 <span><span class="va">hatvalues</span></span></code></pre></div>
@@ -411,7 +431,7 @@
 </div>
 <p>Running that code displays some statistics in the console, but honestly I find them challenging to read in that format. So instead, let’s write all of our influence statistics into a .csv file for easier viewing.</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">##Print file that lists influence info to examine them. This goes into working directory</span></span>
 <span><span class="va">influence</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">cooks</span>, <span class="va">dfbetas</span>, <span class="va">hatvalues</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/write.table.html">write.csv</a></span><span class="op">(</span><span class="va">influence</span>, file <span class="op">=</span> <span class="st">"influenceinfo.csv"</span><span class="op">)</span></span></code></pre></div>
@@ -419,13 +439,13 @@
 <p>First, we bind the cooks distance, dfbetas, and hatvalues data together into one data set, which we name <strong>influence</strong>.</p>
 <p>Then we write this data into a .csv file that is saved in our working directory as <strong>influenceinfo.csv</strong>.</p>
 </div>
-<p>So, how do we interpret hat values? This is a little more complex so that’s why I like to use .csv files. As a reminder, you can read about influence diagnostics and the metrics used <a href="https://wviechtb.github.io/metafor/reference/influence.rma.uni.html">here</a> and in Viechtbauer and Cheung (2010)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Viechtbauer and Cheung.&lt;/p&gt;"><sup>14</sup></a></span>. Specifically for hatvalues, we’re looking for values larger than 3*(p/k), where p is the number of model coefficients and k is the number of cases<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Wolfgang Viechtbauer, &lt;span&gt;“Model Diagnostics for ’Rma.uni’ Objects &lt;span&gt;&lt;/span&gt; Influence.rma.uni,”&lt;/span&gt; n.d., &lt;a href="https://wviechtb.github.io/metafor/reference/influence.rma.uni.html"&gt;https://wviechtb.github.io/metafor/reference/influence.rma.uni.html&lt;/a&gt;.&lt;/p&gt;'><sup>15</sup></a></span>. I like to do that computation in spreadsheet software, then have it highlight cells that exceed that value.</p>
+<p>So, how do we interpret hat values? This is a little more complex so that’s why I like to use .csv files. As a reminder, you can read about influence diagnostics and the metrics used <a href="https://wviechtb.github.io/metafor/reference/influence.rma.uni.html">here</a> and in Viechtbauer and Cheung (2010)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Viechtbauer and Cheung.&lt;/p&gt;"><sup>48</sup></a></span>. Specifically for hatvalues, we’re looking for values larger than 3*(p/k), where p is the number of model coefficients and k is the number of cases<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Wolfgang Viechtbauer, &lt;span&gt;“Model Diagnostics for ’Rma.uni’ Objects &lt;span&gt;&lt;/span&gt; Influence.rma.uni,”&lt;/span&gt; n.d., &lt;a href="https://wviechtb.github.io/metafor/reference/influence.rma.uni.html"&gt;https://wviechtb.github.io/metafor/reference/influence.rma.uni.html&lt;/a&gt;.&lt;/p&gt;'><sup>49</sup></a></span>. I like to do that computation in spreadsheet software, then have it highlight cells that exceed that value.</p>
 <p>For our conversation here, we’ll say that we did not find any individual comparisons that were influential. So what do we do? We have outliers, but none are influential? Let’s explore that.</p>
 </div>
 </div>
-<div id="dealing-with-outliers-and-influential-studies" class="section level4" number="8.3.3.2">
+<div id="dealing-with-outliers-and-influential-studies" class="section level4" number="11.3.3.2">
 <h4>
-<span class="header-section-number">8.3.3.2</span> Dealing with Outliers and Influential Studies<a class="anchor" aria-label="anchor" href="#dealing-with-outliers-and-influential-studies"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.3.2</span> Dealing with Outliers and Influential Studies<a class="anchor" aria-label="anchor" href="#dealing-with-outliers-and-influential-studies"><i class="fas fa-link"></i></a>
 </h4>
 <p>We know from this data that three comparisons in our dataset are potential outliers, but they aren’t significant. What do we do from here? Well, there’s a lot of options, but here are my recommended steps:</p>
 <ul>
@@ -453,24 +473,24 @@
 <p>For the purposes of this example, we’ll assume that the data are good, and there was nothing particularly notable about the study itself. Therefore we will retain the effect size in the data.</p>
 </div>
 </div>
-<div id="writing-up-the-results-1" class="section level3" number="8.3.4">
+<div id="writing-up-the-results-1" class="section level3" number="11.3.4">
 <h3>
-<span class="header-section-number">8.3.4</span> Writing up the Results<a class="anchor" aria-label="anchor" href="#writing-up-the-results-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.4</span> Writing up the Results<a class="anchor" aria-label="anchor" href="#writing-up-the-results-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>So if we were going to write this up, we may report something like this:</p>
 <blockquote>
 <p>We conducted a random-effects three-level meta-analysis of 35 comparisons extracted from 12 studies. Our results indicated that the intervention was not significantly different than the control condition (<em>g</em> = -.38, <em>p</em> = .45). The model indicates that there is significantly heterogeneity within the sample (<em>Q</em>(34) = 285.55, <em>p</em> &lt; .001), with tau<sup>2</sup> = 2.68 (between-comparisons) and tau<sup>2</sup> = .16 (within-studies). Furthermore, our model explained 97.20% of the variance, with 5.63% of the variance due to within-study heterogeneity, and 91.56% due to between-comparisons heterogeneity. We detected three comparisons that were potential outliers, however examination of the studies did not indicate any notable deviations from other studies in our sample. Furthermore, none of these potential outliers significantly influenced our overall meta-analytical result. As such, the potential outliers were retained in the data analysis.</p>
 </blockquote>
 </div>
-<div id="moderator-analysis-1" class="section level3" number="8.3.5">
+<div id="moderator-analysis-1" class="section level3" number="11.3.5">
 <h3>
-<span class="header-section-number">8.3.5</span> Moderator Analysis<a class="anchor" aria-label="anchor" href="#moderator-analysis-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.5</span> Moderator Analysis<a class="anchor" aria-label="anchor" href="#moderator-analysis-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>We’ve ran our overall random-effects three-level meta-analysis model. Some people think this is the important finding, but in education, I think this result is generally only <em>kind of</em> interesting. The <em>really</em> good stuff, in my opinion, is examining all the potential moderator variables. Essentially, we’re going to check and see what variables may influence the overall effect size.</p>
 <p>What might be a moderator variable? Well, it depends on your field and the intervention you’re investigating. In educational technologies, we typically examine participant characteristics, study characteristics, and intervention characteristics as potential moderators.</p>
-<div id="when-are-moderator-analyses-rationalized" class="section level4" number="8.3.5.1">
+<div id="when-are-moderator-analyses-rationalized" class="section level4" number="11.3.5.1">
 <h4>
-<span class="header-section-number">8.3.5.1</span> When are moderator analyses rationalized?<a class="anchor" aria-label="anchor" href="#when-are-moderator-analyses-rationalized"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.5.1</span> When are moderator analyses rationalized?<a class="anchor" aria-label="anchor" href="#when-are-moderator-analyses-rationalized"><i class="fas fa-link"></i></a>
 </h4>
 <p>What a loaded question that is! In conventional meta-analysis, we’re looking at the overall <em>Q</em> statistics <em>p</em> value, as well as <em>I<sup>2</sup></em>. We’re doing the same here in three-level meta-analysis.</p>
 <p>So, now let’s explore moderation analyses. We’re going to focus on categorical moderators because there are a plethora of resources online about how to run numerical moderators in meta-regression.</p>
@@ -478,13 +498,13 @@
 <p><strong>Important Note:</strong> Like conventional meta-analysis in metafor, the tricky thing about categorical variable moderator analyses is it’s actually two steps, and they look similar. Let’s take a look at the different steps.</p>
 </div>
 </div>
-<div id="calculate-qbetween-1" class="section level4" number="8.3.5.2">
+<div id="calculate-qbetween-1" class="section level4" number="11.3.5.2">
 <h4>
-<span class="header-section-number">8.3.5.2</span> Calculate Q<sub>between</sub><a class="anchor" aria-label="anchor" href="#calculate-qbetween-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.5.2</span> Calculate Q<sub>between</sub><a class="anchor" aria-label="anchor" href="#calculate-qbetween-1"><i class="fas fa-link"></i></a>
 </h4>
 <p>First we need to calculate Q<sub>between</sub>. This is an omnibus test that will tell us if there are significant differences between levels of the moderator. We’re going to use grade range as our example:</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">####Grade Level  </span></span>
 <span><span class="co">#calculate qb</span></span>
 <span><span class="va">mod.gradeq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://wviechtb.github.io/metafor/reference/rma.mv.html">rma.mv</a></span><span class="op">(</span><span class="va">yi</span>,</span>
@@ -503,33 +523,33 @@
 </div>
 <p>When we run that code, we’re presented with the following:</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="id_3LMA.html#cb17-1" tabindex="-1"></a>Multivariate Meta<span class="sc">-</span>Analysis <span class="fu">Model</span> (<span class="at">k =</span> <span class="dv">35</span>; method<span class="sc">:</span> REML)</span>
-<span id="cb17-2"><a href="id_3LMA.html#cb17-2" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="id_3LMA.html#cb17-3" tabindex="-1"></a>  logLik  Deviance       AIC       BIC      AICc   </span>
-<span id="cb17-4"><a href="id_3LMA.html#cb17-4" tabindex="-1"></a><span class="sc">-</span><span class="fl">39.0955</span>   <span class="fl">78.1911</span>   <span class="fl">90.1911</span>   <span class="fl">98.7950</span>   <span class="fl">93.6911</span>   </span>
-<span id="cb17-5"><a href="id_3LMA.html#cb17-5" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="id_3LMA.html#cb17-6" tabindex="-1"></a>Variance Components<span class="sc">:</span></span>
-<span id="cb17-7"><a href="id_3LMA.html#cb17-7" tabindex="-1"></a></span>
-<span id="cb17-8"><a href="id_3LMA.html#cb17-8" tabindex="-1"></a>            estim    sqrt  nlvls  fixed           factor </span>
-<span id="cb17-9"><a href="id_3LMA.html#cb17-9" tabindex="-1"></a>sigma<span class="sc">^</span><span class="fl">2.1</span>  <span class="fl">2.9968</span>  <span class="fl">1.7311</span>     <span class="dv">12</span>     no            Study </span>
-<span id="cb17-10"><a href="id_3LMA.html#cb17-10" tabindex="-1"></a>sigma<span class="sc">^</span><span class="fl">2.2</span>  <span class="fl">0.1652</span>  <span class="fl">0.4064</span>     <span class="dv">35</span>     no  Study<span class="sc">/</span>ES_number </span>
-<span id="cb17-11"><a href="id_3LMA.html#cb17-11" tabindex="-1"></a></span>
-<span id="cb17-12"><a href="id_3LMA.html#cb17-12" tabindex="-1"></a>Test <span class="cf">for</span> Residual Heterogeneity<span class="sc">:</span></span>
-<span id="cb17-13"><a href="id_3LMA.html#cb17-13" tabindex="-1"></a><span class="fu">QE</span>(<span class="at">df =</span> <span class="dv">31</span>) <span class="ot">=</span> <span class="fl">255.8519</span>, p<span class="sc">-</span>val <span class="sc">&lt;</span> .<span class="dv">0001</span></span>
-<span id="cb17-14"><a href="id_3LMA.html#cb17-14" tabindex="-1"></a></span>
-<span id="cb17-15"><a href="id_3LMA.html#cb17-15" tabindex="-1"></a>Test of <span class="fu">Moderators</span> (coefficients <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>)<span class="sc">:</span></span>
-<span id="cb17-16"><a href="id_3LMA.html#cb17-16" tabindex="-1"></a><span class="fu">F</span>(<span class="at">df1 =</span> <span class="dv">3</span>, <span class="at">df2 =</span> <span class="dv">8</span>) <span class="ot">=</span> <span class="fl">1.5686</span>, p<span class="sc">-</span>val <span class="ot">=</span> <span class="fl">0.2711</span></span>
-<span id="cb17-17"><a href="id_3LMA.html#cb17-17" tabindex="-1"></a></span>
-<span id="cb17-18"><a href="id_3LMA.html#cb17-18" tabindex="-1"></a>Model Results<span class="sc">:</span></span>
-<span id="cb17-19"><a href="id_3LMA.html#cb17-19" tabindex="-1"></a></span>
-<span id="cb17-20"><a href="id_3LMA.html#cb17-20" tabindex="-1"></a>                            estimate      se     tval  df    pval    ci.lb   ci.ub    </span>
-<span id="cb17-21"><a href="id_3LMA.html#cb17-21" tabindex="-1"></a>intrcpt                       <span class="fl">0.2566</span>  <span class="fl">1.0087</span>   <span class="fl">0.2544</span>   <span class="dv">8</span>  <span class="fl">0.8056</span>  <span class="sc">-</span><span class="fl">2.0695</span>  <span class="fl">2.5827</span>    </span>
-<span id="cb17-22"><a href="id_3LMA.html#cb17-22" tabindex="-1"></a><span class="fu">factor</span>(grade_c)Grades <span class="dv">9-12</span>   <span class="sc">-</span><span class="fl">1.8710</span>  <span class="fl">1.2705</span>  <span class="sc">-</span><span class="fl">1.4726</span>  <span class="dv">31</span>  <span class="fl">0.1509</span>  <span class="sc">-</span><span class="fl">4.4623</span>  <span class="fl">0.7202</span>    </span>
-<span id="cb17-23"><a href="id_3LMA.html#cb17-23" tabindex="-1"></a><span class="fu">factor</span>(grade_c)University    <span class="sc">-</span><span class="fl">0.7356</span>  <span class="fl">1.1972</span>  <span class="sc">-</span><span class="fl">0.6144</span>  <span class="dv">31</span>  <span class="fl">0.5434</span>  <span class="sc">-</span><span class="fl">3.1773</span>  <span class="fl">1.7061</span>    </span>
-<span id="cb17-24"><a href="id_3LMA.html#cb17-24" tabindex="-1"></a><span class="fu">factor</span>(grade_c)Workforce      <span class="fl">0.4138</span>  <span class="fl">2.0591</span>   <span class="fl">0.2010</span>   <span class="dv">8</span>  <span class="fl">0.8457</span>  <span class="sc">-</span><span class="fl">4.3345</span>  <span class="fl">5.1621</span>    </span>
-<span id="cb17-25"><a href="id_3LMA.html#cb17-25" tabindex="-1"></a></span>
-<span id="cb17-26"><a href="id_3LMA.html#cb17-26" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb17-27"><a href="id_3LMA.html#cb17-27" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> ‘<span class="sc">**</span><span class="er">*</span>’ <span class="fl">0.001</span> ‘<span class="sc">**</span>’ <span class="fl">0.01</span> ‘<span class="sc">*</span>’ <span class="fl">0.05</span> ‘.’ <span class="fl">0.1</span> ‘ ’ <span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="id_3LMA.html#cb44-1" tabindex="-1"></a>Multivariate Meta<span class="sc">-</span>Analysis <span class="fu">Model</span> (<span class="at">k =</span> <span class="dv">35</span>; method<span class="sc">:</span> REML)</span>
+<span id="cb44-2"><a href="id_3LMA.html#cb44-2" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="id_3LMA.html#cb44-3" tabindex="-1"></a>  logLik  Deviance       AIC       BIC      AICc   </span>
+<span id="cb44-4"><a href="id_3LMA.html#cb44-4" tabindex="-1"></a><span class="sc">-</span><span class="fl">39.0955</span>   <span class="fl">78.1911</span>   <span class="fl">90.1911</span>   <span class="fl">98.7950</span>   <span class="fl">93.6911</span>   </span>
+<span id="cb44-5"><a href="id_3LMA.html#cb44-5" tabindex="-1"></a></span>
+<span id="cb44-6"><a href="id_3LMA.html#cb44-6" tabindex="-1"></a>Variance Components<span class="sc">:</span></span>
+<span id="cb44-7"><a href="id_3LMA.html#cb44-7" tabindex="-1"></a></span>
+<span id="cb44-8"><a href="id_3LMA.html#cb44-8" tabindex="-1"></a>            estim    sqrt  nlvls  fixed           factor </span>
+<span id="cb44-9"><a href="id_3LMA.html#cb44-9" tabindex="-1"></a>sigma<span class="sc">^</span><span class="fl">2.1</span>  <span class="fl">2.9968</span>  <span class="fl">1.7311</span>     <span class="dv">12</span>     no            Study </span>
+<span id="cb44-10"><a href="id_3LMA.html#cb44-10" tabindex="-1"></a>sigma<span class="sc">^</span><span class="fl">2.2</span>  <span class="fl">0.1652</span>  <span class="fl">0.4064</span>     <span class="dv">35</span>     no  Study<span class="sc">/</span>ES_number </span>
+<span id="cb44-11"><a href="id_3LMA.html#cb44-11" tabindex="-1"></a></span>
+<span id="cb44-12"><a href="id_3LMA.html#cb44-12" tabindex="-1"></a>Test <span class="cf">for</span> Residual Heterogeneity<span class="sc">:</span></span>
+<span id="cb44-13"><a href="id_3LMA.html#cb44-13" tabindex="-1"></a><span class="fu">QE</span>(<span class="at">df =</span> <span class="dv">31</span>) <span class="ot">=</span> <span class="fl">255.8519</span>, p<span class="sc">-</span>val <span class="sc">&lt;</span> .<span class="dv">0001</span></span>
+<span id="cb44-14"><a href="id_3LMA.html#cb44-14" tabindex="-1"></a></span>
+<span id="cb44-15"><a href="id_3LMA.html#cb44-15" tabindex="-1"></a>Test of <span class="fu">Moderators</span> (coefficients <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>)<span class="sc">:</span></span>
+<span id="cb44-16"><a href="id_3LMA.html#cb44-16" tabindex="-1"></a><span class="fu">F</span>(<span class="at">df1 =</span> <span class="dv">3</span>, <span class="at">df2 =</span> <span class="dv">8</span>) <span class="ot">=</span> <span class="fl">1.5686</span>, p<span class="sc">-</span>val <span class="ot">=</span> <span class="fl">0.2711</span></span>
+<span id="cb44-17"><a href="id_3LMA.html#cb44-17" tabindex="-1"></a></span>
+<span id="cb44-18"><a href="id_3LMA.html#cb44-18" tabindex="-1"></a>Model Results<span class="sc">:</span></span>
+<span id="cb44-19"><a href="id_3LMA.html#cb44-19" tabindex="-1"></a></span>
+<span id="cb44-20"><a href="id_3LMA.html#cb44-20" tabindex="-1"></a>                            estimate      se     tval  df    pval    ci.lb   ci.ub    </span>
+<span id="cb44-21"><a href="id_3LMA.html#cb44-21" tabindex="-1"></a>intrcpt                       <span class="fl">0.2566</span>  <span class="fl">1.0087</span>   <span class="fl">0.2544</span>   <span class="dv">8</span>  <span class="fl">0.8056</span>  <span class="sc">-</span><span class="fl">2.0695</span>  <span class="fl">2.5827</span>    </span>
+<span id="cb44-22"><a href="id_3LMA.html#cb44-22" tabindex="-1"></a><span class="fu">factor</span>(grade_c)Grades <span class="dv">9-12</span>   <span class="sc">-</span><span class="fl">1.8710</span>  <span class="fl">1.2705</span>  <span class="sc">-</span><span class="fl">1.4726</span>  <span class="dv">31</span>  <span class="fl">0.1509</span>  <span class="sc">-</span><span class="fl">4.4623</span>  <span class="fl">0.7202</span>    </span>
+<span id="cb44-23"><a href="id_3LMA.html#cb44-23" tabindex="-1"></a><span class="fu">factor</span>(grade_c)University    <span class="sc">-</span><span class="fl">0.7356</span>  <span class="fl">1.1972</span>  <span class="sc">-</span><span class="fl">0.6144</span>  <span class="dv">31</span>  <span class="fl">0.5434</span>  <span class="sc">-</span><span class="fl">3.1773</span>  <span class="fl">1.7061</span>    </span>
+<span id="cb44-24"><a href="id_3LMA.html#cb44-24" tabindex="-1"></a><span class="fu">factor</span>(grade_c)Workforce      <span class="fl">0.4138</span>  <span class="fl">2.0591</span>   <span class="fl">0.2010</span>   <span class="dv">8</span>  <span class="fl">0.8457</span>  <span class="sc">-</span><span class="fl">4.3345</span>  <span class="fl">5.1621</span>    </span>
+<span id="cb44-25"><a href="id_3LMA.html#cb44-25" tabindex="-1"></a></span>
+<span id="cb44-26"><a href="id_3LMA.html#cb44-26" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb44-27"><a href="id_3LMA.html#cb44-27" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> ‘<span class="sc">**</span><span class="er">*</span>’ <span class="fl">0.001</span> ‘<span class="sc">**</span>’ <span class="fl">0.01</span> ‘<span class="sc">*</span>’ <span class="fl">0.05</span> ‘.’ <span class="fl">0.1</span> ‘ ’ <span class="dv">1</span></span></code></pre></div>
 <p><em>What’s this result mean?</em></p>
 <p>There’s a lot of information here but we only want one thing: <strong>The test of moderators.</strong> In this case, that’s Test of Moderators (coefficients 2:4): F(df1 = 3, df2 = 8) = 1.57, p-val = 0.27</p>
 <p>What we’re doing here is checking the <strong>p value</strong>. We can see this test is not significant, which means that this is not a statistically significant moderator. In other words, for this example, the effect of the intervention was not significantly different for participants in grades 9-12 than participants in post-secondary education.</p>
@@ -537,7 +557,7 @@
 <p>With our Q<sub>between</sub> value in hand, we now need to create the actual table we’ll report in the manuscript. You’ll note that when we calculated Q<sub>between</sub>, one of the levels of the moderator was missing, and replaced by the term intercept. Well, it’s time to fix that and get the tables we would use for reporting in our manuscript.</p>
 <p>We’ll use a very similar code:</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#calculate ES</span></span>
 <span><span class="va">mod.grade</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://wviechtb.github.io/metafor/reference/rma.mv.html">rma.mv</a></span><span class="op">(</span><span class="va">yi</span>,</span>
 <span>                    <span class="va">vi</span>,</span>
@@ -554,52 +574,52 @@
 </div>
 <p>When we run that code, we’ll get our results, which look like this:</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="id_3LMA.html#cb19-1" tabindex="-1"></a>Multivariate Meta<span class="sc">-</span>Analysis <span class="fu">Model</span> (<span class="at">k =</span> <span class="dv">35</span>; method<span class="sc">:</span> REML)</span>
-<span id="cb19-2"><a href="id_3LMA.html#cb19-2" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="id_3LMA.html#cb19-3" tabindex="-1"></a>  logLik  Deviance       AIC       BIC      AICc   </span>
-<span id="cb19-4"><a href="id_3LMA.html#cb19-4" tabindex="-1"></a><span class="sc">-</span><span class="fl">39.0955</span>   <span class="fl">78.1911</span>   <span class="fl">90.1911</span>   <span class="fl">98.7950</span>   <span class="fl">93.6911</span>   </span>
-<span id="cb19-5"><a href="id_3LMA.html#cb19-5" tabindex="-1"></a></span>
-<span id="cb19-6"><a href="id_3LMA.html#cb19-6" tabindex="-1"></a>Variance Components<span class="sc">:</span></span>
-<span id="cb19-7"><a href="id_3LMA.html#cb19-7" tabindex="-1"></a></span>
-<span id="cb19-8"><a href="id_3LMA.html#cb19-8" tabindex="-1"></a>            estim    sqrt  nlvls  fixed           factor </span>
-<span id="cb19-9"><a href="id_3LMA.html#cb19-9" tabindex="-1"></a>sigma<span class="sc">^</span><span class="fl">2.1</span>  <span class="fl">2.9968</span>  <span class="fl">1.7311</span>     <span class="dv">12</span>     no            Study </span>
-<span id="cb19-10"><a href="id_3LMA.html#cb19-10" tabindex="-1"></a>sigma<span class="sc">^</span><span class="fl">2.2</span>  <span class="fl">0.1652</span>  <span class="fl">0.4064</span>     <span class="dv">35</span>     no  Study<span class="sc">/</span>ES_number </span>
-<span id="cb19-11"><a href="id_3LMA.html#cb19-11" tabindex="-1"></a></span>
-<span id="cb19-12"><a href="id_3LMA.html#cb19-12" tabindex="-1"></a>Test <span class="cf">for</span> Residual Heterogeneity<span class="sc">:</span></span>
-<span id="cb19-13"><a href="id_3LMA.html#cb19-13" tabindex="-1"></a><span class="fu">QE</span>(<span class="at">df =</span> <span class="dv">31</span>) <span class="ot">=</span> <span class="fl">255.8519</span>, p<span class="sc">-</span>val <span class="sc">&lt;</span> .<span class="dv">0001</span></span>
-<span id="cb19-14"><a href="id_3LMA.html#cb19-14" tabindex="-1"></a></span>
-<span id="cb19-15"><a href="id_3LMA.html#cb19-15" tabindex="-1"></a>Test of <span class="fu">Moderators</span> (coefficients <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)<span class="sc">:</span></span>
-<span id="cb19-16"><a href="id_3LMA.html#cb19-16" tabindex="-1"></a><span class="fu">F</span>(<span class="at">df1 =</span> <span class="dv">4</span>, <span class="at">df2 =</span> <span class="dv">8</span>) <span class="ot">=</span> <span class="fl">1.3172</span>, p<span class="sc">-</span>val <span class="ot">=</span> <span class="fl">0.3420</span></span>
-<span id="cb19-17"><a href="id_3LMA.html#cb19-17" tabindex="-1"></a></span>
-<span id="cb19-18"><a href="id_3LMA.html#cb19-18" tabindex="-1"></a>Model Results<span class="sc">:</span></span>
-<span id="cb19-19"><a href="id_3LMA.html#cb19-19" tabindex="-1"></a></span>
-<span id="cb19-20"><a href="id_3LMA.html#cb19-20" tabindex="-1"></a>                            estimate      se     tval  df    pval    ci.lb    ci.ub    </span>
-<span id="cb19-21"><a href="id_3LMA.html#cb19-21" tabindex="-1"></a><span class="fu">factor</span>(grade_c)Grades <span class="dv">4-6</span>     <span class="fl">0.2566</span>  <span class="fl">1.0087</span>   <span class="fl">0.2544</span>   <span class="dv">8</span>  <span class="fl">0.8056</span>  <span class="sc">-</span><span class="fl">2.0695</span>   <span class="fl">2.5827</span>    </span>
-<span id="cb19-22"><a href="id_3LMA.html#cb19-22" tabindex="-1"></a><span class="fu">factor</span>(grade_c)Grades <span class="dv">9-12</span>   <span class="sc">-</span><span class="fl">1.6145</span>  <span class="fl">0.7725</span>  <span class="sc">-</span><span class="fl">2.0899</span>  <span class="dv">31</span>  <span class="fl">0.0449</span>  <span class="sc">-</span><span class="fl">3.1900</span>  <span class="sc">-</span><span class="fl">0.0389</span>  <span class="sc">*</span> </span>
-<span id="cb19-23"><a href="id_3LMA.html#cb19-23" tabindex="-1"></a><span class="fu">factor</span>(grade_c)University    <span class="sc">-</span><span class="fl">0.4790</span>  <span class="fl">0.6448</span>  <span class="sc">-</span><span class="fl">0.7429</span>  <span class="dv">31</span>  <span class="fl">0.4631</span>  <span class="sc">-</span><span class="fl">1.7941</span>   <span class="fl">0.8360</span>    </span>
-<span id="cb19-24"><a href="id_3LMA.html#cb19-24" tabindex="-1"></a><span class="fu">factor</span>(grade_c)Workforce      <span class="fl">0.6704</span>  <span class="fl">1.7951</span>   <span class="fl">0.3734</span>   <span class="dv">8</span>  <span class="fl">0.7185</span>  <span class="sc">-</span><span class="fl">3.4691</span>   <span class="fl">4.8099</span>    </span>
-<span id="cb19-25"><a href="id_3LMA.html#cb19-25" tabindex="-1"></a></span>
-<span id="cb19-26"><a href="id_3LMA.html#cb19-26" tabindex="-1"></a><span class="sc">---</span></span>
-<span id="cb19-27"><a href="id_3LMA.html#cb19-27" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> ‘<span class="sc">**</span><span class="er">*</span>’ <span class="fl">0.001</span> ‘<span class="sc">**</span>’ <span class="fl">0.01</span> ‘<span class="sc">*</span>’ <span class="fl">0.05</span> ‘.’ <span class="fl">0.1</span> ‘ ’ <span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="id_3LMA.html#cb46-1" tabindex="-1"></a>Multivariate Meta<span class="sc">-</span>Analysis <span class="fu">Model</span> (<span class="at">k =</span> <span class="dv">35</span>; method<span class="sc">:</span> REML)</span>
+<span id="cb46-2"><a href="id_3LMA.html#cb46-2" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="id_3LMA.html#cb46-3" tabindex="-1"></a>  logLik  Deviance       AIC       BIC      AICc   </span>
+<span id="cb46-4"><a href="id_3LMA.html#cb46-4" tabindex="-1"></a><span class="sc">-</span><span class="fl">39.0955</span>   <span class="fl">78.1911</span>   <span class="fl">90.1911</span>   <span class="fl">98.7950</span>   <span class="fl">93.6911</span>   </span>
+<span id="cb46-5"><a href="id_3LMA.html#cb46-5" tabindex="-1"></a></span>
+<span id="cb46-6"><a href="id_3LMA.html#cb46-6" tabindex="-1"></a>Variance Components<span class="sc">:</span></span>
+<span id="cb46-7"><a href="id_3LMA.html#cb46-7" tabindex="-1"></a></span>
+<span id="cb46-8"><a href="id_3LMA.html#cb46-8" tabindex="-1"></a>            estim    sqrt  nlvls  fixed           factor </span>
+<span id="cb46-9"><a href="id_3LMA.html#cb46-9" tabindex="-1"></a>sigma<span class="sc">^</span><span class="fl">2.1</span>  <span class="fl">2.9968</span>  <span class="fl">1.7311</span>     <span class="dv">12</span>     no            Study </span>
+<span id="cb46-10"><a href="id_3LMA.html#cb46-10" tabindex="-1"></a>sigma<span class="sc">^</span><span class="fl">2.2</span>  <span class="fl">0.1652</span>  <span class="fl">0.4064</span>     <span class="dv">35</span>     no  Study<span class="sc">/</span>ES_number </span>
+<span id="cb46-11"><a href="id_3LMA.html#cb46-11" tabindex="-1"></a></span>
+<span id="cb46-12"><a href="id_3LMA.html#cb46-12" tabindex="-1"></a>Test <span class="cf">for</span> Residual Heterogeneity<span class="sc">:</span></span>
+<span id="cb46-13"><a href="id_3LMA.html#cb46-13" tabindex="-1"></a><span class="fu">QE</span>(<span class="at">df =</span> <span class="dv">31</span>) <span class="ot">=</span> <span class="fl">255.8519</span>, p<span class="sc">-</span>val <span class="sc">&lt;</span> .<span class="dv">0001</span></span>
+<span id="cb46-14"><a href="id_3LMA.html#cb46-14" tabindex="-1"></a></span>
+<span id="cb46-15"><a href="id_3LMA.html#cb46-15" tabindex="-1"></a>Test of <span class="fu">Moderators</span> (coefficients <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)<span class="sc">:</span></span>
+<span id="cb46-16"><a href="id_3LMA.html#cb46-16" tabindex="-1"></a><span class="fu">F</span>(<span class="at">df1 =</span> <span class="dv">4</span>, <span class="at">df2 =</span> <span class="dv">8</span>) <span class="ot">=</span> <span class="fl">1.3172</span>, p<span class="sc">-</span>val <span class="ot">=</span> <span class="fl">0.3420</span></span>
+<span id="cb46-17"><a href="id_3LMA.html#cb46-17" tabindex="-1"></a></span>
+<span id="cb46-18"><a href="id_3LMA.html#cb46-18" tabindex="-1"></a>Model Results<span class="sc">:</span></span>
+<span id="cb46-19"><a href="id_3LMA.html#cb46-19" tabindex="-1"></a></span>
+<span id="cb46-20"><a href="id_3LMA.html#cb46-20" tabindex="-1"></a>                            estimate      se     tval  df    pval    ci.lb    ci.ub    </span>
+<span id="cb46-21"><a href="id_3LMA.html#cb46-21" tabindex="-1"></a><span class="fu">factor</span>(grade_c)Grades <span class="dv">4-6</span>     <span class="fl">0.2566</span>  <span class="fl">1.0087</span>   <span class="fl">0.2544</span>   <span class="dv">8</span>  <span class="fl">0.8056</span>  <span class="sc">-</span><span class="fl">2.0695</span>   <span class="fl">2.5827</span>    </span>
+<span id="cb46-22"><a href="id_3LMA.html#cb46-22" tabindex="-1"></a><span class="fu">factor</span>(grade_c)Grades <span class="dv">9-12</span>   <span class="sc">-</span><span class="fl">1.6145</span>  <span class="fl">0.7725</span>  <span class="sc">-</span><span class="fl">2.0899</span>  <span class="dv">31</span>  <span class="fl">0.0449</span>  <span class="sc">-</span><span class="fl">3.1900</span>  <span class="sc">-</span><span class="fl">0.0389</span>  <span class="sc">*</span> </span>
+<span id="cb46-23"><a href="id_3LMA.html#cb46-23" tabindex="-1"></a><span class="fu">factor</span>(grade_c)University    <span class="sc">-</span><span class="fl">0.4790</span>  <span class="fl">0.6448</span>  <span class="sc">-</span><span class="fl">0.7429</span>  <span class="dv">31</span>  <span class="fl">0.4631</span>  <span class="sc">-</span><span class="fl">1.7941</span>   <span class="fl">0.8360</span>    </span>
+<span id="cb46-24"><a href="id_3LMA.html#cb46-24" tabindex="-1"></a><span class="fu">factor</span>(grade_c)Workforce      <span class="fl">0.6704</span>  <span class="fl">1.7951</span>   <span class="fl">0.3734</span>   <span class="dv">8</span>  <span class="fl">0.7185</span>  <span class="sc">-</span><span class="fl">3.4691</span>   <span class="fl">4.8099</span>    </span>
+<span id="cb46-25"><a href="id_3LMA.html#cb46-25" tabindex="-1"></a></span>
+<span id="cb46-26"><a href="id_3LMA.html#cb46-26" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb46-27"><a href="id_3LMA.html#cb46-27" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> ‘<span class="sc">**</span><span class="er">*</span>’ <span class="fl">0.001</span> ‘<span class="sc">**</span>’ <span class="fl">0.01</span> ‘<span class="sc">*</span>’ <span class="fl">0.05</span> ‘.’ <span class="fl">0.1</span> ‘ ’ <span class="dv">1</span></span></code></pre></div>
 <p><em>What’s this result mean?</em></p>
 <p>This looks almost identical to the previous result when we calculated Q<sub>between</sub>. However, you’ll note that the intercept is now gone. <u>These are the means, standard errors, p values, etc. for the levels of the moderator that you will want to report in your manuscript.</u></p>
 <p>Note that the test of moderators is different than before. Confusing right? <u>Well, that’s because the two tests, while named the same thing, are testing different things.</u> When we calculated Q<sub>between,</sub> the test of moderators was testing if there were significant differences between levels of the moderator. However, in this test of moderators it is testing if the moderators are significantly different than zero. These are totally different tests - <strong>do not use this test of moderator as your Q<sub>between</sub> value because it most certainly is not!</strong></p>
 </div>
 <p>What if you have more moderator variables to test? Well, you simply replace the ‘<strong>grade_c</strong>’ variable with whatever each moderator variable column in your data is labeled as, and don’t forget to rename the data items as well (<strong>mod.gradeq</strong> and <strong>mod.grade</strong>). Then you can re-run the same two code sets to calculate Q<sub>between</sub> and the effect sizes.</p>
 </div>
-<div id="easily-create-tables-1" class="section level4" number="8.3.5.3">
+<div id="easily-create-tables-1" class="section level4" number="11.3.5.3">
 <h4>
-<span class="header-section-number">8.3.5.3</span> Easily Create Tables<a class="anchor" aria-label="anchor" href="#easily-create-tables-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.5.3</span> Easily Create Tables<a class="anchor" aria-label="anchor" href="#easily-create-tables-1"><i class="fas fa-link"></i></a>
 </h4>
 <p>Have you tried to copy-paste the results of the moderator analysis from the console into a word processing software yet? Go ahead and try, the book will be here while you test it out.</p>
 <p>So you tried it, and that looks terrible right? And the tables are missing data reviewers want to see, like the number of participants per level of moderator. What if I told you that Chris Palaguachi and I have already spent time creating the code to create these tables? Let’s take a look at the code that will save you hours and hours of calculations and table manipulations.</p>
-<div id="create-the-summary-table-1" class="section level5" number="8.3.5.3.1">
+<div id="create-the-summary-table-1" class="section level5" number="11.3.5.3.1">
 <h5>
-<span class="header-section-number">8.3.5.3.1</span> Create the Summary Table<a class="anchor" aria-label="anchor" href="#create-the-summary-table-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.5.3.1</span> Create the Summary Table<a class="anchor" aria-label="anchor" href="#create-the-summary-table-1"><i class="fas fa-link"></i></a>
 </h5>
 <p>First we’ll create the summary table. This is way easier than it sounds.</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#Only save table results for word </span></span>
 <span><span class="va">mod.grade_table</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">mod.grade</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><em>What’s this code doing?</em></p>
@@ -608,13 +628,13 @@
 </div>
 <p>So now we have a beautiful summary table. We could write this to a spreadsheet now… but what about the number of participants in each condition for each level of the moderator? And what about the number of comparisons for each moderator? We could hand calculate those… but that sounds boring. We could program in the analyses individually… but that is also boring (I’ve done that more than I want to admit). Or, we can use this code Chris and I created to do that automatically:</p>
 </div>
-<div id="calculating-participant-and-comparison-numbers-and-saving-the-table-1" class="section level5" number="8.3.5.3.2">
+<div id="calculating-participant-and-comparison-numbers-and-saving-the-table-1" class="section level5" number="11.3.5.3.2">
 <h5>
-<span class="header-section-number">8.3.5.3.2</span> Calculating Participant and Comparison Numbers, and Saving the Table<a class="anchor" aria-label="anchor" href="#calculating-participant-and-comparison-numbers-and-saving-the-table-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.3.5.3.2</span> Calculating Participant and Comparison Numbers, and Saving the Table<a class="anchor" aria-label="anchor" href="#calculating-participant-and-comparison-numbers-and-saving-the-table-1"><i class="fas fa-link"></i></a>
 </h5>
 <p>First, we’ll compute the number of participants from the experimental and control conditions for each level of the moderator. We’ll also calculate the number of comparisons for each level of the moderator. Finally, we’ll bind these to the pre-existing table, and write all of this information as a table in a .csv file.</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#calculate participants in each group and add it to the table</span></span>
 <span><span class="va">mod.gradeSumParticipants</span> <span class="op">&lt;-</span> <span class="va">dat1</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">grade_c</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -633,7 +653,7 @@
 </div>
 <p>How great is that? We now have almost all the data we need from the moderator analysis. The only missing piece is the <em>Q<sub>between</sub></em> value. Guess what, we have a script to record that too.</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Save QM Test and write it into a text file</span></span>
 <span><span class="va">Qmod.grade_collapsed_string</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">mod.gradeq</span><span class="op">[[</span><span class="st">"QMdf"</span><span class="op">]</span><span class="op">]</span>, collapse <span class="op">=</span> <span class="st">", "</span><span class="op">)</span></span>
 <span><span class="va">Qmod.grade1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>CollapsedQMdf <span class="op">=</span> <span class="va">Qmod.grade_collapsed_string</span><span class="op">)</span></span>
@@ -661,18 +681,18 @@
 </div>
 </div>
 </div>
-<div id="plots" class="section level2" number="8.4">
+<div id="plots" class="section level2" number="11.4">
 <h2>
-<span class="header-section-number">8.4</span> Plots<a class="anchor" aria-label="anchor" href="#plots"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.4</span> Plots<a class="anchor" aria-label="anchor" href="#plots"><i class="fas fa-link"></i></a>
 </h2>
 <p>We should always include a forest plot with our results. Unfortunately, this is a bit more complex with a three-level meta-analysis because we have both study-level effects and (often) multiple comparisons from within each study. However, there are some really fun visualizations we can create if we borrow some code from others. Let’s see what’s possible.</p>
 <div class="rmdnote">
-<p><strong>Important Note:</strong> We’re going to use a different file for creating our forest and caterpillar plots. This same file and data preparation is needed to create the funnel plots to evaluate publication bias. For that reason, I tend to create my forest plots, caterpillar plots, and funnel plots all at the same time. In addition, because it uses a different data file, I generally create a second R code file as well specifically for making plots. That’s why this all grouped at the end of this chapter.</p>
-<p>The code in this plots section is adapted from Fernández-Castilla et al. (2020)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Belén Fernández-Castilla et al., &lt;span&gt;“Visual Representations of Meta-Analyses of Multiple Outcomes: Extensions to Forest Plots, Funnel Plots, and Caterpillar Plots,”&lt;/span&gt; &lt;em&gt;Methodology&lt;/em&gt; 16, no. 4 (December 22, 2020): 299–315, &lt;a href="https://doi.org/10.5964/meth.4013"&gt;https://doi.org/10.5964/meth.4013&lt;/a&gt;.&lt;/p&gt;'><sup>16</sup></a></span>. I have slightly adapted the code to fit our data.</p>
+<p><strong>Important Note:</strong> We’re going to use a different file for creating our forest and caterpillar plots. This same file and data preparation is needed to create the funnel plots to evaluate publication bias. For that reason, I tend to create my forest plots, caterpillar plots, and funnel plots all at the same time. In addition, because it uses a different data file, I generally create a second R code file as well specifically for making plots. That’s why this all grouped at the end of this chapter.
+The code in this plots section is adapted from Fernández-Castilla et al. (2020)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Belén Fernández-Castilla et al., &lt;span&gt;“Visual Representations of Meta-Analyses of Multiple Outcomes: Extensions to Forest Plots, Funnel Plots, and Caterpillar Plots,”&lt;/span&gt; &lt;em&gt;Methodology&lt;/em&gt; 16, no. 4 (December 22, 2020): 299–315, &lt;a href="https://doi.org/10.5964/meth.4013"&gt;https://doi.org/10.5964/meth.4013&lt;/a&gt;.&lt;/p&gt;'><sup>50</sup></a></span>. I have slightly adapted the code to fit our data.</p>
 </div>
-<div id="preparatory-work" class="section level4" number="8.4.0.1">
+<div id="preparatory-work" class="section level4" number="11.4.0.1">
 <h4>
-<span class="header-section-number">8.4.0.1</span> Preparatory Work<a class="anchor" aria-label="anchor" href="#preparatory-work"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.4.0.1</span> Preparatory Work<a class="anchor" aria-label="anchor" href="#preparatory-work"><i class="fas fa-link"></i></a>
 </h4>
 <p>Before we dig into the ‘how-to’ of creating forest plots for three-level meta-analysis, we need to create a new data file with our raw data and compute a couple new statistics. So let’s do that first.</p>
 <p>We’ll need a .csv file that contains columns for outcome number (this is just sequential, meaning 1 through <em>n</em> number of comparisons). Next, we need a study column, this will number the studies (<em>not</em> comparisons, but studies). Then we need author names as we wish to see them on the plots. Next we have effect size, variance, and standard error.</p>
@@ -685,7 +705,7 @@
 <p>In the end, your <a href="https://github.com/noah-schroeder/reviewbook/blob/abfdb439ef81267b388ef75067a03262e1e59020/data%20for%20plots.csv">spreadsheet should look like this one</a>, which is what we’ll use for creating our plots.</p>
 <p>Now, let’s get to the R code and load up our data</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#load packages</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://had.co.nz/plyr">plyr</a></span><span class="op">)</span></span>
@@ -711,13 +731,13 @@
 <p>Next we are naming a bunch of vectors we’ll need to create these plots and our publication bias plots.</p>
 </div>
 </div>
-<div id="three-level-meta-analysis-forest-plot" class="section level4" number="8.4.0.2">
+<div id="three-level-meta-analysis-forest-plot" class="section level4" number="11.4.0.2">
 <h4>
-<span class="header-section-number">8.4.0.2</span> Three-Level Meta-Analysis Forest Plot<a class="anchor" aria-label="anchor" href="#three-level-meta-analysis-forest-plot"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.4.0.2</span> Three-Level Meta-Analysis Forest Plot<a class="anchor" aria-label="anchor" href="#three-level-meta-analysis-forest-plot"><i class="fas fa-link"></i></a>
 </h4>
 <p>Let’s create our three-level forest plot:</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">forest_plot_3</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">author</span>, <span class="va">study</span>, <span class="va">ES</span>, <span class="va">out</span>, <span class="va">var</span>, <span class="va">se</span>, <span class="va">size_lines</span><span class="op">)</span><span class="op">{</span></span>
 <span>  <span class="va">size_lines</span><span class="op">=</span><span class="va">size_lines</span></span>
 <span>  <span class="va">dataset</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">study</span>,<span class="va">author</span>, <span class="va">ES</span>, <span class="va">out</span>, <span class="va">var</span>, <span class="va">se</span><span class="op">)</span></span>
@@ -892,20 +912,20 @@
 </div>
 <p>If this code works correctly for you, the forest plot should appear in the plots section of R studio.</p>
 <div class="inline-figure"><img src="images/3lmaforest.png" style="width:100.0%"></div>
-<p>Absolutely beautiful plot right? You can read about what the different items and colors mean in Fernández-Castilla et al. (2020)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Fernández-Castilla et al.&lt;/p&gt;"><sup>17</sup></a></span>. Remember, all of the code for the plots in this chapter are from their paper. But to quickly explain some major points, the black boxes represent the average effect size from the comparisons within each study, and the black lines are the study precision. The grey lines are the median precision of one effect size from each study. The size of the effect size box is representative of its weight in the analysis. J represents how many comparisons were analyzed from each study.</p>
+<p>Absolutely beautiful plot right? You can read about what the different items and colors mean in Fernández-Castilla et al. (2020)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Fernández-Castilla et al.&lt;/p&gt;"><sup>51</sup></a></span>. Remember, all of the code for the plots in this chapter are from their paper. But to quickly explain some major points, the black boxes represent the average effect size from the comparisons within each study, and the black lines are the study precision. The grey lines are the median precision of one effect size from each study. The size of the effect size box is representative of its weight in the analysis. J represents how many comparisons were analyzed from each study.</p>
 </div>
-<div id="caterpillar-plots" class="section level4" number="8.4.0.3">
+<div id="caterpillar-plots" class="section level4" number="11.4.0.3">
 <h4>
-<span class="header-section-number">8.4.0.3</span> Caterpillar Plots<a class="anchor" aria-label="anchor" href="#caterpillar-plots"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.4.0.3</span> Caterpillar Plots<a class="anchor" aria-label="anchor" href="#caterpillar-plots"><i class="fas fa-link"></i></a>
 </h4>
-<p>While forest plots are great, sometimes we want a different way to visualize our data. Caterpillar plots are an interesting way to visualize our data. Again, we borrow some code from Fernández-Castilla et al. (2020)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Fernández-Castilla et al.&lt;/p&gt;"><sup>18</sup></a></span>.</p>
-<div id="all-comparisons" class="section level5" number="8.4.0.3.1">
+<p>While forest plots are great, sometimes we want a different way to visualize our data. Caterpillar plots are an interesting way to visualize our data. Again, we borrow some code from Fernández-Castilla et al. (2020)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Fernández-Castilla et al.&lt;/p&gt;"><sup>52</sup></a></span>.</p>
+<div id="all-comparisons" class="section level5" number="11.4.0.3.1">
 <h5>
-<span class="header-section-number">8.4.0.3.1</span> All Comparisons<a class="anchor" aria-label="anchor" href="#all-comparisons"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.4.0.3.1</span> All Comparisons<a class="anchor" aria-label="anchor" href="#all-comparisons"><i class="fas fa-link"></i></a>
 </h5>
 <p>First, let’s look at all comparisons in one plot:</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">Caterpillar</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">study</span>, <span class="va">ES</span>, <span class="va">out</span>, <span class="va">var</span>, <span class="va">se</span><span class="op">)</span><span class="op">{</span> </span>
 <span>  <span class="va">dataset</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">study</span>, <span class="va">ES</span>, <span class="va">out</span>, <span class="va">var</span>, <span class="va">se</span><span class="op">)</span></span>
 <span>  <span class="va">dataset</span><span class="op">$</span><span class="va">cilb</span><span class="op">&lt;-</span><span class="va">dataset</span><span class="op">$</span><span class="va">ES</span><span class="op">-</span><span class="op">(</span><span class="fl">1.96</span><span class="op">*</span><span class="va">dataset</span><span class="op">$</span><span class="va">se</span><span class="op">)</span></span>
@@ -982,13 +1002,13 @@
 <div class="inline-figure"><img src="images/caterpillar_all.png" style="width:100.0%"></div>
 <p>As you can see, all 35 comparisons are included in this plot, listed from smallest (left) to largest (right). The red line is our overall meta-analytic effect size.</p>
 </div>
-<div id="study-level-plot" class="section level5" number="8.4.0.3.2">
+<div id="study-level-plot" class="section level5" number="11.4.0.3.2">
 <h5>
-<span class="header-section-number">8.4.0.3.2</span> Study-Level Plot<a class="anchor" aria-label="anchor" href="#study-level-plot"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.4.0.3.2</span> Study-Level Plot<a class="anchor" aria-label="anchor" href="#study-level-plot"><i class="fas fa-link"></i></a>
 </h5>
-<p>If you prefer a plot of study-level results, similar to the forest plot, we can use this code, again from Fernández-Castilla et al. (2020)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Fernández-Castilla et al.&lt;/p&gt;"><sup>19</sup></a></span>:</p>
+<p>If you prefer a plot of study-level results, similar to the forest plot, we can use this code, again from Fernández-Castilla et al. (2020)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Fernández-Castilla et al.&lt;/p&gt;"><sup>53</sup></a></span>:</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">caterpillar_studies</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">study</span>, <span class="va">ES</span>, <span class="va">out</span>, <span class="va">var</span>, <span class="va">se</span><span class="op">)</span><span class="op">{</span></span>
 <span><span class="va">dataset</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">study</span>, <span class="va">ES</span>, <span class="va">out</span>, <span class="va">var</span>, <span class="va">se</span><span class="op">)</span></span>
@@ -1108,19 +1128,19 @@
 <p>Caterpillar plots are not, as of January 2024, very common in the educational literature. However, I see value in including the visualization in my publications.</p>
 </div>
 </div>
-<div id="publication-bias-1" class="section level3" number="8.4.1">
+<div id="publication-bias-1" class="section level3" number="11.4.1">
 <h3>
-<span class="header-section-number">8.4.1</span> Publication Bias<a class="anchor" aria-label="anchor" href="#publication-bias-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.4.1</span> Publication Bias<a class="anchor" aria-label="anchor" href="#publication-bias-1"><i class="fas fa-link"></i></a>
 </h3>
-<p>Oh we’re not done yet, we haven’t even talked about publication bias yet! Publication bias is more difficult to examine in three-level models than conventional meta-analysis models. Furthermore, the tests we have for conventional meta-analysis models often don’t function well in three-level applications (Rodgers &amp; Pustejovsky, 2021)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Melissa A. Rodgers and James E. Pustejovsky, &lt;span&gt;“Evaluating Meta-Analytic Methods to Detect Selective Reporting in the Presence of Dependent Effect Sizes.”&lt;/span&gt; &lt;em&gt;Psychological Methods&lt;/em&gt; 26, no. 2 (April 2021): 141–60, &lt;a href="https://doi.org/10.1037/met0000300"&gt;https://doi.org/10.1037/met0000300&lt;/a&gt;.&lt;/p&gt;'><sup>20</sup></a></span>. Instead, we can look at funnel plots to examine them for asymmetry.</p>
-<div id="funnel-plots" class="section level4" number="8.4.1.1">
+<p>Oh we’re not done yet, we haven’t even talked about publication bias yet! Publication bias is more difficult to examine in three-level models than conventional meta-analysis models. Furthermore, the tests we have for conventional meta-analysis models often don’t function well in three-level applications (Rodgers &amp; Pustejovsky, 2021)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Melissa A. Rodgers and James E. Pustejovsky, &lt;span&gt;“Evaluating Meta-Analytic Methods to Detect Selective Reporting in the Presence of Dependent Effect Sizes.”&lt;/span&gt; &lt;em&gt;Psychological Methods&lt;/em&gt; 26, no. 2 (April 2021): 141–60, &lt;a href="https://doi.org/10.1037/met0000300"&gt;https://doi.org/10.1037/met0000300&lt;/a&gt;.&lt;/p&gt;'><sup>54</sup></a></span>. Instead, we can look at funnel plots to examine them for asymmetry.</p>
+<div id="funnel-plots" class="section level4" number="11.4.1.1">
 <h4>
-<span class="header-section-number">8.4.1.1</span> Funnel Plots<a class="anchor" aria-label="anchor" href="#funnel-plots"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.4.1.1</span> Funnel Plots<a class="anchor" aria-label="anchor" href="#funnel-plots"><i class="fas fa-link"></i></a>
 </h4>
-<p>Again, we’re going to borrow the methods and adapt the code from Fernández-Castilla et al. (2020)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Fernández-Castilla et al., &lt;span&gt;“Visual Representations of Meta-Analyses of Multiple Outcomes.”&lt;/span&gt;&lt;/p&gt;"><sup>21</sup></a></span>.</p>
+<p>Again, we’re going to borrow the methods and adapt the code from Fernández-Castilla et al. (2020)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Fernández-Castilla et al., &lt;span&gt;“Visual Representations of Meta-Analyses of Multiple Outcomes.”&lt;/span&gt;&lt;/p&gt;"><sup>55</sup></a></span>.</p>
 <p>First we’ll create a funnel plot of all effect sizes and check it for asymmetry.</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">three_funnel</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">study</span>, <span class="va">ES</span>, <span class="va">out</span>, <span class="va">var</span>, <span class="va">se</span><span class="op">)</span><span class="op">{</span></span>
 <span>  </span>
 <span><span class="va">dataset</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">study</span>, <span class="va">ES</span>, <span class="va">out</span>, <span class="va">var</span>, <span class="va">se</span><span class="op">)</span></span>
@@ -1198,9 +1218,9 @@
 <p>When we run that code we’ll see the following:</p>
 <div class="inline-figure"><img src="images/funnel_all.png" style="width:100.0%"></div>
 <p>The overall effect size is the grey vertical line to the left of zero. We want to see symmetry around that line, vertically and horizontally. But we don’t. That looks pretty asymmetrical doesn’t it?</p>
-<p>Now let’s create a funnel plot of study-level effects, again with the help of Fernández-Castilla et al.’s (2020)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Fernández-Castilla et al.&lt;/p&gt;"><sup>22</sup></a></span> code:</p>
+<p>Now let’s create a funnel plot of study-level effects, again with the help of Fernández-Castilla et al.’s (2020)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Fernández-Castilla et al.&lt;/p&gt;"><sup>56</sup></a></span> code:</p>
 <div class="rmdnote">
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">three_funnel_study</span><span class="op">&lt;-</span><span class="kw">function</span><span class="op">(</span><span class="va">study</span>, <span class="va">ES</span>, <span class="va">out</span>, <span class="va">var</span>, <span class="va">se</span>, <span class="va">size_dots</span>, <span class="va">numbers</span><span class="op">)</span><span class="op">{</span></span>
 <span> <span class="va">numbers</span><span class="op">=</span><span class="va">numbers</span></span>
 <span>   <span class="va">size_dots</span><span class="op">=</span><span class="va">size_dots</span></span>
@@ -1388,22 +1408,22 @@
 <div class="inline-figure"><img src="images/funnel_study.png"></div>
 <p>Again, the overall effect size is the vertical line to the left of zero. We want to see symmetry around that line, vertically and horizontally. But again, we don’t. Interesting!</p>
 </div>
-<div id="reporting-publication-bias-1" class="section level4" number="8.4.1.2">
+<div id="reporting-publication-bias-1" class="section level4" number="11.4.1.2">
 <h4>
-<span class="header-section-number">8.4.1.2</span> Reporting Publication Bias<a class="anchor" aria-label="anchor" href="#reporting-publication-bias-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.4.1.2</span> Reporting Publication Bias<a class="anchor" aria-label="anchor" href="#reporting-publication-bias-1"><i class="fas fa-link"></i></a>
 </h4>
 <p>Ok, so we’ve now looked at two different funnel plots to check for publication bias. What do they tell us, and how do we report it? Well, we know the funnel plot was not very symmetrical. This means that publication bias may be a concern in our sample. Unfortunately, to the best of my knowledge in January 2024, we can’t quantify this as well with three-level models as we can with conventional meta-analysis.</p>
 </div>
 </div>
 </div>
-<div id="thats-it-1" class="section level2" number="8.5">
+<div id="thats-it-1" class="section level2" number="11.5">
 <h2>
-<span class="header-section-number">8.5</span> That’s it!<a class="anchor" aria-label="anchor" href="#thats-it-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.5</span> That’s it!<a class="anchor" aria-label="anchor" href="#thats-it-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>You’ve now gone through all the steps needed to conduct a three-level meta-analysis. Congratulations! This may seem intimidating, but if you complete each step, in order, this will be a very simple process. And think - now you a) have a code you can adapt and use for every three-level meta-analysis you conduct in the future, b) have a code you can share with friends, and c) can share you code with your publication so others can replicate your analysis. Just think - if more people had done that I would not have had to write this book….</p>
-<div id="section-1" class="section level4" number="8.5.0.1">
+<div id="section-1" class="section level4" number="11.5.0.1">
 <h4>
-<span class="header-section-number">8.5.0.1</span> <a class="anchor" aria-label="anchor" href="#section-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.5.0.1</span> <a class="anchor" aria-label="anchor" href="#section-1"><i class="fas fa-link"></i></a>
 </h4>
 
 </div>
@@ -1414,11 +1434,37 @@
 
 
   <div class="chapter-nav">
-<div class="empty"></div>
-<div class="empty"></div>
+<div class="prev"><a href="meta.html"><span class="header-section-number">10</span> Conventional Meta-Analysis</a></div>
+<div class="next"><a href="change-log.html">Change Log</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <div id="book-on-this-page"></div>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#id_3LMA"><span class="header-section-number">11</span> Three-Level Meta-Analysis</a></li>
+<li>
+<a class="nav-link" href="#preparing-your-data-1"><span class="header-section-number">11.1</span> Preparing your data</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#your-data-file-1"><span class="header-section-number">11.1.1</span> Your Data File</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#running-a-three-level-meta-analysis-in-metafor"><span class="header-section-number">11.2</span> Running a Three-Level Meta-Analysis in Metafor</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#example-data-for-this-analysis-1"><span class="header-section-number">11.2.1</span> Example Data for This Analysis</a></li>
+<li><a class="nav-link" href="#load-r-packages-1"><span class="header-section-number">11.2.2</span> Load R Packages</a></li>
+<li><a class="nav-link" href="#import-your-data-into-r-studio-1"><span class="header-section-number">11.2.3</span> Import Your Data Into R Studio</a></li>
+<li><a class="nav-link" href="#calculating-effect-sizes-1"><span class="header-section-number">11.2.4</span> Calculating Effect Sizes</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#running-the-meta-analysis-model-1"><span class="header-section-number">11.3</span> Running The Meta-Analysis Model</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#interpreting-the-results-1"><span class="header-section-number">11.3.1</span> Interpreting the Results</a></li>
+<li><a class="nav-link" href="#explaining-the-variance"><span class="header-section-number">11.3.2</span> Explaining the Variance</a></li>
+<li><a class="nav-link" href="#checking-for-outliers-and-influence-1"><span class="header-section-number">11.3.3</span> Checking for Outliers and Influence</a></li>
+<li><a class="nav-link" href="#writing-up-the-results-1"><span class="header-section-number">11.3.4</span> Writing up the Results</a></li>
+<li><a class="nav-link" href="#moderator-analysis-1"><span class="header-section-number">11.3.5</span> Moderator Analysis</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#plots"><span class="header-section-number">11.4</span> Plots</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#publication-bias-1"><span class="header-section-number">11.4.1</span> Publication Bias</a></li></ul>
+</li>
+<li><a class="nav-link" href="#thats-it-1"><span class="header-section-number">11.5</span> That’s it!</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
