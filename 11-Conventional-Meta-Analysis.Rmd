@@ -64,7 +64,7 @@ After you run this, you'll see an item called 'dat' appear in your environment, 
 
 ### Calculating Effect Sizes
 
-Next, you will want to calculate the effect sizes and variance for each effect size if you have not done so already. You can do that using this code:
+Next, you will want to calculate the effect sizes and variance for each comparison if you have not done so already. You can do that using this code:
 
 ::: rmdnote
 ``` r
@@ -84,7 +84,7 @@ The next set of variables (**m1i, sd1i, n1i, m2i, sd2i,** and **n2i**) are speci
 Finally, we need to tell metafor where to find the data, and we have to refer to data already in R. We use our datafile '**dat**'.
 :::
 
-Now if you can make sure the effect size and variance for each effect size were calculated:
+Now if you want to, you can make sure the effect size and variance for each effect size were calculated:
 
 ::: rmdnote
 ``` r
@@ -152,7 +152,7 @@ This code simply displays the result in the console so you can see the meta-anal
 
 When we run that code, we now see the following:
 
-::: {style="gray"}
+::: rmdnote
 ```         
 Random-Effects Model (k = 27; tau^2 estimator: REML)
 
@@ -363,7 +363,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 
 There's a lot of information here but we only want one thing: **The test of moderators.** In this case, that's Test of Moderators (coefficients 2:5): QM(df = 4) = 4.2829, p-val = 0.3691
 
-[What we're doing here is checking the p value.]{.underline} We can see this test is not significant, which means that this is not a statistically significant moderator. In other words, for this example, the effects of the intervention was not significantly different for participants in K-5 than participants in Post-Secondary Education.
+[What we're doing here is checking the p value.]{.underline} We can see this test is not significant, which means that this is not a statistically significant moderator. In other words, for this example, the effect of the intervention was not significantly different for participants in K-5 than participants in Post-Secondary Education.
 :::
 
 With our Q~between~ value in hand, we now need to create the actual table we'll report in the manuscript. You'll note that when we calculated Q~between~, one of the levels of the moderator was missing, and replaced by the term intercept. Well, it's time to fix that and get the tables we would use for reporting in our manuscript.
@@ -448,7 +448,7 @@ mod.grade_table <-coef(summary(mod.grade))
 
 *What's this code doing?*
 
-First, we're creating a new data item, called **mod.grade_table**. I The **coef(summary(mod.grade))** is simply telling metafor we want the coefficient summary for the **mod.grade** data - which is what we called our moderator analysis of the grade levels.
+First, we're creating a new data item, called **mod.grade_table**. The **coef(summary(mod.grade))** is simply telling metafor we want the coefficient summary for the **mod.grade** data - which is what we called our moderator analysis of the grade levels.
 
 Overall, this basically saves most of the data we want as a separate table.
 :::
@@ -484,7 +484,7 @@ Next, we have a new item called **gradeNumComp**. This is counting the number of
 Finally, we create a new table, bind all the data together, and write it as a csv file.
 :::
 
-How great is that? We now have almost all the data we need from the moderator analysis. The only missing is the *Q~between~* value. Guess what, we have a script to record that too. First, a warning:
+How great is that? We now have almost all the data we need from the moderator analysis. The only piece of information missing is the *Q~between~* value. Guess what, we have a script to record that too. First, a warning:
 
 ::: rmdimportant
 **IMPORTANT NOTE**: This code will print the *Q~between~* data twice. The first will be presented as: *Q~between~* (df) = #, *p* = #. The second will be presented with NA instead of the actual degrees of freedom. You want the result with the degrees of freedom, and you can ignore the result with NA printed.
@@ -528,7 +528,7 @@ Ok, so now we've gotten our moderator analyses run, and all of our information e
 
 ### Publication Bias
 
-Oh we're not done yet, we haven't even talked about publication bias yet! Don't worry, this is pretty easy because metafor, again, has some great built in functions.
+Oh we're not done yet, we haven't even talked about publication bias yet! Don't worry, this is pretty easy because metafor, again, has some great built-in functions.
 
 #### Funnel Plot
 
@@ -695,7 +695,7 @@ Ok, so we've now run a variety of tests to check for publication bias. What do t
 >
 > ![](images/clipboard-2269174522.png){width="100%"}
 >
-> Next, we used Egger's regression test to test for funnel plot asymmetry, which was not significant (z = -0.04, p = 0.97). Finally, we used Rosenthal's fail safe n test to see how many null effect studies would be needed to change the overall meta-analytic effect size to be non-significant. The test showed 1028 studies would be needed.
+> Next, we used Egger's regression test to test for funnel plot asymmetry, which was not significant (z = -0.04, p = 0.97). Finally, we used Rosenthal's Fail Safe N test to see how many null effect studies would be needed to change the overall meta-analytic effect size to be non-significant. The test showed 1028 studies would be needed.
 >
 > Based on the results of these four tests, publication bias is not expected to be a significant influence on our results.
 

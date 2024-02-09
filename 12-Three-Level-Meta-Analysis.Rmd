@@ -83,7 +83,7 @@ df <- read.csv("360 sample data.csv")
 
 ### Calculating Effect Sizes
 
-Next, you will want to calculate the effect sizes and variance for each effect size if you have not done so already. You can do that using this code:
+Next, you will want to calculate the effect size and variance for each comparison if you have not done so already. You can do that using this code:
 
 ::: rmdnote
 ``` r
@@ -313,7 +313,7 @@ Running that code created a plot, a .csv file, and displayed data in the console
 
 ![](images/outliers3level.png){width="100%"}
 
-You can see here with have three outliers using this criteria, however we don't know which comparisons they are. Both the data in the console and generated .csv file tell us which comparisons were outliers.
+You can see here we have three outliers using this criteria, however we don't know which comparisons they are. Both the data in the console and generated .csv file tell us which comparisons were outliers.
 
 At this point, similar to conventional meta-analysis, we need to examine the studies in more detail. First, I check for any data entry errors. Sometimes decimal points are in the wrong place, which can easy create an outlier.
 
@@ -424,7 +424,7 @@ hatvalues
 We are creating a data item called **hatvalues**, and calculating hat values using the **hatvalues** function in metafor for the overall meta-analytic model. We then display the results in the console.
 :::
 
-Running that code displays some statistics in the console, but honestly I find them challenging to read in that format. So instead, let's write all of our influence statistics into a .csv file for easier viewing.
+Running that code displays some statistics in the console, but honestly I find them challenging to read in that format. So instead, we will write all of our influence statistics into a .csv file for easier viewing.
 
 ::: rmdnote
 ``` r
@@ -446,7 +446,7 @@ For our conversation here, we'll say that we did not find any individual compari
 
 #### Dealing with Outliers and Influential Studies
 
-We know from this data that three comparisons in our dataset are potential outliers, but they aren't significant. What do we do from here? Well, there's a lot of options, but here are my recommended steps:
+We know from this data that three comparisons in our dataset are potential outliers, but they aren't significantly influencing our overall meta-analytical result. What do we do from here? Well, there's a lot of options, but here are my recommended steps:
 
 -   Go back to your data and check the effect size. Is it oddly large or small? If so, check and see if you have a typo in the data.
 
@@ -716,8 +716,7 @@ Ok, so now we've gotten our moderator analyses run and all of our information ex
 We should always include a forest plot with our results. Unfortunately, this is a bit more complex with a three-level meta-analysis because we have both study-level effects and (often) multiple comparisons from within each study. However, there are some really fun visualizations we can create if we borrow some code from others. Let's see what's possible.
 
 ::: rmdnote
-**Important Note:** We're going to use a different file for creating our forest and caterpillar plots. This same file and data preparation is needed to create the funnel plots to evaluate publication bias. For that reason, I tend to create my forest plots, caterpillar plots, and funnel plots all at the same time. In addition, because it uses a different data file, I generally create a second R code file as well specifically for making plots. That's why this all grouped at the end of this chapter.
-The code in this plots section is adapted from Fernández-Castilla et al. (2020)[@fernández-castilla2020]. I have slightly adapted the code to fit our data.
+**Important Note:** We're going to use a different file for creating our forest and caterpillar plots. This same file and data preparation is needed to create the funnel plots to evaluate publication bias. For that reason, I tend to create my forest plots, caterpillar plots, and funnel plots all at the same time. In addition, because it uses a different data file, I generally create a second R code file as well specifically for making plots. That's why this all grouped at the end of this chapter. The code in this plots section is adapted from Fernández-Castilla et al. (2020)[@fernández-castilla2020]. I have slightly adapted the code to fit our data.
 :::
 
 #### Preparatory Work
@@ -1186,7 +1185,7 @@ Caterpillar plots are not, as of January 2024, very common in the educational li
 
 ### Publication Bias
 
-Oh we're not done yet, we haven't even talked about publication bias yet! Publication bias is more difficult to examine in three-level models than conventional meta-analysis models. Furthermore, the tests we have for conventional meta-analysis models often don't function well in three-level applications (Rodgers & Pustejovsky, 2021)[@rodgers2021]. Instead, we can look at funnel plots to examine them for asymmetry.
+Oh we're not done yet, we haven't even talked about publication bias yet! Publication bias is more difficult to examine in three-level models than conventional meta-analysis models. Furthermore, the tests we have for conventional meta-analysis models often don't function well in three-level applications (Rodgers & Pustejovsky, 2021)[@rodgers2021]. Instead, one approach we can take is to look at funnel plots to examine them for asymmetry.
 
 #### Funnel Plots
 

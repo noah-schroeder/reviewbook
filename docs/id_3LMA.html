@@ -72,8 +72,8 @@
 <li class="book-part">Background</li>
 <li><a class="" href="introduction-to-systematic-reviews.html"><span class="header-section-number">1</span> Introduction to Systematic Reviews</a></li>
 <li><a class="" href="getting-started.html"><span class="header-section-number">2</span> Getting Started</a></li>
-<li><a class="" href="statistical-foundations-of-meta-analysis.html"><span class="header-section-number">3</span> Statistical Foundations of Meta-Analysis</a></li>
-<li><a class="" href="PRISMA.html"><span class="header-section-number">4</span> PRISMA</a></li>
+<li><a class="" href="PRISMA.html"><span class="header-section-number">3</span> PRISMA</a></li>
+<li><a class="" href="statistical-foundations-of-meta-analysis.html"><span class="header-section-number">4</span> Statistical Foundations of Meta-Analysis</a></li>
 <li class="book-part">Methods</li>
 <li><a class="" href="literaturesearch.html"><span class="header-section-number">5</span> Literature Searches</a></li>
 <li><a class="" href="screening.html"><span class="header-section-number">6</span> Study Screening</a></li>
@@ -169,7 +169,7 @@
 <h3>
 <span class="header-section-number">11.2.4</span> Calculating Effect Sizes<a class="anchor" aria-label="anchor" href="#calculating-effect-sizes-1"><i class="fas fa-link"></i></a>
 </h3>
-<p>Next, you will want to calculate the effect sizes and variance for each effect size if you have not done so already. You can do that using this code:</p>
+<p>Next, you will want to calculate the effect size and variance for each comparison if you have not done so already. You can do that using this code:</p>
 <div class="rmdnote">
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://wviechtb.github.io/metafor/reference/escalc.html">escalc</a></span><span class="op">(</span>measure<span class="op">=</span><span class="st">"SMD"</span>, m1i<span class="op">=</span><span class="va">Exp_mean</span>, sd1i<span class="op">=</span><span class="va">Exp_sd</span>, n1i<span class="op">=</span><span class="va">Exp_n</span>,</span>
@@ -336,7 +336,7 @@
 </div>
 <p>Running that code created a plot, a .csv file, and displayed data in the console. I prefer to first examine the plot, which shows three outliers in blue.</p>
 <div class="inline-figure"><img src="images/outliers3level.png" style="width:100.0%"></div>
-<p>You can see here with have three outliers using this criteria, however we don’t know which comparisons they are. Both the data in the console and generated .csv file tell us which comparisons were outliers.</p>
+<p>You can see here we have three outliers using this criteria, however we don’t know which comparisons they are. Both the data in the console and generated .csv file tell us which comparisons were outliers.</p>
 <p>At this point, similar to conventional meta-analysis, we need to examine the studies in more detail. First, I check for any data entry errors. Sometimes decimal points are in the wrong place, which can easy create an outlier.</p>
 <div id="checking-for-influence" class="section level4" number="11.3.3.1">
 <h4>
@@ -429,7 +429,7 @@
 <p><em>What’s this code doing?</em></p>
 <p>We are creating a data item called <strong>hatvalues</strong>, and calculating hat values using the <strong>hatvalues</strong> function in metafor for the overall meta-analytic model. We then display the results in the console.</p>
 </div>
-<p>Running that code displays some statistics in the console, but honestly I find them challenging to read in that format. So instead, let’s write all of our influence statistics into a .csv file for easier viewing.</p>
+<p>Running that code displays some statistics in the console, but honestly I find them challenging to read in that format. So instead, we will write all of our influence statistics into a .csv file for easier viewing.</p>
 <div class="rmdnote">
 <div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">##Print file that lists influence info to examine them. This goes into working directory</span></span>
@@ -447,7 +447,7 @@
 <h4>
 <span class="header-section-number">11.3.3.2</span> Dealing with Outliers and Influential Studies<a class="anchor" aria-label="anchor" href="#dealing-with-outliers-and-influential-studies"><i class="fas fa-link"></i></a>
 </h4>
-<p>We know from this data that three comparisons in our dataset are potential outliers, but they aren’t significant. What do we do from here? Well, there’s a lot of options, but here are my recommended steps:</p>
+<p>We know from this data that three comparisons in our dataset are potential outliers, but they aren’t significantly influencing our overall meta-analytical result. What do we do from here? Well, there’s a lot of options, but here are my recommended steps:</p>
 <ul>
 <li><p>Go back to your data and check the effect size. Is it oddly large or small? If so, check and see if you have a typo in the data.</p></li>
 <li><p>Let’s say the data has no errors. Next we’ll look at the study itself. Is there something substantially methodologically ‘wrong’ or is it significantly different than the other studies in your sample? If so, you may be able to rationalize removing the study from your data set. If you do, be sure to report that you removed the study, and why, in your manuscript.</p></li>
@@ -687,8 +687,7 @@
 </h2>
 <p>We should always include a forest plot with our results. Unfortunately, this is a bit more complex with a three-level meta-analysis because we have both study-level effects and (often) multiple comparisons from within each study. However, there are some really fun visualizations we can create if we borrow some code from others. Let’s see what’s possible.</p>
 <div class="rmdnote">
-<p><strong>Important Note:</strong> We’re going to use a different file for creating our forest and caterpillar plots. This same file and data preparation is needed to create the funnel plots to evaluate publication bias. For that reason, I tend to create my forest plots, caterpillar plots, and funnel plots all at the same time. In addition, because it uses a different data file, I generally create a second R code file as well specifically for making plots. That’s why this all grouped at the end of this chapter.
-The code in this plots section is adapted from Fernández-Castilla et al. (2020)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Belén Fernández-Castilla et al., &lt;span&gt;“Visual Representations of Meta-Analyses of Multiple Outcomes: Extensions to Forest Plots, Funnel Plots, and Caterpillar Plots,”&lt;/span&gt; &lt;em&gt;Methodology&lt;/em&gt; 16, no. 4 (December 22, 2020): 299–315, &lt;a href="https://doi.org/10.5964/meth.4013"&gt;https://doi.org/10.5964/meth.4013&lt;/a&gt;.&lt;/p&gt;'><sup>50</sup></a></span>. I have slightly adapted the code to fit our data.</p>
+<p><strong>Important Note:</strong> We’re going to use a different file for creating our forest and caterpillar plots. This same file and data preparation is needed to create the funnel plots to evaluate publication bias. For that reason, I tend to create my forest plots, caterpillar plots, and funnel plots all at the same time. In addition, because it uses a different data file, I generally create a second R code file as well specifically for making plots. That’s why this all grouped at the end of this chapter. The code in this plots section is adapted from Fernández-Castilla et al. (2020)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Belén Fernández-Castilla et al., &lt;span&gt;“Visual Representations of Meta-Analyses of Multiple Outcomes: Extensions to Forest Plots, Funnel Plots, and Caterpillar Plots,”&lt;/span&gt; &lt;em&gt;Methodology&lt;/em&gt; 16, no. 4 (December 22, 2020): 299–315, &lt;a href="https://doi.org/10.5964/meth.4013"&gt;https://doi.org/10.5964/meth.4013&lt;/a&gt;.&lt;/p&gt;'><sup>50</sup></a></span>. I have slightly adapted the code to fit our data.</p>
 </div>
 <div id="preparatory-work" class="section level4" number="11.4.0.1">
 <h4>
@@ -1132,7 +1131,7 @@ The code in this plots section is adapted from Fernández-Castilla et al. (2020
 <h3>
 <span class="header-section-number">11.4.1</span> Publication Bias<a class="anchor" aria-label="anchor" href="#publication-bias-1"><i class="fas fa-link"></i></a>
 </h3>
-<p>Oh we’re not done yet, we haven’t even talked about publication bias yet! Publication bias is more difficult to examine in three-level models than conventional meta-analysis models. Furthermore, the tests we have for conventional meta-analysis models often don’t function well in three-level applications (Rodgers &amp; Pustejovsky, 2021)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Melissa A. Rodgers and James E. Pustejovsky, &lt;span&gt;“Evaluating Meta-Analytic Methods to Detect Selective Reporting in the Presence of Dependent Effect Sizes.”&lt;/span&gt; &lt;em&gt;Psychological Methods&lt;/em&gt; 26, no. 2 (April 2021): 141–60, &lt;a href="https://doi.org/10.1037/met0000300"&gt;https://doi.org/10.1037/met0000300&lt;/a&gt;.&lt;/p&gt;'><sup>54</sup></a></span>. Instead, we can look at funnel plots to examine them for asymmetry.</p>
+<p>Oh we’re not done yet, we haven’t even talked about publication bias yet! Publication bias is more difficult to examine in three-level models than conventional meta-analysis models. Furthermore, the tests we have for conventional meta-analysis models often don’t function well in three-level applications (Rodgers &amp; Pustejovsky, 2021)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Melissa A. Rodgers and James E. Pustejovsky, &lt;span&gt;“Evaluating Meta-Analytic Methods to Detect Selective Reporting in the Presence of Dependent Effect Sizes.”&lt;/span&gt; &lt;em&gt;Psychological Methods&lt;/em&gt; 26, no. 2 (April 2021): 141–60, &lt;a href="https://doi.org/10.1037/met0000300"&gt;https://doi.org/10.1037/met0000300&lt;/a&gt;.&lt;/p&gt;'><sup>54</sup></a></span>. Instead, one approach we can take is to look at funnel plots to examine them for asymmetry.</p>
 <div id="funnel-plots" class="section level4" number="11.4.1.1">
 <h4>
 <span class="header-section-number">11.4.1.1</span> Funnel Plots<a class="anchor" aria-label="anchor" href="#funnel-plots"><i class="fas fa-link"></i></a>
@@ -1480,7 +1479,7 @@ The code in this plots section is adapted from Fernández-Castilla et al. (2020
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Beginner’s Guide to Systematic Review and Meta-Analysis</strong>" was written by Noah L. Schroeder, Ph.D.. It was last built on 2024-02-07.</p>
+    <p>"<strong>A Beginner’s Guide to Systematic Review and Meta-Analysis</strong>" was written by Noah L. Schroeder, Ph.D.. It was last built on 2024-02-08.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

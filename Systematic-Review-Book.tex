@@ -121,7 +121,7 @@
 
 \title{A Beginner's Guide to Systematic Review and Meta-Analysis}
 \author{Noah L. Schroeder, Ph.D.}
-\date{2024-02-06}
+\date{2024-02-07}
 
 \begin{document}
 \maketitle
@@ -138,7 +138,7 @@
 
 This book is designed as a fundamental ``how-to'' guide to help researchers new to systematic review and meta-analysis in education and other fields. \ul{This book is focused on how to execute these methodologies, not the statistics driving specific methods}. It is written in a rather informal format in an effort to help a reader connect with the content.
 
-While following the steps in this book can help you run a systematic review or meta-analysis successfully, I highly recommend learning why certain decisions are made. For example, in the meta-analysis section of this book, I assume that you understand what is happening statistically in a meta-analysis. I do not explain the formulas, main ideas, assumptions, etc. in any sort of depth. There are plenty of resources available to help you learn this information, it is simply outside the current scope of this book. \ul{This book is currently a strictly a ``how-to'' guide and I have no intention to make it into what I would consider a ``true'' statistics book.}
+While following the steps in this book can help you run a systematic review or meta-analysis successfully, I highly recommend learning why certain decisions are made. For example, in the meta-analysis section of this book, I assume that you understand what is happening statistically in a meta-analysis. I do not explain the formulas, main ideas, assumptions, etc. in any sort of depth. There are plenty of resources available to help you learn this information, it is simply outside the current scope of this book. \ul{This book is currently a strictly ``how-to'' guide and I have no intention to make it into what I would consider a ``true'' statistics book.}
 
 \textbf{What makes this book different than others?} All meta-analysis examples in this book are using standardized mean difference effect sizes (Hedge's \emph{g}). There are a lot of examples online of meta-analysis in R using correlations, and this book was created, in part, because there were very few resources I could find about how to do meta-analysis with standardized mean differences.
 
@@ -165,7 +165,7 @@ This book is designed for:
   Anyone else who wants to improve their knowledge of systematic review and meta-analytical methods.
 \end{itemize}
 
-My aim with this book is to make systematic review, and particularly meta-analysis, accessible to those who may not fully understand every aspect of R, want to create reproducible analyses, and most of all, enjoy the free nature of R.
+My aim with this book is to make systematic review, and particularly meta-analysis, accessible to those who may not fully understand every aspect of R but want to create reproducible analyses, and most of all, enjoy the free nature of R.
 
 \hypertarget{what-will-you-learn}{%
 \section*{What will you learn?}\label{what-will-you-learn}}
@@ -214,7 +214,7 @@ If you find errors in the code or text, please email me so I can correct them.
 \section*{About the author.}\label{about-the-author.}}
 \addcontentsline{toc}{section}{About the author.}
 
-My name is Noah Schroeder, I received my Ph.D.~from the Educational Psychology program at Washington State University. I taught myself how to use R and metafor using published papers and online resources because I was bored and it seemed like a fun thing to do. My areas of expertise are virtual humans and other pedagogical agents, multimedia learning, and of course, review methodologies. Please feel free to visit my \href{https://scholar.google.com/citations?user=W-Ij6voAAAAJ\&hl=en\&oi=ao}{Google Scholar profile}.
+My name is Noah Schroeder, I received my Ph.D.~from the Educational Psychology program at Washington State University. I learned about meta-analysis using GUI-based programs. I taught myself how to use R and metafor using published papers and online resources because I was bored and it seemed like a fun thing to do. I also could not do the analyses I wanted (three-level meta-analysis) in GUI-based programs, but I could run them in R. My areas of expertise are virtual humans and other pedagogical agents, multimedia learning, and of course, review methodologies. Please feel free to visit my \href{https://scholar.google.com/citations?user=W-Ij6voAAAAJ\&hl=en\&oi=ao}{Google Scholar profile}.
 
 \hypertarget{how-to-cite-this-book}{%
 \chapter*{How to Cite this Book}\label{how-to-cite-this-book}}
@@ -222,7 +222,7 @@ My name is Noah Schroeder, I received my Ph.D.~from the Educational Psychology p
 
 Please cite this book as:
 
-Schroeder, N. L. (2024). \emph{A beginner's guide to systematic review and meta-analysis.} Available at http:
+Schroeder, N. L. (2024). \emph{A beginner's guide to systematic review and meta-analysis.} Available at \url{https://noah-schroeder.github.io/reviewbook/}
 
 \hypertarget{part-background}{%
 \part{Background}\label{part-background}}
@@ -237,7 +237,7 @@ This chapter serves as a surface level introduction to systematic reviews. It is
 
 Let's get this out of the way early: systematic review is both an umbrella term, containing many types of systematically-conducted reviews, as well as a specific methodology. I know that's confusing. If you think it is confusing, you're not alone. You know how I know? I know it's confusing because I see a lot of scoping reviews published that are called systematic reviews. While scoping reviews are conducted systematically, they are more properly labeled as scoping reviews. Imagine my disappointment when I expect to be reading really well-synthesized findings about the efficacy or design of an intervention and instead I end up reading a high-level overview of the field.
 
-So, what types of reviews are we talking about when we talk about systematic reviews in the educational sciences? We're typically referring to scoping reviews (relatively new to the field at the time of writing, but not new as a method), systematic reviews, and meta-analyses. Yes, meta-analyses are actually a type of systematic review. In fact, the methods are identical until the data extraction and data analysis. In systematic reviews we (usually) qualitatively analyze the data, while in meta-analysis we quantitatively analyze the data. There are a lot of different types of systematic reviews you should be aware of though. I recommend reading this classic piece by Grant and Booth (2009)\citep{grant2009}.
+So, what types of reviews are we talking about when we talk about systematic reviews in the educational sciences? We're typically referring to scoping reviews (relatively new to the field (in January, 2024), but not new as a method), systematic reviews, and meta-analyses. Yes, meta-analyses are actually a type of systematic review. In fact, the methods are identical until the data extraction and data analysis. In systematic reviews we (usually) qualitatively analyze the data, while in meta-analysis we quantitatively analyze the data. There are a lot of different types of systematic reviews you should be aware of though. I recommend reading \href{https://onlinelibrary.wiley.com/doi/full/10.1111/j.1471-1842.2009.00848.x}{this classic piece by Grant and Booth (2009)}\citep{grant2009}.
 
 Let's take a quick look at the different types of systematic reviews we typically see in education.
 
@@ -253,23 +253,23 @@ For more about scoping reviews, please review the \href{http://www.prisma-statem
 \hypertarget{systematic-reviews}{%
 \subsection{Systematic Reviews}\label{systematic-reviews}}
 
-Systematic reviews tend to answer more specific questions than scoping reviews. For example, you may \ul{look at the efficacy of an intervention or how to design an intervention to be most effective.} Typically, systematic review, when used as the method rather than an umbrella term, refers to a \emph{qualitative thematic analysis} of the data from primary studies.
+Systematic reviews tend to answer more specific questions than scoping reviews. For example, you may \ul{look at the efficacy of an intervention or how to design an intervention to be most effective.} Typically, systematic review, when used as the method rather than an umbrella term, refers to a \emph{qualitative analysis} of the data from primary studies.
 
-Importantly, if you are going to conduct a systematic review, you should review the PRISMA guidelines (Page et al., 2021)\citep{page2021}.
+Importantly, if you are going to conduct a systematic review, you should review the \href{http://www.prisma-statement.org/}{PRISMA guidelines} (Page et al., 2021)\citep{page2021}.
 
 \hypertarget{umbrella-reviews}{%
 \subsection{Umbrella Reviews}\label{umbrella-reviews}}
 
-Umbrella reviews are reviews of reviews. In other words, we collect all of the reviews in the field and synthesize them. Pretty cool right? You can read more about them in Aromataris et al.~(2015)\citep{aromataris2015}.
+Umbrella reviews are systematic reviews of reviews. In other words, we collect all of the reviews in the field and synthesize them. Pretty cool right? You can read more about them in Aromataris et al.~(2015)\citep{aromataris2015}.
 
 \hypertarget{meta-analysis}{%
 \subsection{Meta-Analysis}\label{meta-analysis}}
 
-Meta-analysis is an extension of systematic review methods, with the primary difference being that data are analyzed \emph{quantitatively} rather than qualitatively. There are various types of meta-analysis, including conventional (covered in this book), three-level (covered in this book), as well as structural equation modeling meta-analysis (\href{http://www.suzannejak.nl/MASEM_SJak.pdf}{which you can read about here}). There are other types as well but they're not common in education fields at the time of writing.
+Meta-analysis is an extension of systematic review methods, with the primary difference being that data are analyzed \emph{quantitatively} rather than qualitatively. There are various types of meta-analysis, including conventional (covered in this book), three-level (covered in this book), as well as structural equation modeling meta-analysis (\href{http://www.suzannejak.nl/MASEM_SJak.pdf}{which you can read about here}). There are other types as well (e.g., Bayesian) but they're not common in education fields at the time of writing (January, 2024).
 
 As I noted, in this book we don't explore the statistical aspects of meta-analysis, it's a how-to book. But you can read about the statistics in other sources, such as \href{https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/}{Doing Meta-Analysis in R: A Hands-On Guide} \citep{harrer2021}. I felt Harrer et al.~did a great job making meta-analysis accessible in that book, so if you are interested in an introduction to the statistical side of meta-analysis, it's a great resource in my opinion.
 
-Importantly, if you are going to conduct a meta-analysis, you should review the PRISMA guidelines (Page et al., 2021)\citep{page2021}. The guidelines apply to meta-analysis as well as systematic review.
+Importantly, if you are going to conduct a meta-analysis, you should review the \href{http://www.prisma-statement.org/}{PRISMA guidelines} (Page et al., 2021)\citep{page2021}. The guidelines apply to meta-analysis as well as systematic review.
 
 \hypertarget{non-systematic-reviews}{%
 \section{Non-Systematic Reviews}\label{non-systematic-reviews}}
@@ -465,7 +465,7 @@ Arguably the most important part of your entire review is creating a good search
 
 So, what can we do to make sure we have a good search string? First, make sure you actually know the field you're conducting a review in. Read some papers, gain some knowledge. You'll likely learn the keywords that should be used through this process. Another important step is to look at existing systematic reviews and meta-analyses in the field. What keywords did they use?
 
-Keep in mind you can use all sorts of strategies to search within databases, such as parenthesis, quotation marks, AND, OR, and asterisks. How these types of strategies function may vary between databases but they generally have documentation available that tells you what types of operators their search supports.
+Keep in mind you can use all sorts of strategies to search within databases, such as parentheses, quotation marks, AND, OR, and asterisks. How these types of strategies function may vary between databases but they generally have documentation available that tells you what types of operators their search supports.
 
 \hypertarget{how-broad-or-narrow-should-the-search-be}{%
 \subsection{How broad or narrow should the search be?}\label{how-broad-or-narrow-should-the-search-be}}
@@ -475,7 +475,7 @@ This totally depends on your study. Some fields are big. Some fields are small. 
 \hypertarget{ways-people-try-to-reduce-the-number-of-studies.}{%
 \subsubsection{Ways people try to reduce the number of studies.}\label{ways-people-try-to-reduce-the-number-of-studies.}}
 
-Should we restrict our studies to only those published in journal articles? This is quite common, but personally \ul{I do not prefer this practice.} This greatly limits what will be located, especially in certain fields. One may argue, ``Well journal articles are the highest quality because they're peer-reviewed''. Well, I've read quite a few peer-reviewed articles I would call low-quality, so that argument doesn't hold much weight for me. In addition, many conferences, especially those with printed proceedings, are peer-reviewed. So, I do not prefer this approach of only reviewing journal articles.
+Should we restrict our studies to only those published in journal articles? This is quite common, but personally \ul{I do not prefer this practice.} This greatly limits what will be located, especially in certain fields. One may argue, ``Well journal articles are the highest quality because they're peer-reviewed''. Well, I've read quite a few peer-reviewed articles I would call low-quality, so that argument doesn't hold much weight for me. In addition, many conferences, especially those with printed proceedings, are peer-reviewed. So, I do not prefer the approach of only reviewing journal articles.
 
 Should we limit the studies by publication date? \ul{Maybe - but you should have a good reason}, such as a major breakthrough in the field that changed the nature of the field. Otherwise, this is, in my opinion, a weak rationale for reducing the scope of your search.
 
@@ -489,7 +489,7 @@ You should pick the databases you search intentionally, and the databases you ch
 \hypertarget{what-about-google-scholar}{%
 \subsection{What about Google Scholar?}\label{what-about-google-scholar}}
 
-Google Scholar is a bit difficult to search in a way others can replicate because, at the time of writing, you cannot export all the citations at once. So, I typically do not formally search Google Scholar, but I will use various combinations of keywords to informally search Google Scholar, and I'll add relevant studies to my database that were not located through other searches. I usually categorize this as something like, ``Additional studies located through informal searches''.
+Google Scholar is a bit difficult to search in a way others can replicate because, at the time of writing (January, 2024), you cannot export all the citations at once. So, I typically do not formally search Google Scholar, but I will use various combinations of keywords to informally search Google Scholar, and I'll add relevant studies to my database that were not located through other searches. I usually categorize this as something like, ``Additional studies located through informal searches''.
 
 \hypertarget{add-studies-from-existing-reviews}{%
 \section{Add Studies from Existing Reviews}\label{add-studies-from-existing-reviews}}
@@ -525,17 +525,17 @@ As noted on the \protect\hyperlink{crossPRISMA}{PRISMA} page, you should record 
 \hypertarget{exporting-studies-from-databases}{%
 \section{Exporting Studies from Databases}\label{exporting-studies-from-databases}}
 
-Nearly every database I've ever used has a way to mass export your located studies. I export my citations, \ul{with abstracts}, as a .ris file. That is so I have a record of the search (I keep the .ris file) and so I can upload the citations into a citation management system like \protect\hyperlink{0}{Zotero}, or into software to aid with screening like \protect\hyperlink{0}{Rayyan}, \protect\hyperlink{0}{Covidence}, or \protect\hyperlink{0}{MetaReviewer}. There is more information about these types of software in the \protect\hyperlink{0}{study screening chapter}.
+Nearly every database I've ever used has a way to mass export your located studies. I export my citations, \ul{with abstracts}, as a .ris file. That is so I have a record of the search (I keep the .ris file) and so I can upload the citations into a citation management system like \protect\hyperlink{0}{Zotero}, or into software to aid with screening like \href{https://asreview.nl/}{ASReview}, \href{https://www.rayyan.ai/}{Rayyan}, \href{https://www.covidence.org/}{Covidence}, or \href{https://www.metareviewer.org/}{MetaReviewer}. There is more information about these types of software in the \protect\hyperlink{screening}{study screening chapter}.
 
 \hypertarget{building-your-projects-citation-database}{%
 \section{Building Your Project's Citation Database}\label{building-your-projects-citation-database}}
 
-Now that you have all your .ris files from the databases you searched, you are likely going to want to combine them into your own citation database for your project. You can do this by uploading your files into a citation management system like \href{https://www.zotero.org/}{Zotero}, or into software to aid with screening like \href{https://www.rayyan.ai/}{Rayyan}, \href{https://www.covidence.org/}{Covidence}, or \href{https://www.metareviewer.org/}{MetaReviewer}.
+Now that you have all your .ris files from the databases you searched, you are likely going to want to combine them into your own citation database for your project. You can do this by uploading your files into a citation management system like \href{https://www.zotero.org/}{Zotero}, or into software to aid with screening like \href{https://asreview.nl/}{ASReview}, \href{https://www.rayyan.ai/}{Rayyan}, \href{https://www.covidence.org/}{Covidence}, or \href{https://www.metareviewer.org/}{MetaReviewer}.
 
 \hypertarget{removing-duplicates}{%
 \subsection{Removing Duplicates}\label{removing-duplicates}}
 
-When you search for studies across multiple databases, you are going to have duplicate entries, by which I mean, there will be studies that come up in multiple databases. Removing duplicates can be incredibly time consuming if you are doing that yourself with no software assistance. Fortunately, there are now tools that can help, such as \href{https://www.zotero.org/}{Zotero}, \href{https://www.rayyan.ai/}{Rayyan}, and \href{https://www.covidence.org/}{Covidence}.
+When you search for studies across multiple databases, you are going to have duplicate entries, by which I mean, there will be studies that come up in multiple databases. Removing duplicates can be incredibly time consuming if you are doing that yourself with no software assistance. Fortunately, there are now tools that can help, such as \href{https://www.zotero.org/}{Zotero}, \href{https://asreview.nl/}{ASReview}, \href{https://www.rayyan.ai/}{Rayyan}, and \href{https://www.covidence.org/}{Covidence}.
 
 I've used Zotero for years for duplicate removal but (at the time of writing) it can be tedious and time consuming because you have to individually approve each duplicate merge. I have not used duplicate removal in Rayyan yet. I am currently (January, 2024) collaborating on a review using Covidence to remove duplicates, and so far it seems helpful. \textbf{I do not have an opinion as to if one software is ``best'' because what is ``best'' will vary by your use case.} I'll just say you should explore all of the options and see what your preference is, because there are certainly pros and cons to each.
 
@@ -590,7 +590,7 @@ How do you calculate this? Well, it depends on what you are calculating. Many ti
 \hypertarget{automation-tools}{%
 \section{Automation Tools}\label{automation-tools}}
 
-At the time of writing, we are seeing the rise of AI-assisted abstract screening. A number of different software platforms can aid with this. Is it a good idea? Time will tell. Before relying on AI-assisted screening, where you have AI-exclude studies based on algorithms, I recommend looking for evidence that the software works well for your use case. This type of work exists in the literature and can help guide what types of software works best, and how different algorithms perform in different scenarios. We recently (January, 2024) used \href{https://asreview.nl/}{ASReview} after reading this \href{https://osf.io/preprints/psyarxiv/fpwc2/download}{preprint by Campos et al.~(2023)}\citep{campos2023}. Overall, using ASReview was a very positive experience for us, but we likely would have screened all of the studies had we not read the findings of Campos et al.~(2023)\citep{campos2023}. One benefit of the AI-assisted screening however is the ability to move the most relevant studies first. Even if all abstracts are reviewed, this process alone could likely save the screener time.
+At the time of writing (January, 2024), we are seeing the rise of AI-assisted abstract screening. A number of different software platforms can aid with this. Is it a good idea? Time will tell. Before relying on AI-assisted screening, where you have AI-exclude studies based on algorithms, I recommend looking for evidence that the software works well for your use case. This type of work exists in the literature and can help guide what types of software works best, and how different algorithms perform in different scenarios. We recently (January, 2024) used \href{https://asreview.nl/}{ASReview} after reading this \href{https://osf.io/preprints/psyarxiv/fpwc2/download}{preprint by Campos et al.~(2023)}\citep{campos2023}. Overall, using ASReview was a very positive experience for us, but we likely would have screened all of the studies had we not read the findings of Campos et al.~(2023)\citep{campos2023}. One benefit of the AI-assisted screening however is the ability to move the most relevant studies first. Even if all abstracts are reviewed, this process alone could likely save the screener time.
 
 \hypertarget{data}{%
 \chapter{Data Extraction and Coding}\label{data}}
@@ -619,7 +619,7 @@ One very important factor is keeping a table of the variables you're coding. I l
 \hypertarget{systematic-review-outcome-data-extraction}{%
 \section{Systematic Review Outcome Data Extraction}\label{systematic-review-outcome-data-extraction}}
 
-It is very difficult to provide guidance on how to set up your coding form for systematic reviews, simply because there are \emph{so} many different options. For example, do you want to know the fine-grained results, such as mean, standard deviations, and sample sizes? Or do you want to just know overall statistical test results? Or, maybe you only care about the conclusion the authors made based on those findings?
+It is very difficult to provide guidance on how to set up your coding form for systematic reviews simply because there are \emph{so} many different options. For example, do you want to know the fine-grained results, such as mean, standard deviations, and sample sizes? Or do you want to just know overall statistical test results? Or, maybe you only care about the conclusion the authors made based on those findings?
 
 Regardless, you'll probably have key features you want to code from the studies. Depending on your research questions, these can vary widely. For example, you might be interested in publication trends, coding the year and type of publication. Or, you might be interested in the design of an intervention, coding features of the implementation. Or, you might be interested in the type of assessment used and code their qualities. Or, you might code all of these things. It really depends on your research questions. \ul{Your research questions should guide the data you extract from studies.}
 
@@ -635,11 +635,11 @@ Another important note I would like to make, because I see it so poorly reported
 \hypertarget{conventional-meta-analysis}{%
 \subsection{Conventional Meta-analysis}\label{conventional-meta-analysis}}
 
-One key assumption of conventional meta-analysis is that of \ul{statistical independence - each participant can only be counted once.} Let's say you have a study that has three dependent variables, all of which are of interest to you - guess what, in conventional meta-analysis, you have to pick one dependent variable (or calculate weighted means and pooled standard deviations, but I do not prefer this method for reasons discussed in the \protect\hyperlink{0}{conventional meta-analysis chapter}). \textbf{Due to this, each comparison will appear on one row on your coding form.}
+One key assumption of conventional meta-analysis is that of \ul{statistical independence - each participant can only be counted once.} Let's say you have a study that has three dependent variables, all of which are of interest to you - guess what, in conventional meta-analysis, you have to pick one dependent variable (or calculate weighted means and pooled standard deviations, but I do not prefer this method for reasons discussed in the \protect\hyperlink{meta}{conventional meta-analysis chapter}). \textbf{Due to this, each comparison will appear on one row on your coding form.}
 
 Let's look at some examples of different scenarios. Please note that you can have as many moderator variables as you wish, and they can be continuous or categorical.
 
-Our first example is a study with one experiment and three groups: a control group, a group using clickers, and a group using clickers with self-reflection prompts. For the purposes of our example, we'll ignore the clicker with self-reflection prompts group, because a) we only have one control group, so we can only have one comparison or we violate the principle of statistical independence, and b) I don't like to combine groups for reasons discussed in the \protect\hyperlink{crossmeta}{conventional meta-analysis chapter}. This means we'll compare the control group and the clicker group. We'll also code for two moderator variables, the type of control condition (categorical) and the student's confidence level using clickers (continuous). Our coding form may look like this:
+Our first example is a study with one experiment and three groups: a control group, a group using clickers, and a group using clickers with self-reflection prompts. For the purposes of our example, we'll ignore the clicker with self-reflection prompts group, because a) we only have one control group, so we can only have one comparison or we violate the principle of statistical independence, and b) I don't like to combine groups for reasons discussed in the \protect\hyperlink{meta}{conventional meta-analysis chapter}. This means we'll compare the control group and the clicker group. We'll also code for two moderator variables, the type of control condition (categorical) and the student's confidence level using clickers (continuous). Our coding form may look like this:
 
 \includegraphics[width=2\textwidth,height=\textheight]{images/MA_coding.PNG}
 
@@ -682,7 +682,7 @@ That's basically it. The most important thing to remember when coding a conventi
 \hypertarget{three-level-meta-analysis}{%
 \subsection{Three-Level Meta-Analysis}\label{three-level-meta-analysis}}
 
-As explained in the \protect\hyperlink{cross3LMA}{three-level meta-analysis chapter}, three-level meta-analysis can account for dependencies in the data. So, remember that study with three dependent variables that were important? Well, if we use three-level meta-analysis we can include all of that data!
+As explained in the \protect\hyperlink{3LMA}{three-level meta-analysis chapter}, three-level meta-analysis can account for dependencies in the data. So, remember that example study with three dependent variables that were important? Well, if we use three-level meta-analysis we can include all of that data!
 
 There are some important things we should note about how to structure your coding form. These are best seen through an example, so let's analyze an example coding form. Note that just like conventional meta-analysis, you can have as many moderator variables as you wish, and they can be continuous or categorical.
 
@@ -747,24 +747,26 @@ Another limitation of many GUI-based platform is that (at the time of writing) t
 
 One final thing I found I enjoyed about learning R and metafor\citep{viechtbauer2010} was that it taught me just how much you may not realize might be happening behind the scenes in GUI-based software. For example, do you know what estimator you're using in the GUI-based software? Are you using a Knapp-Hartung adjustment? These kinds of questions are important, yet you may not think about them if you just copy-pasted your data and asked the software to run the analysis.
 
+Let's get started using R.
+
 \hypertarget{install-r-and-r-studio}{%
 \section{Install R and R Studio}\label{install-r-and-r-studio}}
 
-You can \href{https://www.r-project.org/}{download and install R here} and I recommend \href{https://posit.co/download/rstudio-desktop/}{downloading and installing R Studio} (free version) as well.
+You can \href{https://www.r-project.org/}{download and install R here} and I recommend \href{https://posit.co/download/rstudio-desktop/}{downloading and installing R Studio} (there is a free version) as well.
 
 Once you have R and R Studio installed, you'll want to open R Studio.
 
 \hypertarget{what-you-need-to-know}{%
 \section{What You Need to Know}\label{what-you-need-to-know}}
 
-What do I think you \emph{need} to know about R and R Studio before continuing in this book? Well, honestly not a lot. I've tried to break it down into very simple terms. I would install R and R Studio, then continue with the book as long as you know where to enter code into the file you're working on (top left of R Studio for me), where the console is (bottom left of R Studio for me), where the environment is (top right of R Studio for me), and where the files and plots appear (bottom right of R Studio for me), I think you'll likely be OK to move forward. Here's a screenshot of R Studio so you can see where everything is on my set up (which I believe is the default).
+What do I think you \emph{need} to know about R and R Studio before continuing in this book? Well, honestly not a lot. I've tried to break it down into very simple terms. I would install R and R Studio, then continue with the book as long as you know where to enter code into the file you're working on (top left of R Studio for me), where the console is (bottom left of R Studio for me), where the environment is (top right of R Studio for me), and where the files and plots appear (bottom right of R Studio for me). If you understand those big ideas, I think you'll likely be OK to move forward. Here's a screenshot of R Studio so you can see where everything is on my set up (which I believe is the default).
 
 \includegraphics[width=1\textwidth,height=\textheight]{images/Rstudio.png}
 
 \hypertarget{set-your-working-directory}{%
 \subsection{Set Your Working Directory}\label{set-your-working-directory}}
 
-You'll need to tell R where to save your files and where to retrieve files from, which is known as your working directory. There is not really a ``right'' or ``wrong'' way to do this. For simplicity, I set up a new project folder on my desktop, and I save my data file there. Then I set that folder as my working directory. To set your working directory, you click on session, then set working directory, as seen in the screenshot below. I would choose the ``choose directory'' option, then choose my desktop folder that is my project folder.
+You'll need to tell R where to save your files and where to retrieve files from, which is known as your working directory. For simplicity, I set up a new project folder on my desktop, and I save my data file there. Then I set that folder as my working directory. To set your working directory, you click on session, then set working directory, as seen in the screenshot below. I would choose the ``choose directory'' option, then choose my desktop folder that is my project folder.
 
 \includegraphics[width=1\textwidth,height=\textheight]{images/workingdirectory.PNG}
 
@@ -803,12 +805,14 @@ After you click run, you'll see things appear in the console. That's normal. It 
 \hypertarget{was-that-easy}{%
 \subsubsection{Was that easy?}\label{was-that-easy}}
 
-If this first step was easy or you figured it out without too much trouble, I think you're ready to move forward in the book.
+If this first step was easy or you figured it out without too much trouble, I think you're ready to move forward in the book. The meta-analysis codes sections of the book rely on you copy-pasting sections of code from the book into your R Studio interface, then highlighting the relevant section of code you just copy-pasted into R Studio, and then clicking `run'.
 
 \hypertarget{was-this-too-difficult}{%
 \subsubsection{Was this too difficult?}\label{was-this-too-difficult}}
 
 If you struggled to keep up so far, then I would suggest you start at the very basics. There are so many resources online, I don't see a reason to rewrite what others have written about extensively. I know getting started with R Studio can be intimidating. It seems scary and complicated. After you get started and start writing your own code, it won't seem so scary. Here is a starting point: \url{https://education.rstudio.com/learn/beginner/}
+
+How not scary does R become? Well, you may be surprised to hear that I wrote this entire book in R Studio using the bookdown package. R is very versatile!
 
 \hypertarget{meta}{%
 \chapter{Conventional Meta-Analysis}\label{meta}}
@@ -826,14 +830,14 @@ Let's say you understand the differences between conventional and three-level me
 \hypertarget{preparing-your-data}{%
 \section{Preparing your data}\label{preparing-your-data}}
 
-Hopefully you have already run your \protect\hyperlink{crossliteraturesearch}{literature search}, \protect\hyperlink{crossscreening}{screened your studies}, and \protect\hyperlink{crossdata}{extracted your data}. This point forward assumes you have already completed these steps.
+Hopefully you have already run your \protect\hyperlink{literaturesearch}{literature search}, \protect\hyperlink{screening}{screened your studies}, and \protect\hyperlink{data}{extracted your data}. This point forward assumes you have already completed these steps.
 
 \hypertarget{your-data-file}{%
 \subsection{Your Data File}\label{your-data-file}}
 
 Personally I prefer to use .csv files as my data file that I import into R. Why? Because that's what was always used in the examples I found online when I was learning R, and I've used it ever since. Why change something that works? Plus, .csv works with many different software programs and across various operating systems. ~
 
-As noted in the \protect\hyperlink{crossdata}{data extraction and coding chapter}, metafor uses two pieces of information for conducting the meta-analysis that you need to consider before importing data in R: the effect size (\textbf{\emph{yi}}) and the variance (\textbf{\emph{vi}}). If you read the previous chapters, you know you have choices when coding: you can code the mean, standard deviation, and sample size for the experimental and control groups and then use R and metafor to calculate the effect size and variance for each comparison (my recommended method), or you can calculate the effect size and variance for each effect size yourself. I prefer the former approach because I find it helpful to have all of this data to not only check for errors in coding (such as a misplaced decimal point -- these things happen!) and also for calculating sample sizes for tables.
+As noted in the \protect\hyperlink{data}{data extraction and coding chapter}, metafor uses two pieces of information for conducting the meta-analysis that you need to consider before importing data in R: the effect size (\textbf{\emph{yi}}) and the variance (\textbf{\emph{vi}}). If you read the previous chapters, you know you have choices when coding: you can code the mean, standard deviation, and sample size for the experimental and control groups and then use R and metafor to calculate the effect size and variance for each comparison (my recommended method), or you can calculate the effect size and variance for each effect size yourself. I prefer the former approach because I find it helpful to have all of this data to not only check for errors in coding (such as a misplaced decimal point -- these things happen!) and also for calculating sample sizes for tables.
 
 If you choose to use R and metafor to calculate the effect sizes and variance, it will be important to have each mean, standard deviation, and sample size for the experimental group and the control group in their own columns. I recommend having simple column titles that are descriptive and easy to remember, because you will have to type them into R. \textbf{See a sample coding form below, which we will use for our conventional meta-analysis}. Note that you can have as many moderator variables as you wish, and they can be continuous or categorical.
 
@@ -845,12 +849,12 @@ So, assuming you have all of that done, let's get onto the fun stuff, running a 
 \hypertarget{example-data-for-this-analysis}{%
 \subsection{Example Data for This Analysis}\label{example-data-for-this-analysis}}
 
-If you want to follow along with this specific example, you'll want to use the subset of data from Schroeder and Cenkci's (2018)\citep{schroeder2018} meta-analysis on the spatial split-attention effect. The data can be downloaded here.
+If you want to follow along with this specific example, you'll want to use the subset of data from Schroeder and Cenkci's (2018)\citep{schroeder2018} meta-analysis on the spatial split-attention effect. The data can be \href{https://github.com/noah-schroeder/reviewbook/blob/abfdb439ef81267b388ef75067a03262e1e59020/SC\%20sample\%20data.csv}{downloaded here}.
 
 \hypertarget{load-r-packages}{%
 \subsection{Load R Packages}\label{load-r-packages}}
 
-First we need to load our R packages. Hopefully you installed these already, if not it won't take long, just see the \protect\hyperlink{crossrpackages}{R Basics chapter}. Assuming you have already installed the R packages, let's load them up so we can do some meta-analysis!
+First we need to load our R packages. Hopefully you installed these already, if not it won't take long, just see the \protect\hyperlink{rbasics}{R Basics chapter}. Assuming you have already installed the R packages, let's load them up so we can do some meta-analysis!
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -867,7 +871,7 @@ This code is simply loading the metafor package in the R environment so we can d
 \hypertarget{import-your-data-into-r-studio}{%
 \subsection{Import Your Data Into R Studio}\label{import-your-data-into-r-studio}}
 
-The first step to conducting your meta-analysis is to read in the data. To do that, we first want to set our working directory (more about that in the \protect\hyperlink{crossrbasics}{R Basics chapter}). Once you've set your working directory, you can use this piece of code.
+The first step to conducting your meta-analysis is to read in the data. To do that, we first want to set our working directory (more about that in the \protect\hyperlink{rbasics}{R Basics chapter}). Once you've set your working directory and saved the SC sample data file there, you can use this piece of code.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1073,7 +1077,7 @@ We know from this data that study 9 in our dataset is a potential outlier or has
 
   \begin{itemize}
   \item
-    My personal opinion is generally to retain the study as is - because it is valid data.
+    My current personal opinion is generally to retain the study as is - because it is valid data.
   \item
     Another option is to ``downsize'' the effect size to slightly larger (or smaller) than the next largest (or smallest) effect size.
 
@@ -1267,14 +1271,14 @@ This looks almost identical to the previous result when we calculated Q\textsubs
 
 Note that the test of moderators is different than before. Confusing right? \ul{Well, that's because the two tests, while named the same thing, are testing different things.} When we calculated Q\textsubscript{between,} the test of moderators was testing if there were significant differences between levels of the moderator. However, in this test of moderators it is testing if the moderators are significantly different than zero. These are totally different tests - \textbf{do not use this test of moderator as your Q\textsubscript{between} value because it most certainly is not!}
 
-What if you have more moderator variables to test? Well, you simply replace the `\textbf{graderange}' variable with whatever each moderator variable column in your data is labeled as, and don't forget to rename the data items as well (mod.gradeq and mod.grade). Then you can re-run the same two code sets to calculate Q\textsubscript{between} and the effect sizes.
+What if you have more moderator variables to test? Well, you simply replace the `\textbf{graderange}' variable with whatever each moderator variable column in your data is labeled as, and don't forget to rename the data items as well (\textbf{mod.gradeq} and \textbf{mod.grade}). Then you can re-run the same two code sets to calculate Q\textsubscript{between} and the effect sizes.
 
 \hypertarget{easily-create-tables}{%
 \subsubsection{Easily Create Tables}\label{easily-create-tables}}
 
 Have you tried to copy-paste the results of the moderator analysis from the console into a word processing software yet? Go ahead and try, the book will be here while you test it out.
 
-So you tried it, and that looks terrible right? And the tables are missing data reviewers want to see, like the number of participants per level of moderator. What if I told you that I have already spent time, with the help of Chris Palaguachi, creating the code to create these tables? Let's take a look at the code that will save you hours and hours of calculations and table manipulations.
+So you tried it, and that looks terrible right? And the tables are missing data reviewers want to see, like the number of participants per level of moderator. What if I told you that Chris Palaguachi and I have already spent time creating the code to create these tables? Let's take a look at the code that will save you hours and hours of calculations and table manipulations.
 
 \hypertarget{create-the-summary-table}{%
 \paragraph{Create the Summary Table}\label{create-the-summary-table}}
@@ -1290,7 +1294,7 @@ First we'll create the summary table. This is way easier than it sounds.
 
 \emph{What's this code doing?}
 
-First, we're creating a new data item, called \textbf{mod.grade\_table}. I The \textbf{coef(summary(mod.grade))} is simply telling metafor we want the coefficient summary for the mod.grade data - which is what we called our moderator analysis of the grade levels.
+First, we're creating a new data item, called \textbf{mod.grade\_table}. I The \textbf{coef(summary(mod.grade))} is simply telling metafor we want the coefficient summary for the \textbf{mod.grade} data - which is what we called our moderator analysis of the grade levels.
 
 Overall, this basically saves most of the data we want as a separate table.
 
@@ -1358,7 +1362,7 @@ The warning heeded, let's take a look at the code:
 
 \emph{What's this code doing?}
 
-This is another complex code. First, we are extracting some data from the moderator analysis (The relevant Q statistics) and naming them something else.
+This is another complex code. First, we are extracting some data from the moderator analysis (The relevant \emph{Q} statistics) and naming them something else.
 
 Then we are writing them into the format we want.
 
@@ -1579,14 +1583,14 @@ Let's say you understand the differences between conventional and three-level me
 \hypertarget{preparing-your-data-1}{%
 \section{Preparing your data}\label{preparing-your-data-1}}
 
-Hopefully you have already run your \protect\hyperlink{crossliteraturesearch}{literature search}, \protect\hyperlink{crossscreening}{screened your studies}, and \protect\hyperlink{crossdata}{extracted your data}. This point forward assumes you have already completed these steps.
+Hopefully you have already run your \protect\hyperlink{literaturesearch}{literature search}, \protect\hyperlink{screening}{screened your studies}, and \protect\hyperlink{data}{extracted your data}. This point forward assumes you have already completed these steps.
 
 \hypertarget{your-data-file-1}{%
 \subsection{Your Data File}\label{your-data-file-1}}
 
 Personally I prefer to use .csv files as my data file that I import into R. Why? Because that's what was always used in the examples I found online when I was learning R, and I've used it ever since. Why change something that works? Plus, .csv works with many different software programs and across various operating systems. ~
 
-As noted in the \protect\hyperlink{crossdata}{data extraction and coding chapter}, metafor uses two pieces of information for conducting the meta-analysis that you need to consider before importing data in R: the effect size (\textbf{\emph{yi}}) and the variance (\textbf{\emph{vi}}). If you read the previous chapters, you know you have choices when coding: you can code the mean, standard deviation, and sample size for the experimental and control groups and then use R and metafor to calculate the effect size and variance for each comparison (my recommended method), or you can calculate the effect size and variance for each effect size yourself. I prefer the former approach because I find it helpful to have all of this data to not only check for errors in coding (such as a misplaced decimal point -- these things happen!) and also for calculating sample sizes for tables.
+As noted in the \protect\hyperlink{data}{data extraction and coding chapter}, metafor uses two pieces of information for conducting the meta-analysis that you need to consider before importing data in R: the effect size (\textbf{\emph{yi}}) and the variance (\textbf{\emph{vi}}). If you read the previous chapters, you know you have choices when coding: you can code the mean, standard deviation, and sample size for the experimental and control groups and then use R and metafor to calculate the effect size and variance for each comparison (my recommended method), or you can calculate the effect size and variance for each effect size yourself. I prefer the former approach because I find it helpful to have all of this data to not only check for errors in coding (such as a misplaced decimal point -- these things happen!) and also for calculating sample sizes for tables.
 
 If you choose to use R and metafor to calculate the effect sizes and variance, it will be important to have each mean, standard deviation, and sample size for the experimental group and the control group in their own columns. I recommend having simple column titles that are descriptive and easy to remember, because you will have to type them into R. \textbf{See a sample coding form below that we will use to complete this analysis}. Note that you can have as many moderator variables as you wish, and they can be continuous or categorical.
 
@@ -1608,12 +1612,12 @@ So, assuming you have all of that done, let's get onto the fun stuff, running a 
 \hypertarget{example-data-for-this-analysis-1}{%
 \subsection{Example Data for This Analysis}\label{example-data-for-this-analysis-1}}
 
-If you want to follow along with this specific example, you'll want to use the subset of data from Schroeder et al.'s (2023)\citep{schroeder2023} meta-analysis on the effects of 360˚ video on learning. The data can be downloaded here.
+If you want to follow along with this specific example, you'll want to use the subset of data from Schroeder et al.'s (2023)\citep{schroeder2023} meta-analysis on the effects of 360˚ video on learning. The data can be \href{https://github.com/noah-schroeder/reviewbook/blob/abfdb439ef81267b388ef75067a03262e1e59020/360\%20sample\%20data.csv}{downloaded here}.
 
 \hypertarget{load-r-packages-1}{%
 \subsection{Load R Packages}\label{load-r-packages-1}}
 
-First we need to load our R packages. Hopefully you installed these already, if not it won't take long, just see the \protect\hyperlink{crossrpackages}{R Basics chapter}. Assuming you have already installed the R packages, let's load them up so we can do some analysis!
+First we need to load our R packages. Hopefully you installed these already, if not it won't take long, just see the \protect\hyperlink{rbasics}{R Basics chapter}. Assuming you have already installed the R packages, let's load them up so we can do some analysis!
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1635,7 +1639,7 @@ This code is simply loading the metafor, ggplot2, and dplyr packages in the R en
 \hypertarget{import-your-data-into-r-studio-1}{%
 \subsection{Import Your Data Into R Studio}\label{import-your-data-into-r-studio-1}}
 
-The first step to conducting your meta-analysis is to read in the data. To do that, we first want to set our working directory (more about that in the \protect\hyperlink{crossrbasics}{R Basics chapter}). Once you've set your working directory, you can use this piece of code.
+The first step to conducting your meta-analysis is to read in the data. To do that, we first want to set our working directory (more about that in the \protect\hyperlink{rbasics}{R Basics chapter}). Once you've set your working directory and saved the sample data file there, you can use this piece of code.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1730,7 +1734,7 @@ First, we're naming our meta-analysis result as a new piece of data in R, and we
 
 \textbf{rma.mv} is telling metafor that we want to run a random-effects, multivariate meta-analysis model. Within that, we're using \textbf{yi} to reference effect size data within our data set, \textbf{vi} to reference effect size variance within our data set.
 
-The next line is a bit more complex. Harrer et al.~(2021)\citep{harrer2021} explain that this is used to define the random effects and their nesting. Specifically, we will always start with \textbf{\textasciitilde1 and a vertical bar} for three-level models. Next, we need to define what our grouping variables are, in our case, it's going to be studies (\textbf{Study} column in our data set), and within studies, are effect size numbers (\textbf{ES\_number} column in our data set).
+The next line is a bit more complex. Harrer et al.~(2021)\citep{harrer2021} explain that this is used to define the random effects and their nesting. Specifically, we will always start with \textbf{\textasciitilde1 and a vertical bar} for three-level models. Next, we need to define what our grouping variables are, in our case, it's going to be studies (\textbf{Study} column in our data set), and within studies are effect size numbers (\textbf{ES\_number} column in our data set).
 
 \textbf{method} is specifying that we want to use Restricted Maximum-Likelihood.
 
@@ -2032,7 +2036,7 @@ We know from this data that three comparisons in our dataset are potential outli
 
   \begin{itemize}
   \item
-    My personal opinion is to retain the study as is - because it is valid data.
+    My current personal opinion is to retain the study as is - because it is valid data.
   \item
     Another option is to ``downsize'' the effect size to slightly larger (or smaller) than the next largest (or smallest) effect size.
 
@@ -2213,14 +2217,14 @@ This looks almost identical to the previous result when we calculated Q\textsubs
 
 Note that the test of moderators is different than before. Confusing right? \ul{Well, that's because the two tests, while named the same thing, are testing different things.} When we calculated Q\textsubscript{between,} the test of moderators was testing if there were significant differences between levels of the moderator. However, in this test of moderators it is testing if the moderators are significantly different than zero. These are totally different tests - \textbf{do not use this test of moderator as your Q\textsubscript{between} value because it most certainly is not!}
 
-What if you have more moderator variables to test? Well, you simply replace the `\textbf{grade\_c}' variable with whatever each moderator variable column in your data is labeled as, and don't forget to rename the data items as well (mod.gradeq and mod.grade). Then you can re-run the same two code sets to calculate Q\textsubscript{between} and the effect sizes.
+What if you have more moderator variables to test? Well, you simply replace the `\textbf{grade\_c}' variable with whatever each moderator variable column in your data is labeled as, and don't forget to rename the data items as well (\textbf{mod.gradeq} and \textbf{mod.grade}). Then you can re-run the same two code sets to calculate Q\textsubscript{between} and the effect sizes.
 
 \hypertarget{easily-create-tables-1}{%
 \subsubsection{Easily Create Tables}\label{easily-create-tables-1}}
 
 Have you tried to copy-paste the results of the moderator analysis from the console into a word processing software yet? Go ahead and try, the book will be here while you test it out.
 
-So you tried it, and that looks terrible right? And the tables are missing data reviewers want to see, like the number of participants per level of moderator. What if I told you that I have already spent time (with the help of Chris Palaguachi) creating the code to create these tables? Let's take a look at the code that will save you hours and hours of calculations and table manipulations.
+So you tried it, and that looks terrible right? And the tables are missing data reviewers want to see, like the number of participants per level of moderator. What if I told you that Chris Palaguachi and I have already spent time creating the code to create these tables? Let's take a look at the code that will save you hours and hours of calculations and table manipulations.
 
 \hypertarget{create-the-summary-table-1}{%
 \paragraph{Create the Summary Table}\label{create-the-summary-table-1}}
@@ -2298,13 +2302,13 @@ How great is that? We now have almost all the data we need from the moderator an
 
 \emph{What's this code doing?}
 
-This is another complex code. First, we are extracting some data from the moderator analysis (The relevant Q statistics) and naming them something else.
+This is another complex code. First, we are extracting some data from the moderator analysis (The relevant \emph{Q} statistics) and naming them something else.
 
 Then we are writing them into the format we want.
 
 Then we write them into a .txt file in the format we should be used to seeing for \emph{Q\textsubscript{between.}}
 
-Ok, so now we've gotten our moderator analyses run and all of our information extracted. We can simply replicate this code, changing our moderator names and variable names where required. I recommend having a copy of the code for each variable, and using find and replace to replace the moderator names. It's quite efficient!
+Ok, so now we've gotten our moderator analyses run and all of our information extracted. We can simply replicate this code, changing our moderator names and variable names where required. You should also change the name of the file being written. I like to make it the same as the moderator name to minimize confusion later. I recommend having a copy of the code for each variable, and using find and replace to replace the moderator names. It's quite efficient!
 
 \hypertarget{plots}{%
 \section{Plots}\label{plots}}
@@ -2312,7 +2316,6 @@ Ok, so now we've gotten our moderator analyses run and all of our information ex
 We should always include a forest plot with our results. Unfortunately, this is a bit more complex with a three-level meta-analysis because we have both study-level effects and (often) multiple comparisons from within each study. However, there are some really fun visualizations we can create if we borrow some code from others. Let's see what's possible.
 
 \textbf{Important Note:} We're going to use a different file for creating our forest and caterpillar plots. This same file and data preparation is needed to create the funnel plots to evaluate publication bias. For that reason, I tend to create my forest plots, caterpillar plots, and funnel plots all at the same time. In addition, because it uses a different data file, I generally create a second R code file as well specifically for making plots. That's why this all grouped at the end of this chapter.
-
 The code in this plots section is adapted from Fernández-Castilla et al.~(2020)\citep{fernández-castilla2020}. I have slightly adapted the code to fit our data.
 
 \hypertarget{preparatory-work}{%
@@ -2320,7 +2323,7 @@ The code in this plots section is adapted from Fernández-Castilla et al.~(2020)
 
 Before we dig into the `how-to' of creating forest plots for three-level meta-analysis, we need to create a new data file with our raw data and compute a couple new statistics. So let's do that first.
 
-We'll need a .csv file that contains columns for outcome number (this is just sequential, meaning 1 through n number of comparisons). Next, we need a study column, this will number the studies (\emph{not} comparisons, but studies). Then we need author names as we wish to see them on the plots. Next we have effect size, variance, and standard error.
+We'll need a .csv file that contains columns for outcome number (this is just sequential, meaning 1 through \emph{n} number of comparisons). Next, we need a study column, this will number the studies (\emph{not} comparisons, but studies). Then we need author names as we wish to see them on the plots. Next we have effect size, variance, and standard error.
 
 So what does this mean practically? Well, for me, it usually means I copy-paste the author list from my data sheet, as well as the effect size and variance.
 
@@ -2334,7 +2337,7 @@ Now we just need to calculate that standard deviation. Well, the standard deviat
 
 Together, these data points let us compute the standard error in our spreadsheet.
 
-In the end, your spreadsheet should look like this one, which is what we'll use for creating our plots.
+In the end, your \href{https://github.com/noah-schroeder/reviewbook/blob/abfdb439ef81267b388ef75067a03262e1e59020/data\%20for\%20plots.csv}{spreadsheet should look like this one}, which is what we'll use for creating our plots.
 
 Now, let's get to the R code and load up our data
 
@@ -2557,7 +2560,7 @@ If this code works correctly for you, the forest plot should appear in the plots
 
 \includegraphics[width=1\textwidth,height=\textheight]{images/3lmaforest.png}
 
-Absolutely beautiful plot right? I'll tell you what, I really love this plot. You can read about what the different items and colors mean in Fernández-Castilla et al.~(2020)\citep{fernández-castilla2020}. Remember, all of the code for the plots in this chapter are from their paper. But to quickly explain some major points, the black boxes represent the average effect size from the comparisons within each study, and the black lines are the study precision. The grey lines are the median precision of one effect size from each study. The size of the effect size box is representative of its weight in the analysis. J represents how many comparisons were analyzed from each study. I think that this is such a beautiful plot, one of my favorites in all of meta-analysis!
+Absolutely beautiful plot right? You can read about what the different items and colors mean in Fernández-Castilla et al.~(2020)\citep{fernández-castilla2020}. Remember, all of the code for the plots in this chapter are from their paper. But to quickly explain some major points, the black boxes represent the average effect size from the comparisons within each study, and the black lines are the study precision. The grey lines are the median precision of one effect size from each study. The size of the effect size box is representative of its weight in the analysis. J represents how many comparisons were analyzed from each study.
 
 \hypertarget{caterpillar-plots}{%
 \subsubsection{Caterpillar Plots}\label{caterpillar-plots}}
@@ -2656,7 +2659,7 @@ As you can see, all 35 comparisons are included in this plot, listed from smalle
 \hypertarget{study-level-plot}{%
 \paragraph{Study-Level Plot}\label{study-level-plot}}
 
-If you prefer a plot of study level results, similar to the forest plot, we can use this code, again from Fernández-Castilla et al.~(2020)\citep{fernández-castilla2020}:
+If you prefer a plot of study-level results, similar to the forest plot, we can use this code, again from Fernández-Castilla et al.~(2020)\citep{fernández-castilla2020}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -2776,7 +2779,7 @@ If you prefer a plot of study level results, similar to the forest plot, we can 
 
 \emph{What's this code doing?}
 
-This code creates a caterpillar plot of study level effects rather than the comparison level.
+This code creates a caterpillar plot of study-level effects rather than the comparison-level.
 
 That should produce this plot:
 
@@ -2787,7 +2790,7 @@ Caterpillar plots are not, as of January 2024, very common in the educational li
 \hypertarget{publication-bias-1}{%
 \subsection{Publication Bias}\label{publication-bias-1}}
 
-Oh we're not done yet, we haven't even talked about publication bias yet! Publication bias is more difficult to examine in three-level models than conventional meta-analysis models. Furthermore, the tests we have for conventional models often don't function well in three-level applications (Rodgers \& Pustejovsky, 2021)\citep{rodgers2021}. Instead, we can look at funnel plots to examine them for asymmetry.
+Oh we're not done yet, we haven't even talked about publication bias yet! Publication bias is more difficult to examine in three-level models than conventional meta-analysis models. Furthermore, the tests we have for conventional meta-analysis models often don't function well in three-level applications (Rodgers \& Pustejovsky, 2021)\citep{rodgers2021}. Instead, we can look at funnel plots to examine them for asymmetry.
 
 \hypertarget{funnel-plots}{%
 \subsubsection{Funnel Plots}\label{funnel-plots}}
@@ -3099,7 +3102,7 @@ You've now gone through all the steps needed to conduct a three-level meta-analy
 \chapter*{Change Log}\label{change-log}}
 \addcontentsline{toc}{chapter}{Change Log}
 
-February 6, 2024: Book made available online.
+February 7, 2024: Book made available online.
 
   \bibliography{references.bib}
 

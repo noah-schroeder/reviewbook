@@ -10,7 +10,7 @@ Alright, we're getting to the good stuff here, how to use R. You might be a bit 
 
 ## Why use R when a GUI-based Platform is Easier?
 
-At the time of writing, GUI-based platforms such as [Comprehensive Meta-Analysis](https://meta-analysis.com/) (paid software at the time of writing), [JASP](https://jasp-stats.org/) (free software at the time of writing), and [Jamovi](https://www.jamovi.org/) (free software at the time of writing) are excellent for conducting conventional meta-analyses. They can help you analyze the data quickly, without having to know how to do any coding in R. However, some of these options are limited in terms of reproducibility, meaning someone would need the same program to confirm your analysis. While this may seem like a minor limitation to some, it is actually quite important.
+At the time of writing, GUI-based platforms such as [Comprehensive Meta-Analysis](https://meta-analysis.com/) (paid software at the time of writing), [JASP](https://jasp-stats.org/) (free software at the time of writing), and [Jamovi](https://www.jamovi.org/) (free software at the time of writing) are excellent for conducting conventional meta-analyses. They can help you analyze the data quickly, without having to know how to do any coding in R. However, some programs like this are limited in terms of reproducibility, meaning someone would need the same program to confirm your analysis. While this may seem like a minor limitation to some, it is actually quite important.
 
 Another limitation of many GUI-based platform is that (at the time of writing) they do not allow one to conduct multivariate or three-level meta-analyses, among other limitations. In the educational sciences, three-level meta-analysis seems to offer advantages because you can account for, for example, all of the learning outcome tests in a study rather than only one learning outcome test per study. In other words, the three-level meta-analysis can account for the dependence between effect sizes, whereas a conventional (two-level) meta-analysis cannot. This factor alone is what convinced me that I needed to learn R!
 
@@ -69,7 +69,7 @@ After you click run, you'll see things appear in the console. That's normal. It 
 
 #### Was that easy?
 
-If this first step was easy or you figured it out without too much trouble, I think you're ready to move forward in the book. The meta-analysis codes sections of the book rely on you copy-pasting sections of code from the book into your R Studio interface, then highlighting the relevant section of code you just copy-pasted into R Studio, and then clicking 'run'.
+If this first step was easy or you figured it out without too much trouble, I think you're ready to move forward in the book. The meta-analysis sections of the book rely on you copy-pasting sections of code from the book into your R Studio interface, then highlighting the relevant section of code you just copy-pasted into R Studio, and then clicking 'run'.
 
 #### Was this too difficult?
 

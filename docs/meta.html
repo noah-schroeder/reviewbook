@@ -72,8 +72,8 @@
 <li class="book-part">Background</li>
 <li><a class="" href="introduction-to-systematic-reviews.html"><span class="header-section-number">1</span> Introduction to Systematic Reviews</a></li>
 <li><a class="" href="getting-started.html"><span class="header-section-number">2</span> Getting Started</a></li>
-<li><a class="" href="statistical-foundations-of-meta-analysis.html"><span class="header-section-number">3</span> Statistical Foundations of Meta-Analysis</a></li>
-<li><a class="" href="PRISMA.html"><span class="header-section-number">4</span> PRISMA</a></li>
+<li><a class="" href="PRISMA.html"><span class="header-section-number">3</span> PRISMA</a></li>
+<li><a class="" href="statistical-foundations-of-meta-analysis.html"><span class="header-section-number">4</span> Statistical Foundations of Meta-Analysis</a></li>
 <li class="book-part">Methods</li>
 <li><a class="" href="literaturesearch.html"><span class="header-section-number">5</span> Literature Searches</a></li>
 <li><a class="" href="screening.html"><span class="header-section-number">6</span> Study Screening</a></li>
@@ -158,7 +158,7 @@
 <h3>
 <span class="header-section-number">10.2.4</span> Calculating Effect Sizes<a class="anchor" aria-label="anchor" href="#calculating-effect-sizes"><i class="fas fa-link"></i></a>
 </h3>
-<p>Next, you will want to calculate the effect sizes and variance for each effect size if you have not done so already. You can do that using this code:</p>
+<p>Next, you will want to calculate the effect sizes and variance for each comparison if you have not done so already. You can do that using this code:</p>
 <div class="rmdnote">
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#calculate overall ES, in this case standardized mean difference (Hedges g), and variance.</span></span>
@@ -170,7 +170,7 @@
 <p>The next set of variables (<strong>m1i, sd1i, n1i, m2i, sd2i,</strong> and <strong>n2i</strong>) are specific pieces of information that metafor needs to calculate the effect size. <strong>m1i</strong> is the mean of the intervention group. <strong>sd1i</strong> is the standard deviation of the intervention group. <strong>n1i</strong> is the sample size of the intervention group. <strong>m2i</strong> is the mean of the control group. <strong>sd2i</strong> is the standard deviation of the control group. <strong>n2i</strong> is the sample size of the control group. I have always found those codes hard to remember, so on my coding form/data file I use different column headings. You can see I tell metafor where to find each variable by using the <strong>=</strong> sign. For example, the mean of the intervention group (<strong>m1i</strong>) is called <strong>Exp_mean</strong> in my data file.</p>
 <p>Finally, we need to tell metafor where to find the data, and we have to refer to data already in R. We use our datafile ‘<strong>dat</strong>’.</p>
 </div>
-<p>Now if you can make sure the effect size and variance for each effect size were calculated:</p>
+<p>Now if you want to, you can make sure the effect size and variance for each effect size were calculated:</p>
 <div class="rmdnote">
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#display data</span></span>
@@ -218,7 +218,7 @@
 <span class="header-section-number">10.3.1</span> Interpreting the Results<a class="anchor" aria-label="anchor" href="#interpreting-the-results"><i class="fas fa-link"></i></a>
 </h3>
 <p>When we run that code, we now see the following:</p>
-<div style="gray">
+<div class="rmdnote">
 <pre><code>Random-Effects Model (k = 27; tau^2 estimator: REML)
 
 tau^2 (estimated amount of total heterogeneity): 0.2372 (SE = 0.0940)
@@ -404,7 +404,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ .05 ‘.’ 0.1 ‘ ’ 
 <span id="cb14-31"><a href="meta.html#cb14-31" tabindex="-1"></a>Signif. codes<span class="sc">:</span>  <span class="dv">0</span> ‘<span class="sc">**</span><span class="er">*</span>’ <span class="fl">0.001</span> ‘<span class="sc">**</span>’ <span class="fl">0.01</span> ‘<span class="sc">*</span>’ <span class="fl">0.05</span> ‘.’ <span class="fl">0.1</span> ‘ ’ <span class="dv">1</span></span></code></pre></div>
 <p><em>What’s this result mean?</em></p>
 <p>There’s a lot of information here but we only want one thing: <strong>The test of moderators.</strong> In this case, that’s Test of Moderators (coefficients 2:5): QM(df = 4) = 4.2829, p-val = 0.3691</p>
-<p><u>What we’re doing here is checking the p value.</u> We can see this test is not significant, which means that this is not a statistically significant moderator. In other words, for this example, the effects of the intervention was not significantly different for participants in K-5 than participants in Post-Secondary Education.</p>
+<p><u>What we’re doing here is checking the p value.</u> We can see this test is not significant, which means that this is not a statistically significant moderator. In other words, for this example, the effect of the intervention was not significantly different for participants in K-5 than participants in Post-Secondary Education.</p>
 </div>
 <p>With our Q<sub>between</sub> value in hand, we now need to create the actual table we’ll report in the manuscript. You’ll note that when we calculated Q<sub>between</sub>, one of the levels of the moderator was missing, and replaced by the term intercept. Well, it’s time to fix that and get the tables we would use for reporting in our manuscript.</p>
 <p>We’ll use a very similar code:</p>
@@ -472,7 +472,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ .05 ‘.’ 0.1 ‘ ’ 
 <code class="sourceCode R"><span><span class="co">#Only save table results </span></span>
 <span><span class="va">mod.grade_table</span> <span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">mod.grade</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><em>What’s this code doing?</em></p>
-<p>First, we’re creating a new data item, called <strong>mod.grade_table</strong>. I The <strong>coef(summary(mod.grade))</strong> is simply telling metafor we want the coefficient summary for the <strong>mod.grade</strong> data - which is what we called our moderator analysis of the grade levels.</p>
+<p>First, we’re creating a new data item, called <strong>mod.grade_table</strong>. The <strong>coef(summary(mod.grade))</strong> is simply telling metafor we want the coefficient summary for the <strong>mod.grade</strong> data - which is what we called our moderator analysis of the grade levels.</p>
 <p>Overall, this basically saves most of the data we want as a separate table.</p>
 </div>
 <p>So now we have a beautiful summary table. We could write this to a spreadsheet now… but what about the number of participants in each condition for each level of the moderator? And what about the number of comparisons for each moderator? We could hand calculate those… but that sounds boring and takes a long time. We could program in the analyses individually… but that is also boring (I’ve done that more than I want to admit). Or, we can use this code Chris and I created to do that automatically:</p>
@@ -500,7 +500,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ .05 ‘.’ 0.1 ‘ ’ 
 <p>Next, we have a new item called <strong>gradeNumComp</strong>. This is counting the number of comparisons in each item. We then create a new data item (<strong>gradeNumComp</strong>) and rename it <strong>kcomparisons</strong>.</p>
 <p>Finally, we create a new table, bind all the data together, and write it as a csv file.</p>
 </div>
-<p>How great is that? We now have almost all the data we need from the moderator analysis. The only missing is the <em>Q<sub>between</sub></em> value. Guess what, we have a script to record that too. First, a warning:</p>
+<p>How great is that? We now have almost all the data we need from the moderator analysis. The only piece of information missing is the <em>Q<sub>between</sub></em> value. Guess what, we have a script to record that too. First, a warning:</p>
 <div class="rmdimportant">
 <p><strong>IMPORTANT NOTE</strong>: This code will print the <em>Q<sub>between</sub></em> data twice. The first will be presented as: <em>Q<sub>between</sub></em> (df) = #, <em>p</em> = #. The second will be presented with NA instead of the actual degrees of freedom. You want the result with the degrees of freedom, and you can ignore the result with NA printed.</p>
 <p>Example: Our .txt file will contain this: Qb( 4 ) = 4.28 , p = 0.369 Qb( NA ) = 4.28 , p = 0.369 The first section, Qb( 4 ) = 4.28 , p = 0.369, is the proper information for reporting the result of the analysis.</p>
@@ -538,7 +538,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ .05 ‘.’ 0.1 ‘ ’ 
 <h3>
 <span class="header-section-number">10.3.6</span> Publication Bias<a class="anchor" aria-label="anchor" href="#publication-bias"><i class="fas fa-link"></i></a>
 </h3>
-<p>Oh we’re not done yet, we haven’t even talked about publication bias yet! Don’t worry, this is pretty easy because metafor, again, has some great built in functions.</p>
+<p>Oh we’re not done yet, we haven’t even talked about publication bias yet! Don’t worry, this is pretty easy because metafor, again, has some great built-in functions.</p>
 <div id="funnel-plot" class="section level4" number="10.3.6.1">
 <h4>
 <span class="header-section-number">10.3.6.1</span> Funnel Plot<a class="anchor" aria-label="anchor" href="#funnel-plot"><i class="fas fa-link"></i></a>
@@ -668,7 +668,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ .05 ‘.’ 0.1 ‘ ’ 
 <div class="inline-figure"><img src="images/clipboard-27399461.png" style="width:100.0%"></div>
 <p>Next we conducted a trim and fill analysis to check for missing studies and the impact of those studies on the overall meta-analytic effect size. This test found that there were likely two studies missing on the right side of the funnel plot (Figure 2), and they would change our overall effect size to <em>g</em> = .68, <em>p</em> &lt; .001. This is not notably different than the overall effect size calculated in our meta-analytic model (<em>g</em> = .61, <em>p</em> &lt; .001).</p>
 <div class="inline-figure"><img src="images/clipboard-2269174522.png" style="width:100.0%"></div>
-<p>Next, we used Egger’s regression test to test for funnel plot asymmetry, which was not significant (z = -0.04, p = 0.97). Finally, we used Rosenthal’s fail safe n test to see how many null effect studies would be needed to change the overall meta-analytic effect size to be non-significant. The test showed 1028 studies would be needed.</p>
+<p>Next, we used Egger’s regression test to test for funnel plot asymmetry, which was not significant (z = -0.04, p = 0.97). Finally, we used Rosenthal’s Fail Safe N test to see how many null effect studies would be needed to change the overall meta-analytic effect size to be non-significant. The test showed 1028 studies would be needed.</p>
 <p>Based on the results of these four tests, publication bias is not expected to be a significant influence on our results.</p>
 </blockquote>
 </div>
@@ -733,7 +733,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ .05 ‘.’ 0.1 ‘ ’ 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Beginner’s Guide to Systematic Review and Meta-Analysis</strong>" was written by Noah L. Schroeder, Ph.D.. It was last built on 2024-02-07.</p>
+    <p>"<strong>A Beginner’s Guide to Systematic Review and Meta-Analysis</strong>" was written by Noah L. Schroeder, Ph.D.. It was last built on 2024-02-08.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

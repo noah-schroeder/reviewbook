@@ -9,7 +9,6 @@ getting-started
 research-questions
 inclusion-and-exclusion-criteria
 what-next
-statistical-foundations-of-meta-analysis
 PRISMA
 what-is-the-prisma-statement
 what-do-i-need-to-know
@@ -17,6 +16,7 @@ prisma-checklist
 prisma-flow-chart
 practical-implications
 summary
+statistical-foundations-of-meta-analysis
 literaturesearch
 create-a-search-string
 how-broad-or-narrow-should-the-search-be
