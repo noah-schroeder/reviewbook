@@ -428,7 +428,7 @@ This looks almost identical to the previous result when we calculated Q~between~
 Note that the test of moderators is different than before. Confusing right? [Well, that's because the two tests, while named the same thing, are testing different things.]{.underline} When we calculated Q~between,~ the test of moderators was testing if there were significant differences between levels of the moderator. However, in this test of moderators it is testing if the moderators are significantly different than zero. These are totally different tests - **do not use this test of moderator as your Q~between~ value because it most certainly is not!**
 :::
 
-What if you have more moderator variables to test? Well, you simply replace the '**graderange**' variable with whatever each moderator variable column in your data is labeled as, and don't forget to rename the data items as well (**mod.gradeq** and **mod.grade**). Then you can re-run the same two code sets to calculate Q~between~ and the effect sizes.
+What if you have more categorical moderator variables to test? Well, you simply replace the '**graderange**' variable with whatever each categorical moderator variable column in your data is labeled as, and don't forget to rename the data items as well (**mod.gradeq** and **mod.grade**). Then you can re-run the same two code sets to calculate Q~between~ and the effect sizes.
 
 #### Easily Create Tables
 
@@ -524,7 +524,7 @@ Then we are writing them into the format we want.
 Then we write them into a .txt file in the format we should be used to seeing for *Q~between.~*
 :::
 
-Ok, so now we've gotten our moderator analyses run, and all of our information extracted. We can simply replicate this code, changing our moderator names and variable names where required. You should also change the name of the file being written. I like to make it the same as the moderator name to minimize confusion later. I recommend having a copy of the code for each variable, and using find and replace to replace the moderator names. It's quite efficient!
+Ok, so now we've gotten our moderator analyses run, and all of our information extracted. We can simply replicate this code, changing our categorical moderator names and variable names where required. You should also change the name of the file being written. I like to make it the same as the moderator name to minimize confusion later. I recommend having a copy of the code for each variable, and using find and replace to replace the moderator names. It's quite efficient!
 
 ### Publication Bias
 
@@ -701,9 +701,7 @@ Ok, so we've now run a variety of tests to check for publication bias. What do t
 
 ### That's it!
 
-You've now gone through all the steps needed to conduct a conventional meta-analysis. Congratulations! This may seem intimidating, but if you complete each step, in order, this will be a very simple process. And think - now you a) have a code you can use, with slight modifications, for every conventional meta-analysis you conduct in the future, b) have a code you can share with friends, and c) can share you code with your publication so others can replicate your analysis. Just think - if more people had done that I would not have had to write this book....
-
-#### 
+You've now gone through all the steps needed to conduct a conventional meta-analysis. Congratulations! This may seem intimidating, but if you complete each step, in order, this will be a very simple process. And think - now you a) have a code you can use, with slight modifications, for every conventional meta-analysis you conduct in the future, b) have a code you can share with friends, and c) can share you code with your publication so others can replicate your analysis.
 
 ---
 bibliography: references.bib

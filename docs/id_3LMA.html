@@ -256,7 +256,7 @@
 <p><em>What’s this mean?</em></p>
 <p>Recall this is a subset of data from Schroeder et al. (2023)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Schroeder, Siegle, and Craig, &lt;span&gt;“A Meta-Analysis on Learning from 360° Video.”&lt;/span&gt;&lt;/p&gt;"><sup>44</sup></a></span> so the numbers will not align with what is in the published version.</p>
 <p>The first line tells us this is a multivariate random-effects model including 35 comparisons, and tau<sup>2</sup> was estimated using restricted maximum likelihood estimation (REML).</p>
-<p>Next, we see our variance components. The estimate is tau<sup>2</sup>. The first (<strong>sigma2.1</strong>) refers to the between-study heterogeneity, whereas <strong>sigma2.2</strong> refers to within-comparison heterogeneity.</p>
+<p>Next, we see our variance components. The estimate is tau<sup>2</sup>. The first (<strong>sigma2.1</strong>) refers to the between-study heterogeneity, whereas <strong>sigma2.2</strong> refers to within-study heterogeneity.</p>
 <p>Typically, the other important pieces here that we are interested in reporting in our manuscript are the <strong>overall effect size, tau<sup>2</sup></strong>, and the <strong><em>Q</em>-test</strong>.</p>
 <p>The <strong>effect size</strong> (model results in this output) is interpreted as the standardized mean difference effect size, if there is a significant <em>Q</em> test it indicates there is significant heterogeneity in our sample.</p>
 </div>
@@ -266,7 +266,7 @@
 <h3>
 <span class="header-section-number">11.3.2</span> Explaining the Variance<a class="anchor" aria-label="anchor" href="#explaining-the-variance"><i class="fas fa-link"></i></a>
 </h3>
-<p>In the above step, we saw tau<sup>2</sup>, but we did not see <em>I</em><sup>2</sup>. If you’re familiar with conventional meta-analysis, you know that <em>I</em><sup>2</sup> tells us how much variation is explained by between-study heterogeneity. In three-level meta-analysis we can look at this to find both a within-study and between-comparison value. Let’s check out that code:</p>
+<p>In the above step, we saw tau<sup>2</sup>, but we did not see <em>I</em><sup>2</sup>. If you’re familiar with conventional meta-analysis, you know that <em>I</em><sup>2</sup> tells us how much variation is explained by between-study heterogeneity. In three-level meta-analysis we can look at this to find both a within-study and between-study value. Let’s check out that code:</p>
 <div class="rmdnote">
 <p><strong>Important:</strong> First, we actually need to do some background work. Harrer et al. (2021)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Harrer et al., &lt;em&gt;Doing Meta-Analysis with r&lt;/em&gt;.&lt;/p&gt;"><sup>45</sup></a></span> have provided code that helps us calculate <em>I</em><sup>2</sup>,but first we need to ‘teach’ R that analysis.</p>
 <p>So, please visit this link and copy the entire code: <a href="https://raw.githubusercontent.com/MathiasHarrer/dmetar/master/R/mlm.variance.distribution.R" class="uri">https://raw.githubusercontent.com/MathiasHarrer/dmetar/master/R/mlm.variance.distribution.R</a></p>
@@ -295,11 +295,11 @@
 <span id="cb36-7"><a href="id_3LMA.html#cb36-7" tabindex="-1"></a><span class="sc">$</span>totalI2</span>
 <span id="cb36-8"><a href="id_3LMA.html#cb36-8" tabindex="-1"></a>[<span class="dv">1</span>] <span class="fl">97.19464</span></span></code></pre></div>
 <p><em>What’s this result mean?</em></p>
-<p>When you run this analysis, you’ll see that 5.63% of the variance is due to level 2 (within-study) heterogeneity, while 91.56% is due to between-comparisons heterogeneity. Overall, the model explains 97.2% of the variance.</p>
+<p>When you run this analysis, you’ll see that 5.63% of the variance is due to level 2 (within-study) heterogeneity, while 91.56% is due to between-study heterogeneity. Overall, the model explains 97.2% of the variance.</p>
 </div>
 <p>We can also get the same information from the plot that was generated:</p>
 <div class="inline-figure"><img src="images/i2plot.png" style="width:100.0%"></div>
-<p>Ok, so we’ve established that we have quite a bit of between-comparison heterogeneity. When we consider that the tau<sup>2</sup> for the between-comparison heterogeneity was notably higher than the within-study heterogeneity, these results are consistent and help us rationalize conducting moderator analyses.</p>
+<p>Ok, so we’ve established that we have quite a bit of between-study heterogeneity. When we consider that the tau<sup>2</sup> for the between-study heterogeneity was notably higher than the within-study heterogeneity, these results are consistent and help us rationalize conducting moderator analyses.</p>
 </div>
 <div id="checking-for-outliers-and-influence-1" class="section level3" number="11.3.3">
 <h3>
@@ -307,7 +307,7 @@
 </h3>
 <p>At this point we’ve ran our random-effects three-level meta-analysis model. We also understand where the variance is coming from. However, we have not checked for outliers or studies with significant influence on the results. This is actually a complex topic, as not many meta-analyses (as of January, 2024) in education actually address a) if they searched for outliers or influence, b) what metric they used to check for outliers and why, and c) what they did about the outliers and why. Kind of interesting right?</p>
 <p>So here’s what we can do to check for outliers and influence. Unfortunately it isn’t quite as easy as evaluating outliers in conventional meta-analysis, but don’t worry, it’s not too difficult!</p>
-<p>First, let’s check for outliers. We’re going to slightly adapt Van Lissa’s (n.d.)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Lissa, &lt;em&gt;Doing Meta-Analysis in r and Exploring Heterogeneity Using Metaforest&lt;/em&gt;.&lt;/p&gt;"><sup>46</sup></a></span> method.</p>
+<p>First, let’s check for outliers. We’re going to use Van Lissa’s (n.d.)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Lissa, &lt;em&gt;Doing Meta-Analysis in r and Exploring Heterogeneity Using Metaforest&lt;/em&gt;.&lt;/p&gt;"><sup>46</sup></a></span> method.</p>
 <div class="rmdnote">
 <div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#adapting CI calculation and plotting from https://cjvanlissa.github.io/Doing-Meta-Analysis-in-R/detecting-outliers-influential-cases.html</span></span>
@@ -479,7 +479,7 @@
 </h3>
 <p>So if we were going to write this up, we may report something like this:</p>
 <blockquote>
-<p>We conducted a random-effects three-level meta-analysis of 35 comparisons extracted from 12 studies. Our results indicated that the intervention was not significantly different than the control condition (<em>g</em> = -.38, <em>p</em> = .45). The model indicates that there is significantly heterogeneity within the sample (<em>Q</em>(34) = 285.55, <em>p</em> &lt; .001), with tau<sup>2</sup> = 2.68 (between-comparisons) and tau<sup>2</sup> = .16 (within-studies). Furthermore, our model explained 97.20% of the variance, with 5.63% of the variance due to within-study heterogeneity, and 91.56% due to between-comparisons heterogeneity. We detected three comparisons that were potential outliers, however examination of the studies did not indicate any notable deviations from other studies in our sample. Furthermore, none of these potential outliers significantly influenced our overall meta-analytical result. As such, the potential outliers were retained in the data analysis.</p>
+<p>We conducted a random-effects three-level meta-analysis of 35 comparisons extracted from 12 studies. Our results indicated that the intervention was not significantly different than the control condition (<em>g</em> = -.38, <em>p</em> = .45). The model indicates that there is significantly heterogeneity within the sample (<em>Q</em>(34) = 285.55, <em>p</em> &lt; .001), with tau<sup>2</sup> = 2.68 (between-studies) and tau<sup>2</sup> = .16 (within-studies). Furthermore, our model explained 97.20% of the variance, with 5.63% of the variance due to within-study heterogeneity, and 91.56% due to between-study heterogeneity. We detected three comparisons that were potential outliers, however examination of the studies did not indicate any notable deviations from other studies in our sample. Furthermore, none of these potential outliers significantly influenced our overall meta-analytical result. As such, the potential outliers were retained in the data analysis.</p>
 </blockquote>
 </div>
 <div id="moderator-analysis-1" class="section level3" number="11.3.5">
@@ -605,7 +605,7 @@
 <p>This looks almost identical to the previous result when we calculated Q<sub>between</sub>. However, you’ll note that the intercept is now gone. <u>These are the means, standard errors, p values, etc. for the levels of the moderator that you will want to report in your manuscript.</u></p>
 <p>Note that the test of moderators is different than before. Confusing right? <u>Well, that’s because the two tests, while named the same thing, are testing different things.</u> When we calculated Q<sub>between,</sub> the test of moderators was testing if there were significant differences between levels of the moderator. However, in this test of moderators it is testing if the moderators are significantly different than zero. These are totally different tests - <strong>do not use this test of moderator as your Q<sub>between</sub> value because it most certainly is not!</strong></p>
 </div>
-<p>What if you have more moderator variables to test? Well, you simply replace the ‘<strong>grade_c</strong>’ variable with whatever each moderator variable column in your data is labeled as, and don’t forget to rename the data items as well (<strong>mod.gradeq</strong> and <strong>mod.grade</strong>). Then you can re-run the same two code sets to calculate Q<sub>between</sub> and the effect sizes.</p>
+<p>What if you have more categorical moderator variables to test? Well, you simply replace the ‘<strong>grade_c</strong>’ variable with whatever each categorical moderator variable column in your data is labeled as, and don’t forget to rename the data items as well (<strong>mod.gradeq</strong> and <strong>mod.grade</strong>). Then you can re-run the same two code sets to calculate Q<sub>between</sub> and the effect sizes.</p>
 </div>
 <div id="easily-create-tables-1" class="section level4" number="11.3.5.3">
 <h4>
@@ -676,7 +676,7 @@
 <p>Then we are writing them into the format we want.</p>
 <p>Then we write them into a .txt file in the format we should be used to seeing for <em>Q<sub>between.</sub></em></p>
 </div>
-<p>Ok, so now we’ve gotten our moderator analyses run and all of our information extracted. We can simply replicate this code, changing our moderator names and variable names where required. You should also change the name of the file being written. I like to make it the same as the moderator name to minimize confusion later. I recommend having a copy of the code for each variable, and using find and replace to replace the moderator names. It’s quite efficient!</p>
+<p>Ok, so now we’ve gotten our moderator analyses run and all of our information extracted. We can simply replicate this code, changing our categorical moderator names and variable names where required. You should also change the name of the file being written. I like to make it the same as the moderator name to minimize confusion later. I recommend having a copy of the code for each variable, and using find and replace to replace the moderator names. It’s quite efficient!</p>
 </div>
 </div>
 </div>
@@ -687,7 +687,7 @@
 </h2>
 <p>We should always include a forest plot with our results. Unfortunately, this is a bit more complex with a three-level meta-analysis because we have both study-level effects and (often) multiple comparisons from within each study. However, there are some really fun visualizations we can create if we borrow some code from others. Let’s see what’s possible.</p>
 <div class="rmdnote">
-<p><strong>Important Note:</strong> We’re going to use a different file for creating our forest and caterpillar plots. This same file and data preparation is needed to create the funnel plots to evaluate publication bias. For that reason, I tend to create my forest plots, caterpillar plots, and funnel plots all at the same time. In addition, because it uses a different data file, I generally create a second R code file as well specifically for making plots. That’s why this all grouped at the end of this chapter. The code in this plots section is adapted from Fernández-Castilla et al. (2020)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Belén Fernández-Castilla et al., &lt;span&gt;“Visual Representations of Meta-Analyses of Multiple Outcomes: Extensions to Forest Plots, Funnel Plots, and Caterpillar Plots,”&lt;/span&gt; &lt;em&gt;Methodology&lt;/em&gt; 16, no. 4 (December 22, 2020): 299–315, &lt;a href="https://doi.org/10.5964/meth.4013"&gt;https://doi.org/10.5964/meth.4013&lt;/a&gt;.&lt;/p&gt;'><sup>50</sup></a></span>. I have slightly adapted the code to fit our data.</p>
+<p><strong>Important Note:</strong> We’re going to use a different file for creating our forest plot, caterpillar plots, and funnel plots. For that reason, I tend to create my forest plots, caterpillar plots, and funnel plots all at the same time. In addition, because it uses a different data file, I generally create a second R code file as well specifically for making plots. That’s why this all grouped at the end of this chapter. The code in this plots section is slightly adapted from Fernández-Castilla et al. (2020)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Belén Fernández-Castilla et al., &lt;span&gt;“Visual Representations of Meta-Analyses of Multiple Outcomes: Extensions to Forest Plots, Funnel Plots, and Caterpillar Plots,”&lt;/span&gt; &lt;em&gt;Methodology&lt;/em&gt; 16, no. 4 (December 22, 2020): 299–315, &lt;a href="https://doi.org/10.5964/meth.4013"&gt;https://doi.org/10.5964/meth.4013&lt;/a&gt;.&lt;/p&gt;'><sup>50</sup></a></span>. I have slightly adapted the code to fit our data.</p>
 </div>
 <div id="preparatory-work" class="section level4" number="11.4.0.1">
 <h4>
@@ -1136,7 +1136,7 @@
 <h4>
 <span class="header-section-number">11.4.1.1</span> Funnel Plots<a class="anchor" aria-label="anchor" href="#funnel-plots"><i class="fas fa-link"></i></a>
 </h4>
-<p>Again, we’re going to borrow the methods and adapt the code from Fernández-Castilla et al. (2020)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Fernández-Castilla et al., &lt;span&gt;“Visual Representations of Meta-Analyses of Multiple Outcomes.”&lt;/span&gt;&lt;/p&gt;"><sup>55</sup></a></span>.</p>
+<p>Again, we’re going to borrow the methods and code from Fernández-Castilla et al. (2020)<span class="citation"><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Fernández-Castilla et al., &lt;span&gt;“Visual Representations of Meta-Analyses of Multiple Outcomes.”&lt;/span&gt;&lt;/p&gt;"><sup>55</sup></a></span>.</p>
 <p>First we’ll create a funnel plot of all effect sizes and check it for asymmetry.</p>
 <div class="rmdnote">
 <div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
@@ -1419,13 +1419,8 @@
 <h2>
 <span class="header-section-number">11.5</span> That’s it!<a class="anchor" aria-label="anchor" href="#thats-it-1"><i class="fas fa-link"></i></a>
 </h2>
-<p>You’ve now gone through all the steps needed to conduct a three-level meta-analysis. Congratulations! This may seem intimidating, but if you complete each step, in order, this will be a very simple process. And think - now you a) have a code you can adapt and use for every three-level meta-analysis you conduct in the future, b) have a code you can share with friends, and c) can share you code with your publication so others can replicate your analysis. Just think - if more people had done that I would not have had to write this book….</p>
-<div id="section-1" class="section level4" number="11.5.0.1">
-<h4>
-<span class="header-section-number">11.5.0.1</span> <a class="anchor" aria-label="anchor" href="#section-1"><i class="fas fa-link"></i></a>
-</h4>
+<p>You’ve now gone through all the steps needed to conduct a three-level meta-analysis. Congratulations! This may seem intimidating, but if you complete each step, in order, this will be a very simple process. And think - now you a) have a code you can adapt and use for every three-level meta-analysis you conduct in the future, b) have a code you can share with friends, and c) can share you code with your publication so others can replicate your analysis.</p>
 
-</div>
 </div>
 </div>
 
@@ -1479,7 +1474,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Beginner’s Guide to Systematic Review and Meta-Analysis</strong>" was written by Noah L. Schroeder, Ph.D.. It was last built on 2024-02-08.</p>
+    <p>"<strong>A Beginner’s Guide to Systematic Review and Meta-Analysis</strong>" was written by Noah L. Schroeder, Ph.D.. It was last built on 2024-02-11.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

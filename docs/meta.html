@@ -454,7 +454,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ .05 ‘.’ 0.1 ‘ ’ 
 <p>This looks almost identical to the previous result when we calculated Q<sub>between</sub>. However, you’ll note that the intercept is now gone and instead all of our levels of the moderator are listed (in this case, the different grade ranges). <strong>These are the means, standard errors, p values, etc. that you will want to report in your manuscript.</strong></p>
 <p>Note that the test of moderators is different than before. Confusing right? <u>Well, that’s because the two tests, while named the same thing, are testing different things.</u> When we calculated Q<sub>between,</sub> the test of moderators was testing if there were significant differences between levels of the moderator. However, in this test of moderators it is testing if the moderators are significantly different than zero. These are totally different tests - <strong>do not use this test of moderator as your Q<sub>between</sub> value because it most certainly is not!</strong></p>
 </div>
-<p>What if you have more moderator variables to test? Well, you simply replace the ‘<strong>graderange</strong>’ variable with whatever each moderator variable column in your data is labeled as, and don’t forget to rename the data items as well (<strong>mod.gradeq</strong> and <strong>mod.grade</strong>). Then you can re-run the same two code sets to calculate Q<sub>between</sub> and the effect sizes.</p>
+<p>What if you have more categorical moderator variables to test? Well, you simply replace the ‘<strong>graderange</strong>’ variable with whatever each categorical moderator variable column in your data is labeled as, and don’t forget to rename the data items as well (<strong>mod.gradeq</strong> and <strong>mod.grade</strong>). Then you can re-run the same two code sets to calculate Q<sub>between</sub> and the effect sizes.</p>
 </div>
 <div id="easily-create-tables" class="section level4" number="10.3.5.2">
 <h4>
@@ -530,7 +530,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ .05 ‘.’ 0.1 ‘ ’ 
 <p>Then we are writing them into the format we want.</p>
 <p>Then we write them into a .txt file in the format we should be used to seeing for <em>Q<sub>between.</sub></em></p>
 </div>
-<p>Ok, so now we’ve gotten our moderator analyses run, and all of our information extracted. We can simply replicate this code, changing our moderator names and variable names where required. You should also change the name of the file being written. I like to make it the same as the moderator name to minimize confusion later. I recommend having a copy of the code for each variable, and using find and replace to replace the moderator names. It’s quite efficient!</p>
+<p>Ok, so now we’ve gotten our moderator analyses run, and all of our information extracted. We can simply replicate this code, changing our categorical moderator names and variable names where required. You should also change the name of the file being written. I like to make it the same as the moderator name to minimize confusion later. I recommend having a copy of the code for each variable, and using find and replace to replace the moderator names. It’s quite efficient!</p>
 </div>
 </div>
 </div>
@@ -677,13 +677,8 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ .05 ‘.’ 0.1 ‘ ’ 
 <h3>
 <span class="header-section-number">10.3.7</span> That’s it!<a class="anchor" aria-label="anchor" href="#thats-it"><i class="fas fa-link"></i></a>
 </h3>
-<p>You’ve now gone through all the steps needed to conduct a conventional meta-analysis. Congratulations! This may seem intimidating, but if you complete each step, in order, this will be a very simple process. And think - now you a) have a code you can use, with slight modifications, for every conventional meta-analysis you conduct in the future, b) have a code you can share with friends, and c) can share you code with your publication so others can replicate your analysis. Just think - if more people had done that I would not have had to write this book….</p>
-<div id="section" class="section level4" number="10.3.7.1">
-<h4>
-<span class="header-section-number">10.3.7.1</span> <a class="anchor" aria-label="anchor" href="#section"><i class="fas fa-link"></i></a>
-</h4>
+<p>You’ve now gone through all the steps needed to conduct a conventional meta-analysis. Congratulations! This may seem intimidating, but if you complete each step, in order, this will be a very simple process. And think - now you a) have a code you can use, with slight modifications, for every conventional meta-analysis you conduct in the future, b) have a code you can share with friends, and c) can share you code with your publication so others can replicate your analysis.</p>
 
-</div>
 </div>
 </div>
 </div>
@@ -733,7 +728,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ .05 ‘.’ 0.1 ‘ ’ 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Beginner’s Guide to Systematic Review and Meta-Analysis</strong>" was written by Noah L. Schroeder, Ph.D.. It was last built on 2024-02-08.</p>
+    <p>"<strong>A Beginner’s Guide to Systematic Review and Meta-Analysis</strong>" was written by Noah L. Schroeder, Ph.D.. It was last built on 2024-02-11.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

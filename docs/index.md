@@ -1,7 +1,7 @@
 ---
 title: "A Beginner’s Guide to Systematic Review and Meta-Analysis"
 author: "Noah L. Schroeder, Ph.D."
-date: "2024-02-08"
+date: "2024-02-11"
 output: pdf_document
 documentclass: book
 bibliography:
@@ -35,7 +35,7 @@ This book is designed for:
 
 -   People who are just learning about systematic review and meta-analysis methods.
 
--   People who understand meta-analysis, but I don’t really understand R.
+-   People who understand meta-analysis, but don’t really understand R.
 
 -   People who are used to using graphic user interface (GUI)-based programs for conducting meta-analysis, but want to switch to R.
 
@@ -77,7 +77,7 @@ If you find errors in the code or text, please email me so I can correct them.
 
 ## About the author. {.unnumbered}
 
-My name is Noah Schroeder, I received my Ph.D. from the Educational Psychology program at Washington State University. I learned about meta-analysis using GUI-based programs. I taught myself how to use R and metafor using published papers and online resources because I was bored and it seemed like a fun thing to do. I also could not do the analyses I wanted (three-level meta-analysis) in GUI-based programs, but I could run them in R. My areas of expertise are virtual humans and other pedagogical agents, multimedia learning, and of course, review methodologies. Please feel free to visit my [Google Scholar profile](https://scholar.google.com/citations?user=W-Ij6voAAAAJ&hl=en&oi=ao).
+My name is Noah Schroeder, I received my Ph.D. from the Educational Psychology program at Washington State University in 2013. I have been involved with systematic review and meta-analysis since 2010. I learned about meta-analysis using GUI-based programs. I taught myself how to use R and metafor using published papers and online resources because I was bored and it seemed like a fun thing to do. I also could not do the analyses I wanted (three-level meta-analysis) in GUI-based programs, but I could run them in R. My areas of expertise are virtual humans and other pedagogical agents, multimedia learning, and of course, review methodologies. Please feel free to visit my [Google Scholar profile](https://scholar.google.com/citations?user=W-Ij6voAAAAJ&hl=en&oi=ao).
 
 
 

@@ -206,7 +206,7 @@ Recall this is a subset of data from Schroeder et al. (2023)[@schroeder2023] so 
 
 The first line tells us this is a multivariate random-effects model including 35 comparisons, and tau^2^ was estimated using restricted maximum likelihood estimation (REML).
 
-Next, we see our variance components. The estimate is tau^2^. The first (**sigma2.1**) refers to the between-study heterogeneity, whereas **sigma2.2** refers to within-comparison heterogeneity.
+Next, we see our variance components. The estimate is tau^2^. The first (**sigma2.1**) refers to the between-study heterogeneity, whereas **sigma2.2** refers to within-study heterogeneity.
 
 Typically, the other important pieces here that we are interested in reporting in our manuscript are the **overall effect size, tau^2^**, and the ***Q*****-test**.
 
@@ -217,7 +217,7 @@ Next, let's check out the variance components in more depth.
 
 ### Explaining the Variance
 
-In the above step, we saw tau^2^, but we did not see *I*^2^. If you're familiar with conventional meta-analysis, you know that *I*^2^ tells us how much variation is explained by between-study heterogeneity. In three-level meta-analysis we can look at this to find both a within-study and between-comparison value. Let's check out that code:
+In the above step, we saw tau^2^, but we did not see *I*^2^. If you're familiar with conventional meta-analysis, you know that *I*^2^ tells us how much variation is explained by between-study heterogeneity. In three-level meta-analysis we can look at this to find both a within-study and between-study value. Let's check out that code:
 
 ::: rmdnote
 **Important:** First, we actually need to do some background work. Harrer et al. (2021)[@harrer2021] have provided code that helps us calculate *I*^2^,but first we need to 'teach' R that analysis.
@@ -262,14 +262,14 @@ $totalI2
 
 *What's this result mean?*
 
-When you run this analysis, you'll see that 5.63% of the variance is due to level 2 (within-study) heterogeneity, while 91.56% is due to between-comparisons heterogeneity. Overall, the model explains 97.2% of the variance.
+When you run this analysis, you'll see that 5.63% of the variance is due to level 2 (within-study) heterogeneity, while 91.56% is due to between-study heterogeneity. Overall, the model explains 97.2% of the variance.
 :::
 
 We can also get the same information from the plot that was generated:
 
 ![](images/i2plot.png){width="100%"}
 
-Ok, so we've established that we have quite a bit of between-comparison heterogeneity. When we consider that the tau^2^ for the between-comparison heterogeneity was notably higher than the within-study heterogeneity, these results are consistent and help us rationalize conducting moderator analyses.
+Ok, so we've established that we have quite a bit of between-study heterogeneity. When we consider that the tau^2^ for the between-study heterogeneity was notably higher than the within-study heterogeneity, these results are consistent and help us rationalize conducting moderator analyses.
 
 ### Checking for Outliers and Influence
 
@@ -277,7 +277,7 @@ At this point we've ran our random-effects three-level meta-analysis model. We a
 
 So here's what we can do to check for outliers and influence. Unfortunately it isn't quite as easy as evaluating outliers in conventional meta-analysis, but don't worry, it's not too difficult!
 
-First, let's check for outliers. We're going to slightly adapt Van Lissa's (n.d.)[@vanlissa] method.
+First, let's check for outliers. We're going to use Van Lissa's (n.d.)[@vanlissa] method.
 
 ::: rmdnote
 ``` r
@@ -470,7 +470,7 @@ For the purposes of this example, we'll assume that the data are good, and there
 
 So if we were going to write this up, we may report something like this:
 
-> We conducted a random-effects three-level meta-analysis of 35 comparisons extracted from 12 studies. Our results indicated that the intervention was not significantly different than the control condition (*g* = -.38, *p* = .45). The model indicates that there is significantly heterogeneity within the sample (*Q*(34) = 285.55, *p* \< .001), with tau^2^ = 2.68 (between-comparisons) and tau^2^ = .16 (within-studies). Furthermore, our model explained 97.20% of the variance, with 5.63% of the variance due to within-study heterogeneity, and 91.56% due to between-comparisons heterogeneity. We detected three comparisons that were potential outliers, however examination of the studies did not indicate any notable deviations from other studies in our sample. Furthermore, none of these potential outliers significantly influenced our overall meta-analytical result. As such, the potential outliers were retained in the data analysis.
+> We conducted a random-effects three-level meta-analysis of 35 comparisons extracted from 12 studies. Our results indicated that the intervention was not significantly different than the control condition (*g* = -.38, *p* = .45). The model indicates that there is significantly heterogeneity within the sample (*Q*(34) = 285.55, *p* \< .001), with tau^2^ = 2.68 (between-studies) and tau^2^ = .16 (within-studies). Furthermore, our model explained 97.20% of the variance, with 5.63% of the variance due to within-study heterogeneity, and 91.56% due to between-study heterogeneity. We detected three comparisons that were potential outliers, however examination of the studies did not indicate any notable deviations from other studies in our sample. Furthermore, none of these potential outliers significantly influenced our overall meta-analytical result. As such, the potential outliers were retained in the data analysis.
 
 ### Moderator Analysis
 
@@ -621,7 +621,7 @@ This looks almost identical to the previous result when we calculated Q~between~
 Note that the test of moderators is different than before. Confusing right? [Well, that's because the two tests, while named the same thing, are testing different things.]{.underline} When we calculated Q~between,~ the test of moderators was testing if there were significant differences between levels of the moderator. However, in this test of moderators it is testing if the moderators are significantly different than zero. These are totally different tests - **do not use this test of moderator as your Q~between~ value because it most certainly is not!**
 :::
 
-What if you have more moderator variables to test? Well, you simply replace the '**grade_c**' variable with whatever each moderator variable column in your data is labeled as, and don't forget to rename the data items as well (**mod.gradeq** and **mod.grade**). Then you can re-run the same two code sets to calculate Q~between~ and the effect sizes.
+What if you have more categorical moderator variables to test? Well, you simply replace the '**grade_c**' variable with whatever each categorical moderator variable column in your data is labeled as, and don't forget to rename the data items as well (**mod.gradeq** and **mod.grade**). Then you can re-run the same two code sets to calculate Q~between~ and the effect sizes.
 
 #### Easily Create Tables
 
@@ -709,14 +709,14 @@ Then we are writing them into the format we want.
 Then we write them into a .txt file in the format we should be used to seeing for *Q~between.~*
 :::
 
-Ok, so now we've gotten our moderator analyses run and all of our information extracted. We can simply replicate this code, changing our moderator names and variable names where required. You should also change the name of the file being written. I like to make it the same as the moderator name to minimize confusion later. I recommend having a copy of the code for each variable, and using find and replace to replace the moderator names. It's quite efficient!
+Ok, so now we've gotten our moderator analyses run and all of our information extracted. We can simply replicate this code, changing our categorical moderator names and variable names where required. You should also change the name of the file being written. I like to make it the same as the moderator name to minimize confusion later. I recommend having a copy of the code for each variable, and using find and replace to replace the moderator names. It's quite efficient!
 
 ## Plots
 
 We should always include a forest plot with our results. Unfortunately, this is a bit more complex with a three-level meta-analysis because we have both study-level effects and (often) multiple comparisons from within each study. However, there are some really fun visualizations we can create if we borrow some code from others. Let's see what's possible.
 
 ::: rmdnote
-**Important Note:** We're going to use a different file for creating our forest and caterpillar plots. This same file and data preparation is needed to create the funnel plots to evaluate publication bias. For that reason, I tend to create my forest plots, caterpillar plots, and funnel plots all at the same time. In addition, because it uses a different data file, I generally create a second R code file as well specifically for making plots. That's why this all grouped at the end of this chapter. The code in this plots section is adapted from Fernández-Castilla et al. (2020)[@fernández-castilla2020]. I have slightly adapted the code to fit our data.
+**Important Note:** We're going to use a different file for creating our forest plot, caterpillar plots, and funnel plots. For that reason, I tend to create my forest plots, caterpillar plots, and funnel plots all at the same time. In addition, because it uses a different data file, I generally create a second R code file as well specifically for making plots. That's why this all grouped at the end of this chapter. The code in this plots section is slightly adapted from Fernández-Castilla et al. (2020)[@fernández-castilla2020]. I have slightly adapted the code to fit our data.
 :::
 
 #### Preparatory Work
@@ -1189,7 +1189,7 @@ Oh we're not done yet, we haven't even talked about publication bias yet! Public
 
 #### Funnel Plots
 
-Again, we're going to borrow the methods and adapt the code from Fernández-Castilla et al. (2020)[@fernández-castilla2020].
+Again, we're going to borrow the methods and code from Fernández-Castilla et al. (2020)[@fernández-castilla2020].
 
 First we'll create a funnel plot of all effect sizes and check it for asymmetry.
 
@@ -1482,6 +1482,4 @@ Ok, so we've now looked at two different funnel plots to check for publication b
 
 ## That's it!
 
-You've now gone through all the steps needed to conduct a three-level meta-analysis. Congratulations! This may seem intimidating, but if you complete each step, in order, this will be a very simple process. And think - now you a) have a code you can adapt and use for every three-level meta-analysis you conduct in the future, b) have a code you can share with friends, and c) can share you code with your publication so others can replicate your analysis. Just think - if more people had done that I would not have had to write this book....
-
-#### 
+You've now gone through all the steps needed to conduct a three-level meta-analysis. Congratulations! This may seem intimidating, but if you complete each step, in order, this will be a very simple process. And think - now you a) have a code you can adapt and use for every three-level meta-analysis you conduct in the future, b) have a code you can share with friends, and c) can share you code with your publication so others can replicate your analysis.

@@ -79,7 +79,6 @@ eggers-regression
 fail-safe-n
 reporting-publication-bias
 thats-it
-section
 id_3LMA
 preparing-your-data-1
 your-data-file-1
@@ -114,4 +113,3 @@ publication-bias-1
 funnel-plots
 reporting-publication-bias-1
 thats-it-1
-section-1
