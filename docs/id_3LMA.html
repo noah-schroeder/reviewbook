@@ -632,7 +632,8 @@
 <h5>
 <span class="header-section-number">11.3.5.3.2</span> Calculating Participant and Comparison Numbers, and Saving the Table<a class="anchor" aria-label="anchor" href="#calculating-participant-and-comparison-numbers-and-saving-the-table-1"><i class="fas fa-link"></i></a>
 </h5>
-<p>First, we’ll compute the number of participants from the experimental and control conditions for each level of the moderator. We’ll also calculate the number of comparisons for each level of the moderator. Finally, we’ll bind these to the pre-existing table, and write all of this information as a table in a .csv file.</p>
+<p>First, we’ll compute the number of participants from the experimental and control conditions for each level of the moderator. Note that this is not calculating the actual number of <em>unique</em> participants, because this code is simply conditionally summing the sample size columns in our data set. For example, if a study had one experimental group (n = 10) and one control group (n = 10), and had three outcomes that were included in the analysis (meaning, each appears as its own row in the data set), this code will say there were 30 participants in each group rather than 10. While this is expected in dependant data such as this, it is something to be aware of so you do not make a claim such as, “our analysis of 60 participants” when in reality, your analysis is only 20 <em>unique</em> participants. So, please be careful of your wording when you describe the participant numbers to ensure strict accuracy.</p>
+<p>We’ll also calculate the number of comparisons for each level of the moderator. Finally, we’ll bind these to the pre-existing table, and write all of this information as a table in a .csv file.</p>
 <div class="rmdnote">
 <div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#calculate participants in each group and add it to the table</span></span>
@@ -1474,7 +1475,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Beginner’s Guide to Systematic Review and Meta-Analysis</strong>" was written by Noah L. Schroeder, Ph.D.. It was last built on 2024-02-11.</p>
+    <p>"<strong>A Beginner’s Guide to Systematic Review and Meta-Analysis</strong>" was written by Noah L. Schroeder, Ph.D.. It was last built on 2024-02-29.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -1,7 +1,7 @@
 ---
 title: "A Beginner’s Guide to Systematic Review and Meta-Analysis"
 author: "Noah L. Schroeder, Ph.D."
-date: "2024-02-11"
+date: "2024-02-29"
 output: pdf_document
 documentclass: book
 bibliography:

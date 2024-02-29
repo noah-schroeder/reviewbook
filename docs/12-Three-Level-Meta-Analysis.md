@@ -650,7 +650,9 @@ So now we have a beautiful summary table. We could write this to a spreadsheet n
 
 ##### Calculating Participant and Comparison Numbers, and Saving the Table
 
-First, we'll compute the number of participants from the experimental and control conditions for each level of the moderator. We'll also calculate the number of comparisons for each level of the moderator. Finally, we'll bind these to the pre-existing table, and write all of this information as a table in a .csv file.
+First, we'll compute the number of participants from the experimental and control conditions for each level of the moderator. Note that this is not calculating the actual number of *unique* participants, because this code is simply conditionally summing the sample size columns in our data set. For example, if a study had one experimental group (n = 10) and one control group (n = 10), and had three outcomes that were included in the analysis (meaning, each appears as its own row in the data set), this code will say there were 30 participants in each group rather than 10. While this is expected in dependant data such as this, it is something to be aware of so you do not make a claim such as, "our analysis of 60 participants" when in reality, your analysis is only 20 *unique* participants. So, please be careful of your wording when you describe the participant numbers to ensure strict accuracy.
+
+We'll also calculate the number of comparisons for each level of the moderator. Finally, we'll bind these to the pre-existing table, and write all of this information as a table in a .csv file.
 
 ::: rmdnote
 ``` r
